@@ -9,3 +9,10 @@
 ### Key Features
 
 ### Technologies
+- HTML
+- CSS
+- Javascript
+- service
+- DB/Login
+- Websocket
+- React
