@@ -17,12 +17,12 @@ Have you ever encountered a critical coding error while working on a project? Ar
 
 ### Technologies
 - HTML : Uses correct HTML structure for application. Three HTML pages. One for login, one for sharing and one for leaving feedbacks.
-- CSS : All styling should be clear by using proper white space, contrast colors and proper screen sizes.
-- Javascript :  Provides login, category display, feedback display, display the result and backend endpoint calls.
+- CSS : All styling should be enhanced through the use of proper white space, contrasting colors, and appropriate screen sizes to ensure clarity.
+- Javascript :  The application includes functionality for user login, category display, feedback presentation, result display, and backend endpoint calls.
 - Service : Backend service with endpoints for:
    - login
    - feedback
    - personal code
 - DB/Login : Store users, codes, and feedbacks in database. Register and login users. Credentials securely stored in database. Can't share codes and leave and read feedbacks unless authenticated.
-- Websocket : As each user shares their code, their codes are shoen to all other users.
+- Websocket : As each user shares their code, it becomes visible to all other users.
 - React :  Application ported to use the React web framework.
