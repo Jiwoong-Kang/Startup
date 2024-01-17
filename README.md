@@ -6,9 +6,9 @@
 Have you ever encountered a critical coding error while working on a project? Are you still apprehensive about using unfamiliar programming languages and uncertain about how to effectively learn and apply new languages? Code sharing can be instrumental in addressing these concerns. Users proficient in specific languages or coding can provide valuable feedback. Additionally, users can share their coding challenges, creating a collaborative environment where everyone can enhance their skills collectively by solving problems together.
 
 ### Design
-![login page](https://ninjamock.com/Designer/Workplace/191735332/login)
-![Sharing code](https://ninjamock.com/Designer/Workplace/191735332/Page1)
-![Leave feedback](https://ninjamock.com/Designer/Workplace/191735332/Page2)
+![login page](https://github.com/Jiwoong-Kang/Startup/blob/main/Login.png)
+![Sharing code](https://github.com/Jiwoong-Kang/Startup/blob/main/Sharing%20Code.png)
+![Leave feedback](https://github.com/Jiwoong-Kang/Startup/blob/main/Leave%20feedback.png)
 
 ### Key Features
 - Secure login over HTTPS
