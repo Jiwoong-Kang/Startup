@@ -1,5 +1,11 @@
-# Startup
-CS 260 start up repository
-This is a practice
-This is a practice 2 
-merge merge1
+# Code Sharing
+
+## Specification Deliverable
+
+### Elevator Pitch
+
+### Design
+
+### Key Features
+
+### Technologies
