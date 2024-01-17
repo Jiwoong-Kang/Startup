@@ -7,6 +7,11 @@
 ### Design
 
 ### Key Features
+- Secure login over HTTPS
+- Ability to share your code
+- Get or leave the feedback from everyone
+- Ability to create and delete your sharing
+- Upload coding problems
 
 ### Technologies
 - HTML
