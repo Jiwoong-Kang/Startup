@@ -7,6 +7,7 @@ Have you ever encountered a critical coding error while working on a project? Ar
 
 ### Design
 
+
 ### Key Features
 - Secure login over HTTPS
 - Ability to share your code
@@ -15,9 +16,9 @@ Have you ever encountered a critical coding error while working on a project? Ar
 - Upload coding problems
 
 ### Technologies
-- HTML
-- CSS
-- Javascript
+- HTML : Uses correct HTML structure for application. Three HTML pages. One for login, one for sharing and one for leaving feedbacks.
+- CSS : All styling should be clear by using proper white space, contrast colors and proper screen sizes.
+- Javascript :  Provides login, category display, feedback display, display the result.
 - service
 - DB/Login
 - Websocket
