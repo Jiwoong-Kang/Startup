@@ -10,7 +10,7 @@
   
 ## Commandline for Console
 
-- echo - Output the parameters of the command
+- echo - Output the parameters of the command (printf has the same power, printf can be used like C, such as %s and %d)
 - cd - Change directory
 - mkdir - Make directory
 - rmdir - Remove directory
@@ -39,3 +39,9 @@
 - "|" - Take the output from the command on the left and pipe, or pass, it to the command on the right
 - ">" - Redirect output to a file. Overwrites the file if it exists
 - ">>" - Redirect output to a file. Appends if the file exists
+
+## Editior
+### Visual Studio Code
+- Live server
+- GitLens
+-  :wq 하면 쓰고 나갈 수 있음 (쓸때는 i 사용)
