@@ -24,7 +24,7 @@
 - top - View running processes with CPU and memory usage
 - df - View disk statistics
 - cat - Output the contents of a file
-- less - Interactively output the contents of a file
+- less - Interactively output the contents of a file (# press `q` to exit less)
 - wc - Count the words in a file
 - ps - View the currently running processes
 - kill - Kill a currently running process
