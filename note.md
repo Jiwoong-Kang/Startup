@@ -32,7 +32,7 @@
 - ssh - Create a secure shell on a remote computer
 - scp - Securely copy files to a remote computer
 - history - Show the history of commands
-- ping - Check if a website is up
+- ping - Check if a website is up (control +z = stop)
 - tracert - Trace the connections to a website
 - dig - Show the DNS information for a domain
 - man - Look up a command in the manual
