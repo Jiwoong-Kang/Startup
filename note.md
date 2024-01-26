@@ -40,12 +40,15 @@
 - ">" - Redirect output to a file. Overwrites the file if it exists
 - ">>" - Redirect output to a file. Appends if the file exists
 
-## HTML
-- <!DOCTYPE= HTML> 을 제일 위에 쓰면 안전하게 html 로 인식하게 할 수 있다.
-- more tool -> developer tool -> edit(locally, only for my monitor) 
 
 ## Editior
 ### Visual Studio Code
 - Live server
 - GitLens
 -  :wq 하면 쓰고 나갈 수 있음 (쓸때는 i 사용)
+
+## HTML
+- <!DOCTYPE= HTML> 을 제일 위에 쓰면 안전하게 html 로 인식하게 할 수 있다.
+- more tool -> developer tool -> edit(locally, only for my monitor) -> 옆에 조그만한 점 세개 누르고 edit 하면 된다.
+- 
+
