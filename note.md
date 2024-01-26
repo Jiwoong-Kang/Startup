@@ -40,6 +40,10 @@
 - ">" - Redirect output to a file. Overwrites the file if it exists
 - ">>" - Redirect output to a file. Appends if the file exists
 
+## HTML
+- <!DOCTYPE= HTML> 을 제일 위에 쓰면 안전하게 html 로 인식하게 할 수 있다.
+- more tool -> developer tool -> edit(locally, only for my monitor) 
+
 ## Editior
 ### Visual Studio Code
 - Live server
