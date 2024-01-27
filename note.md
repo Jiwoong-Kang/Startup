@@ -50,5 +50,6 @@
 ## HTML
 - <!DOCTYPE= HTML> 을 제일 위에 쓰면 안전하게 html 로 인식하게 할 수 있다.
 - more tool -> developer tool -> edit(locally, only for my monitor) -> 옆에 조그만한 점 세개 누르고 edit 하면 된다.
-- 
+- if you want to upload the wideo, you need to download that specific video.
+- whenever you want to set the default color, you need to use hexidecimal number.
 
