@@ -31,3 +31,11 @@ Have you ever encountered a critical coding error while working on a project? Ar
 
 
 ## HTML deliverable
+
+- For this deliverable I built out the structure of my application using HTML.
+- HTML Pages :
+- Links :
+- Text :
+- Images :
+- DB / Login :
+- Websocket :
