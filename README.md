@@ -32,7 +32,8 @@ Have you ever encountered a critical coding error while working on a project? Ar
 
 ## HTML deliverable
 
-- For this deliverable I built out the structure of my application using HTML.
+**For this deliverable I built out the structure of my application using HTML.**
+
 - HTML Pages : Four HTML pages for login page, uploading your code, shared code pages and feedback.  
 - Links : Upon logging in, you are seamlessly redirected to your code page. Upon code submission, you are seamlessly directed to the shared code page, which in turn provides a convenient link to the feedback page, allowing you to easily identify and address any issues with your code.
 - Text : Each submission button will be distinguished by a unique color, enhancing visual clarity and providing a distinct visual identifier for each interactive element.
