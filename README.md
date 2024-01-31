@@ -33,7 +33,7 @@ Have you ever encountered a critical coding error while working on a project? Ar
 ## HTML deliverable
 
 - For this deliverable I built out the structure of my application using HTML.
-- HTML Pages :
+- HTML Pages : Four HTML pages for login page, uploading your code, shared code pages and feedback  
 - Links :
 - Text :
 - Images :
