@@ -28,3 +28,6 @@ Have you ever encountered a critical coding error while working on a project? Ar
 - DB/Login : Store users, codes, and feedbacks in database. Register and login users. Credentials securely stored in database. Can't share codes and leave and read feedbacks unless authenticated.
 - Websocket : As each user shares their code, it becomes visible to all other users.
 - React :  Application ported to use the React web framework.
+
+
+## HTML deliverable
