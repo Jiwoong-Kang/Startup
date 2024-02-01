@@ -53,3 +53,9 @@
 - if you want to upload the wideo, you need to download that specific video.
 - whenever you want to set the default color, you need to use hexidecimal number.
 
+## CSS
+- head에 body{background-color:black color= red} p{background-color=white, color=green} 하면 body에 있는 배경은 검은색 글씨는 빨강, paragraph에서는 배경이 흰색 글자는 초록이 된다. 하지만 각 한줄에 더 쓰여졌있다면 제일 먼저 그걸 따라간다. 예시로 <p "color=blue">로 쓰여졌있으면 그 p에서는 글자가 파랑으로 나온다.
+- styles.css 형식으로 새로운 파일을 만들어야한다.
+- styles.css에 모든 style을 넣고 <link rel="stylesheet" href="styles.css" />를 head에 넣으면 그대로 적용된다.
+-  #id를 넣고 {}안에 스타일을 넣으면 그 아이디를 가지고 있는 친구들이 변한다.
+-  id 가 class 보다 더 먼저 적용되는 친구라고 생각하면 쉽다.
