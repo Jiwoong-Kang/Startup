@@ -59,3 +59,35 @@
 - styles.css에 모든 style을 넣고 <link rel="stylesheet" href="styles.css" />를 head에 넣으면 그대로 적용된다.
 -  #id를 넣고 {}안에 스타일을 넣으면 그 아이디를 가지고 있는 친구들이 변한다.
 -  id 가 class 보다 더 먼저 적용되는 친구라고 생각하면 쉽다.
+- style.css 파일을 만들고 html 파일안에 <link href="" rel=>를 헤드부분에 넣어두면 거기서 가져올 수 있다.
+- style.css 에서 @import url(여기안에 font 주소를 가져오면 된다.) 그 후 p{} or body{} 등 쓰면 된다. 3.4 파워포인트 6,7 페이지를 살펴보면 예시들이 나와있다.
+- fonts google 에 들어가서 마음에 드는 font에 select를 누르고 import 를 누르면 그대로 가져올 수 있다.
+
+## Unicode and UTF-8
+- 이 utf를 사용하면 어떤 캐릭터는 그대로 사용할 수 있다. 예시로 한국어는 원래 인식이 안됐지만 이제 유니코드를 이용해서 그대로 나타낼 수 있게 됐다.
+
+## Animation
+- p {
+ text-align: center;
+ font-size: 20vh;
+
+ animation-name: demo;
+ animation-duration: 3s;
+} 처럼 사용하면 애니메이션을 만들 수 있다.
+
+- @keyframes demo {
+ from { //아예 없는 곳에서
+   font-size: 0vh;
+ }
+
+ 95% { // 여기 95퍼가 아니라 원하는 대로 쓸 수 있다. 그냥 여기부터 잠깐 글자가 커진다
+    color : purple; // 이렇게 쓰면 처음엔는 보라색이었다가
+    font-size: 21vh;
+ }
+
+ to {
+    color : blue; // 파란색으로 바뀌게 된다.
+    font-size: 20vh;
+ }
+} 로 선언해줘야 애니메이션이 일어난다
+- 자세한 내용은 3.4 파워포인트의 15페이지를 보도록 하자
