@@ -91,3 +91,26 @@
  }
 } 로 선언해줘야 애니메이션이 일어난다
 - 자세한 내용은 3.4 파워포인트의 15페이지를 보도록 하자
+
+## Responsive Design
+- 화면을 줄였을때 특정한 것들만 나오게 하는 것이다.
+- <meta> 라고 들어가 있는 것들을 의미한다.
+- float : right 로 옛날에는 썻지만 지금은 float: inline-end로 사용한다. 왼쪽은 inline-start로 표현한다. 아랍어같은 거 때문에.
+
+## Grid
+- 3.5 파워포인트 11 페이지를 보면 코드가 나와있는데, 이 grid는 children에게만 영향을 미친다.
+- .container {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: 300px;
+  grid-gap: 1em;
+}
+- 위에 있는 1fr 을 쓰면 한 화면을 저 크기(300픽셀)로 잘 나눈다는 뜻이다
+
+## Flex
+- flex: 0 80px; -> 줄일때 항상 80픽셀을 유지한다는 뜻이다. (페이지 18 in 3.5) 0은 건들지 말라는 뜻
+- 만약 두군데로 나누고 싶으면 하나는 flex:1 하나는 flex:3으로 나누어 놓으면 1대 3 비율로 항상유지할 수 있게 된다. (이 예시는 3.5의 19페이지 예시코드의 section.controls, section.contents 를 보자.)
+
+## Media Queries
+- 
