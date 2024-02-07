@@ -1,0 +1,21 @@
+*{
+    font-family: sans-serif;
+
+}
+
+body{
+    color: blue;
+}
+
+header{
+    background-color: skyblue;
+}
+
+main{
+    background-color: white;
+}
+
+footer{
+    background-color: blue;
+    color: white;
+}
