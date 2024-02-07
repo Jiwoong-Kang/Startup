@@ -112,5 +112,13 @@
 - flex: 0 80px; -> 줄일때 항상 80픽셀을 유지한다는 뜻이다. (페이지 18 in 3.5) 0은 건들지 말라는 뜻
 - 만약 두군데로 나누고 싶으면 하나는 flex:1 하나는 flex:3으로 나누어 놓으면 1대 3 비율로 항상유지할 수 있게 된다. (이 예시는 3.5의 19페이지 예시코드의 section.controls, section.contents 를 보자.)
 
-## Media Queries
-- 
+## CSS Framework
+- 이미 만들어져 있는 디자인을 가져온다고 생각하면 된다.
+- head에 <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+  />를 넣고
+  - body에 <button type="button" class="btn btn-primary">Bootstrap</button>
+  - <button type="button">Plain</button> 로 넣으면 그곳의 스타일을 가져올 수 있다.
+
+
