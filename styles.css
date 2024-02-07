@@ -63,6 +63,21 @@ main{
     font-size:20px;
     background-color: green;
     color: white;
+    
+}
+.form-group{
+    display:flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+label{
+    margin-right:10px;
+}
+
+#ID,#password{
+    width: 250px;
+    height: 30px;
+    font-size: 20px;
 }
 
 
