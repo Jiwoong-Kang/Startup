@@ -4,18 +4,33 @@
 }
 
 body{
-    color: blue;
+    
 }
 
 header{
+    flex: 0 50px;
+    font-size: 20px;
     background-color: skyblue;
+    color:white;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
 }
 
 main{
     background-color: white;
+    color : black;
+    text-align: center;
+    h1{
+        color:black;
+    }
 }
+
 
 footer{
     background-color: blue;
     color: white;
+    font-size: 3vh;
 }
