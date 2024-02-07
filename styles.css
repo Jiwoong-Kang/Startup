@@ -4,8 +4,9 @@
 }
 
 body{
-    
+    color: white;
 }
+
 
 header{
     flex: 0 50px;
@@ -13,24 +14,65 @@ header{
     background-color: skyblue;
     color:white;
 
-    display: flex;
+    display: grid;
     flex-direction: row;
     justify-content: start;
     align-items: center;
+    
+    
+}
+.image-container{
+    background-image: url(https://media.istockphoto.com/id/537331500/photo/programming-code-abstract-technology-background-of-software-deve.jpg?s=612x612&w=0&k=20&c=jlYes8ZfnCmD0lLn-vKvzQoKXrWaEcVypHnB5MuO-g8=)
+
+}
+.container{
+    display:flex;
+}
+#list{
+    flex: 1;
+    padding:10px;
 }
 
+
+
 main{
+    flex: 1;
+    font-size: 30px;
     background-color: white;
     color : black;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     h1{
         color:black;
     }
+
+}
+#login{
+    width: 80px;
+    height: 40px;
+    font-size: 20px;
+    background-color: green;
+    color: white;
+}
+
+#new{
+    width: 100px;
+    height: 50px;
+    font-size:20px;
+    background-color: green;
+    color: white;
 }
 
 
 footer{
+    flex: 0 50px;
+    font-size: 20px;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
     background-color: blue;
     color: white;
-    font-size: 3vh;
 }
+
