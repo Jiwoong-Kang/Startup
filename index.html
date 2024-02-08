@@ -25,23 +25,30 @@
 
     <main>
       <h1>Welcome</h1>
-      <h2>3rd party placeholder goes here.</h2>
-      <p>If you have an account</p>
-      <form method="get" action="sharing.html">
-        <div class="form-group">
-          <label for="ID">ID</label>
-          <input type="text" id="ID" placeholder="Your ID here" />
+      <div id="outer">
+        <div id="outer2"><h2>3rd party placeholder goes here.</h2></div>
+        <div id="outer3">
+          <p>If you have an account</p>
+          <form method="get" action="sharing.html">
+
+            <div class="form-group">
+              <label for="ID">ID</label>
+              <input type="text" id="ID" placeholder="Your ID here" />
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type = "text" id="password" placeholder="Password here" required/>
+            </div>
+              <button type="submit" id="login">Login</button>
+            </form>
+          <p>Are you new?</p>
+          <form method="get" action="account.html">
+          <button type="submit" id="new">Click here</button>
+          </form>
         </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type = "text" id="password" placeholder="Password here" required/>
-        </div>
-          <button type="submit" id="login">Login</button>
-        </form>
-      <p>Are you new?</p>
-      <form method="get" action="account.html">
-      <button type="submit" id="new">Click here</button>
-      </form>
+      </div>
+      
+      
     </main>
     <footer>
       <hr />

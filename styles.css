@@ -5,7 +5,7 @@
 
 body{
     color: white;
-    
+    margin-bottom: 100px;
 }
 
 header{
@@ -14,10 +14,10 @@ header{
     background-color: skyblue;
     color:white;
 
-    display: grid;
     flex-direction: row;
     justify-content: start;
     align-items: center;
+    width : 100%;
     
 }
 .image-container{
@@ -30,11 +30,19 @@ header{
     height: 50px;
     font-weight : bold;
     color : white;
+    width : 100%;
+    justify-content: start;
     
 }
+nav{
+    width : 100%;
+}
 #list{
-    flex: 1;
-    padding:10px;
+    padding:5px;
+}
+a{
+    text-decoration : none;
+    color : white;
 }
 
 main{
@@ -49,7 +57,23 @@ main{
     h1{
         color:black;
     }
-    margin: 100px;
+}
+#outer{
+    display : grid;
+    grid-template-columns : 1fr 1fr;
+}
+#outer2{
+    grid-column : 1;
+}
+#outer3{
+    grid-column : 2;
+    display : flex;
+    flex-direction : column;
+    align-items : center;
+}
+form{
+    display : flex;
+    flex-direction : column;
 }
 #login{
     width: 80px;
@@ -57,6 +81,7 @@ main{
     font-size: 20px;
     background-color: green;
     color: white;
+    align-self : center;
 }
 
 #new{
@@ -120,5 +145,22 @@ footer{
     align-items: center;
     background-color: blue;
     color: white;
+    position : fixed;
+    bottom : 0;
+    width : 100%;
 }
 
+@media (orientation : portrait){
+    #outer{
+        grid-template-rows : 1fr 1fr;
+        grid-template-columns : 1fr;
+    }
+    #outer2{
+        grid-column:1;
+        grid-row : 1;
+    }
+    #outer3{
+        grid-column:1;
+        grid-row : 2;
+    }
+}
