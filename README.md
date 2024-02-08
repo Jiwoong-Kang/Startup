@@ -41,3 +41,13 @@ Have you ever encountered a critical coding error while working on a project? Ar
 - DB / Login : Input box and submit botton for login. Feedback page will show your code and other's feedback under the code. When new account is created, that information will be saved in DB. But I just made a structure for that and I will put more code like javascript in the future.
 - Websocket : The shared code pages and feedback pages will be accessible to all users upon logging in. So, if a user upload their code, then other users can see that and leave feedbacks. And all feedbacks will be opened to everyone. In this step, I just made a structure so that I can put my javascript later.
 - Placeholder for 3rd party service calls : I put this part in my index.html for the future. I will update that after learning Javascript 
+
+
+## CSS deliverable
+
+- Header, Footer and Main content body : I used different colors to distinguish the scetion among header,main and footer. 
+- Navigation elements: I dropped the underlines and changed the color for anchor elements.
+- Responsive to window resizing : My website looks great on all window sizes and devices.
+- Apllication elements : Used good contrast and whitespace.
+- Application text content : I used consistent fonts which is sans-serif
+- Application images : I put this image at the header so the image shows my website's identity.
