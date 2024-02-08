@@ -101,6 +101,13 @@ label{
     background-color: blue;
     color: white;
 }
+#delete{
+    width: 150px;
+    height:30px;
+    font-size:20px;
+    background-color: red;
+    color: white;
+}
 
 footer{
     flex: 0 50px;
