@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <div id="picture" class="picture-box"><img alt="Coding" controls width="200" src="https://media.istockphoto.com/id/537331500/photo/programming-code-abstract-technology-background-of-software-deve.jpg?s=612x612&w=0&k=20&c=jlYes8ZfnCmD0lLn-vKvzQoKXrWaEcVypHnB5MuO-g8=" /></div>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Codesharing HTML</title>
     <link rel="icon" href="favicon.ico" /> 
+    <link href="styles.css" rel="stylesheet" />
   </head>
   <body>
+    <h1 class="image-container">Codesharing<sup>&reg;</sup></h1>
     <header>
       <nav>
-        <menu>
-          <li><a href="index.html">Home</a></li>
-        </menu>
-        
+        <div class="container">
+          <div id="list"><a href="index.html">Home</a></div>
+        </div>
       </nav>
-      <h2>Put your new ID and new Password</h2>
     </header>
     <main>
+      <h2>Put your new ID and new Password</h2>
       <form method="get" action="index.html">
-      <label for="ID">ID</label>
-      <input type="text" id="ID" placeholder="New ID" />
-      <label for="password">New password</label>
-      <input type="text" id="password" placeholder="New password" />
+        <div class="form-group"></div>
+          <label for="ID">ID</label>
+          <input type="text" id="ID" placeholder="New ID" />
+        </div>
+        <div class="form-group"></div>
+          <label for="password">New password</label>
+          <input type="text" id="password" placeholder="New password" required/>
+        </div>
       <button type="submit">Create</button>
       </form>
     </main>
