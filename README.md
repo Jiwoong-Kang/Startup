@@ -45,6 +45,8 @@ Have you ever encountered a critical coding error while working on a project? Ar
 
 ## CSS deliverable
 
+**For this deliverable I designed my website by making my own CSS.**
+
 - Header, Footer and Main content body : I used different colors to distinguish the scetion among header,main and footer. 
 - Navigation elements: I dropped the underlines and changed the color for anchor elements.
 - Responsive to window resizing : My website looks great on all window sizes and devices.
