@@ -50,7 +50,7 @@ Have you ever encountered a critical coding error while working on a project? Ar
 - Header, Footer and Main content body : I used different colors to distinguish the scetion among header,main and footer. 
 - Navigation elements: I dropped the underlines and changed the color for anchor elements.
 - Responsive to window resizing : My website looks great on all window sizes and devices.
-- Aplication elements : Used good contrast and whitespace. Also, I gave specific colors to each button such as blue for save and red for delete, I made those to understood by users easily. 
+- Application elements : Used good contrast and whitespace. Also, I gave specific colors to each button such as blue for save and red for delete, I made those to understood by users easily. 
 - Application elements(will be updated) : I didn't learn javascript yet, so I didn't put any css yet on there. Instead, I appeared those part by words. Those will be updated soon with HTML and CSS both.
 - Application text content : I used consistent fonts which is sans-serif. And for the letters to show what this page is for, I made them a little bit bigger and put those on the top of the body.
 - Application images : I put this image at the header so the image shows my website's identity.
