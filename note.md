@@ -121,4 +121,11 @@
   - body에 <button type="button" class="btn btn-primary">Bootstrap</button>
   - <button type="button">Plain</button> 로 넣으면 그곳의 스타일을 가져올 수 있다.
 
+## JavaScript
+- main.js 로 하면 만들수 있다.
+- 자바스크립트를 가져오려면 링크를 이용해야 한다.
+- 파워포인트 4.1을 보면 자세하게 나와있다. (예시1 : script tag를 붙인다.)
+- <script src="index.js"></script> 를 헤드에 넣어준다. 그리고 순서가 굉장히 중요한데 나중에 선언돼있는 친구를 머저 가져오려고 할 경우 에러가 발생한다. 예를 들어 아직 선언돼지 않은 button을 먼저 사용하고 있을 경우 에러가 발생한다. 이걸 방지 하고 싶으면 <script defer>을 사용하면 된다.
+- let y = 1; 같이 let을 사용해라. 이유는 나중에 업데이트 한다.
+- 
 
