@@ -127,5 +127,22 @@
 - 파워포인트 4.1을 보면 자세하게 나와있다. (예시1 : script tag를 붙인다.)
 - <script src="index.js"></script> 를 헤드에 넣어준다. 그리고 순서가 굉장히 중요한데 나중에 선언돼있는 친구를 머저 가져오려고 할 경우 에러가 발생한다. 예를 들어 아직 선언돼지 않은 button을 먼저 사용하고 있을 경우 에러가 발생한다. 이걸 방지 하고 싶으면 <script defer>을 사용하면 된다.
 - let y = 1; 같이 let을 사용해라. 이유는 나중에 업데이트 한다.
+- 서로 주소를 비교하기 때문에 array 안에 같은 내용이여도, false가 나온다.
+- falsy = (false,0,-0,'', NaN, null, undefined)
+- truthy = !falsy
+- c언어와 같은 while, for, switch case,
+- 예시 페이지에서 start(contents) contents는 찾고 싶은 걸 넣으면 된다. 그러면 그 자리로 가서 실행하기 시작한다.
+- No return 이면 undefined 로 출력된다. 
+- f = function(a,b,c='rat'){return[a,b,c]}
+- console.log(f(1)) == 1,undefined, 'rat' 으로 나오게 된다.
+
+## ArrowFunction
+- const arrow() = () => 1; 언제든 1이 나오게 하는 함수이다.
+- const arrowWithBlock = (a) => {a;} -> undefined 로 나오게 된다.
+- const arrowWithReturn = (a) => {return a;}
+- console.log(arrow(), arrowWithBlock(2), arrowWithReturn(3)) -> 1, undefined, 3
+- you cannot name the arrowfunction, arrow is just the name of ()
+
+## Closures
 - 
 
