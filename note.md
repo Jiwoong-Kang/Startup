@@ -47,13 +47,13 @@
 - GitLens
 -  :wq 하면 쓰고 나갈 수 있음 (쓸때는 i 사용)
 
-## HTML
+### HTML
 - <!DOCTYPE= HTML> 을 제일 위에 쓰면 안전하게 html 로 인식하게 할 수 있다.
 - more tool -> developer tool -> edit(locally, only for my monitor) -> 옆에 조그만한 점 세개 누르고 edit 하면 된다.
 - if you want to upload the wideo, you need to download that specific video.
 - whenever you want to set the default color, you need to use hexidecimal number.
 
-## CSS
+### CSS
 - head에 body{background-color:black color= red} p{background-color=white, color=green} 하면 body에 있는 배경은 검은색 글씨는 빨강, paragraph에서는 배경이 흰색 글자는 초록이 된다. 하지만 각 한줄에 더 쓰여졌있다면 제일 먼저 그걸 따라간다. 예시로 <p "color=blue">로 쓰여졌있으면 그 p에서는 글자가 파랑으로 나온다.
 - styles.css 형식으로 새로운 파일을 만들어야한다.
 - styles.css에 모든 style을 넣고 <link rel="stylesheet" href="styles.css" />를 head에 넣으면 그대로 적용된다.
@@ -67,7 +67,7 @@
 - 이 utf를 사용하면 어떤 캐릭터는 그대로 사용할 수 있다. 예시로 한국어는 원래 인식이 안됐지만 이제 유니코드를 이용해서 그대로 나타낼 수 있게 됐다.
 
 ## Animation
-- p {
+p {
  text-align: center;
  font-size: 20vh;
 
@@ -75,7 +75,7 @@
  animation-duration: 3s;
 } 처럼 사용하면 애니메이션을 만들 수 있다.
 
-- @keyframes demo {
+@keyframes demo {
  from { //아예 없는 곳에서
    font-size: 0vh;
  }
@@ -99,7 +99,7 @@
 
 ## Grid
 - 3.5 파워포인트 11 페이지를 보면 코드가 나와있는데, 이 grid는 children에게만 영향을 미친다.
-- .container {
+.container {
   display: grid;
   grid-template-columns:
     repeat(auto-fill, minmax(300px, 1fr));
@@ -121,7 +121,7 @@
   - body에 <button type="button" class="btn btn-primary">Bootstrap</button>
   - <button type="button">Plain</button> 로 넣으면 그곳의 스타일을 가져올 수 있다.
 
-## JavaScript
+### JavaScript
 - main.js 로 하면 만들수 있다.
 - 자바스크립트를 가져오려면 링크를 이용해야 한다.
 - 파워포인트 4.1을 보면 자세하게 나와있다. (예시1 : script tag를 붙인다.)
@@ -143,6 +143,44 @@
 - console.log(arrow(), arrowWithBlock(2), arrowWithReturn(3)) -> 1, undefined, 3
 - you cannot name the arrowfunction, arrow is just the name of ()
 
-## Closures
-- 
+## Strings
+- casefold : string.toUPppercase(), string.toLowercas()
+- split : string.split(' ')
+- endswith : string.endsWith('') , or startsWith('')
+- replace : string.replace('Dogs', 'Puppies')
+- slice : string.slice(3, 7) 4번째 알파벳부터 6번째 알파벳까지
+- Regex : const objRegex = new Regex('cat.?', 'i') // cat, cats, catz
+- const literalRegex = /cat.?/i  console.log(text.match(literalRegex)) == find all things that contain cat.
+
+## Array
+- add: push, subtract: pop, numbers.pop() = last element, and that will be deleted from the array
+- slice : numbers.slice, length : numbers.length
+- for (let entry of numbers) = for loop
+
+## ArrayOperation
+- numbers = [1,2,3,4,5,6,7,8,9]
+- map : numbers.map((n) => n * 100) [100, 200, 300, 400 ..., 900]
+- reduce : numbers.reduce((a,c) => a+c) 45 (a:원래있던 것 c:새롭게 들어온 것) , 만약 a에 다른 것 넣지 않으면 a는 제일 처음의 요소로 저장되고 c는 그 다음의 것으로 저장된다. 시작점을 정하고 싶으면 a+c, start로 뒤에 넣어주면 된다.
+- forEach : numbers.forEach((n) => console.log(n%2)) no output, sideffect
+- filter : numbers.filter((n) => n%2) build new array [1,3,5,7,9]
+- some : numbers.some((n) => n > 5) 이 하나라도 이 조건에 맞으면 true를 반환한다.
+
+## Exceptions
+try {
+  // normal execution code
+} catch (err) {
+  // exception handling code
+} finally {
+  // always called code
+}
+
+## specialOperators
+- let x = null || 5; -> true
+- console.log('logical or: ', x); 5가 나온다
+- x = x || 10;
+- console.log('logical or: ', x); 5가 나온다
+- console.log(0?? 'coalescing') ?? = null 인지를 판단하고 아니라면 0을 표현해준다.
+- shortcut, let z, z??(z=x); console.log('short circuit: ', z);
+- y??=30 뜻은 y가 null 이 아니면 y에 30을 넣으라는 소리이다.
+
 
