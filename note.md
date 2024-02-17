@@ -174,7 +174,7 @@ try {
   // always called code
 }
 
-## specialOperators
+## SpecialOperators
 - let x = null || 5; -> true
 - console.log('logical or: ', x); 5가 나온다
 - x = x || 10;
@@ -182,5 +182,26 @@ try {
 - console.log(0?? 'coalescing') ?? = null 인지를 판단하고 아니라면 0을 표현해준다.
 - shortcut, let z, z??(z=x); console.log('short circuit: ', z);
 - y??=30 뜻은 y가 null 이 아니면 y에 30을 넣으라는 소리이다.
+
+## Object
+- Dictionary of JS
+
+## Spread
+- let input = [1,2,3];
+- input = [...input,4,5,6] -> [1,2,3,4,5,6]
+- you can use this with object too
+- const sumAndMutiply(multiplier, ...number) 이라고 하면 제일 처음 숫자를 제외하곤 나머지는 다 뒤에 저장된다.
+
+## Document Object Model
+- html + css to my data structure
+- 직접적으로 코드를 바꾸는게 아니라 그 코드가 있는 위치에 새로운 정보를 넣어주어서 거기서만 내용이게 바뀌게 한다.
+- const el = document.querySelector('#t');
+- el.innerHTML = '<div class="injected"><b>Hello</b>!</div>';
+- 이런 코드가 있으면 t 아이디를 가지고 있는 친구들을 찾아서 dom에서만 hello 로 나오게 한다.
+- 그런데 위에 애는 너무 위험하니까 4.4 에 10 번째 페이지에 있는 코드를 사용하자
+
+## Event handlers
+
+
 
 
