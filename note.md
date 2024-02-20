@@ -200,8 +200,14 @@ try {
 - 이런 코드가 있으면 t 아이디를 가지고 있는 친구들을 찾아서 dom에서만 hello 로 나오게 한다.
 - 그런데 위에 애는 너무 위험하니까 4.4 에 10 번째 페이지에 있는 코드를 사용하자
 
-## Event handlers
-
+## Promises
+- Eveything must be asynchronous
+- call stack: 밑에 친구는 돌아가고 있는 와중에 이 친구는 혼자 독립적으로 돌아간다.
+- web API : 이미 돌아가고 있는 함수가 답을 낼때까지 여기서 놀다가 다 되면 위로 보낸다
+- pending, fulfilled, rejected
+- 근복적으로 이 promise는 결과와 조건을 정해놓고 그것이 맞는 결과를 가져오게 한다.
+- 예시는 4.5 파워포인트를 보면된다.(p18, 19)
+- 
 
 
 
