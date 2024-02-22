@@ -54,3 +54,12 @@ Have you ever encountered a critical coding error while working on a project? Ar
 - Application elements(will be updated) : I didn't learn javascript yet, so I didn't put any css yet on there. Instead, I appeared those part by words. Those will be updated soon with HTML and CSS both.
 - Application text content : I used consistent fonts which is sans-serif. And for the letters to show what this page is for, I made them a little bit bigger and put those on the top of the body.
 - Application images : I put this image at the header so the image shows my website's identity.
+
+## Javascript deliverable
+
+**For this deliverable, I used JavaScript for a single user to save their data at local storage. I also added some places that uploaded code by others will show.
+
+- Login : When you press the login button, it will direct you to mypage where you can all the codes that you uploaded and there is an account login section where you can make a new account.
+- Database : All uploaded codes are stored at local storage but they will be replaced by database data later. So far, you can only see your code which is at local storage.
+- Websocket : SInce I haven't learned database, I am only using local storage which isn't accessible to other users. I will update this part later.
+- Application's interaction logic : After you upload your code, you may see your code in different pages. For example, if you upload your code at feedback section, you can see your code in different pages like mypage or code part. Also, they are shown as lists first and when you click, all datas show only on your laptop, since I am just using local storage.
