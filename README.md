@@ -57,7 +57,7 @@ Have you ever encountered a critical coding error while working on a project? Ar
 
 ## Javascript deliverable
 
-**For this deliverable, I used JavaScript for a single user to save their data at local storage. I also added some places that uploaded code by others will show.
+**For this deliverable, I used JavaScript for a single user to save their data at local storage. I also added some places that uploaded code by others will show.**
 
 - Login : When you press the login button, it will direct you to mypage where you can all the codes that you uploaded and there is an account login section where you can make a new account.
 - Database : All uploaded codes are stored at local storage but they will be replaced by database data later. So far, you can only see your code which is at local storage.
