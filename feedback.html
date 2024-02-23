@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script defer src="feedback.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Codesharing HTML</title>
@@ -28,9 +29,9 @@
       <div id="outer2"><p>Show the code that someone uploaded(This part will be updated.)</p>
       </div>
       <div id="outer3"><textarea id="message" placeholder="Leave your answer"></textarea>
-        <form method="post" action="sharing.html">
-          <button type="submit" id="save">Save</button>
-        </form>
+        <div id="post_form">
+          <button type="submit" id="save" onclick="feedback(this)">Save</button>
+        </div>
       </div>
     </div>
     </main>
