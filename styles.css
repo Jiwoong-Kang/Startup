@@ -77,7 +77,7 @@ main{
     display : grid;
     grid-template-columns : 1fr 1fr;
     justify-content: space-between ;
-    width : 60%;
+    width : 80%;
 }
 #new_outer2{
     grid-column : 1;
