@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script defer src="sharing.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Codesharing HTML</title>
@@ -28,9 +29,9 @@
       <p>After click one of code lists, you may enter that code page and see the code and feedbacks.
         if you want, you can leave your feedback too.(Both parts will be updated)
       </p>
-      <form method="get" action="feedback.html">
-        <button type="submit" id="feedback">Leave your feedback</button>
-      </form>
+      <div id="post_form">
+        <button type="submit" id="feedback" onclick = "feedback(this)">Leave your feedback</button>
+      </div>
 
     </main>
 
