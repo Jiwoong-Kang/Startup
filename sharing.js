@@ -9,14 +9,16 @@ function sharing(){
     
     document.getElementById("outer2_text").innerHTML = show_code_parse.code
     document.getElementById("outer2_text").style.whiteSpace = "pre"
-    
+
     document.getElementById("outer3_text").innerHTML = show_code_parse.explanation
     document.getElementById("outer3_text").style.whiteSpace = "pre"
+
 
     let show_feedback = localStorage.getItem("feedback")
 
     document.getElementById("feedback2").innerHTML = show_feedback
     document.getElementById("feedback2").style.whiteSpace = "pre"
+
 
 }
 
