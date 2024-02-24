@@ -76,7 +76,6 @@ main{
 #new_outer{
     display : grid;
     grid-template-columns : 1fr 1fr;
-    justify-content: space-between ;
     width : 80%;
 }
 #new_outer2{
@@ -89,9 +88,8 @@ main{
     display : flex;
     flex-direction : column;
     border : 1px solid black;
-    
-
 }
+
 
 #subject{
     width: 1000px;
@@ -192,6 +190,21 @@ footer{
         grid-row : 1;
     }
     #outer3{
+        grid-column:1;
+        grid-row : 2;
+    }
+}
+
+@media (orientation : portrait){
+    #new_outer{
+        grid-template-rows : 1fr 1fr;
+        grid-template-columns : 1fr;
+    }
+    #new_outer2{
+        grid-column:1;
+        grid-row : 1;
+    }
+    #new_outer3{
         grid-column:1;
         grid-row : 2;
     }
