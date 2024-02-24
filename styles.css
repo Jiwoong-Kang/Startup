@@ -96,6 +96,11 @@ main{
     height: 30px;
     font-size: 20px;
 }
+
+#feedback2{
+    border  : 1px solid black;
+    word-break: break-all;
+}
 #post_form{
     display : flex;
     flex-direction : column;
