@@ -71,6 +71,12 @@ main{
     flex-direction : column;
     align-items : center;
 }
+
+#subject{
+    width: 1000px;
+    height: 50px;
+    font-size: 10px;
+}
 #post_form{
     display : flex;
     flex-direction : column;
