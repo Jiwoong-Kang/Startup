@@ -1,7 +1,9 @@
 function code(){
+    const subjectEl = document.querySelector("#subject")
     const codeEl = document.querySelector("#message")
     const explainEl = document.querySelector("#message2")
     const obj = {
+        subject : subjectEl.value,
         code : codeEl.value ,
         explanation : explainEl.value
     };
