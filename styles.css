@@ -72,6 +72,25 @@ main{
     align-items : center;
 }
 
+#new_outer{
+    display : grid;
+    grid-template-columns : 1fr 1fr;
+    justify-content: space-between ;
+    width : 60%;
+}
+#new_outer2{
+    grid-column : 1;
+    border : 1px solid black;
+}
+#new_outer3{
+    grid-column : 2;
+    display : flex;
+    flex-direction : column;
+    align-items : center;
+    border : 1px solid black;
+
+}
+
 #subject{
     width: 1000px;
     height: 30px;
