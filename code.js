@@ -12,3 +12,21 @@ function code(){
     window.location.href = "main_sharing.html"
 
 }
+
+const textAreas = document.querySelectorAll('textarea');
+
+textAreas.forEach(textArea => {
+    textArea.addEventListener('keydown', function(e) {
+        if(e.key == 'Tab') {
+            e.preventDefault();
+
+            var start = e.target.selectionStart;
+            var end = e.target.selectionEnd;
+
+            e.target.value = e.target.value.substring(0, start)
+                + '\t' + e.target.value.substring(end);
+
+            e.target.selectionStart = e.target.selectionEnd = start + 1;
+        }
+    });
+});
