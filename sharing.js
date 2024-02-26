@@ -5,6 +5,7 @@ function feedback2(){
 function sharing(){
     let show_code = localStorage.getItem("code")
     let show_code_parse = JSON.parse(show_code)
+    
     document.getElementById("subject2").innerHTML = show_code_parse.subject
     
     document.getElementById("outer2_text").innerHTML = show_code_parse.code

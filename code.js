@@ -7,9 +7,19 @@ function code(){
         code : codeEl.value ,
         explanation : explainEl.value
     };
-    let string_code = JSON.stringify(obj)
-    localStorage.setItem("code", string_code)
-    window.location.href = "main_sharing.html"
+    let current_code = localStorage.getItem("code")
+    if (current_code){
+        let current_code_array = JSON.parse(current_code)
+        current_code_array.push(obj)
+        let new_current_code = JSON.stringify(current_code_array)
+        localStorage.setItem("code", new_current_code)
+        window.location.href = "main_sharing.html"
+    }else{
+        let string_code = JSON.stringify([obj])
+        localStorage.setItem("code", string_code)
+        window.location.href = "main_sharing.html"
+    }
+    
 
 }
 
