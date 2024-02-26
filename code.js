@@ -9,6 +9,6 @@ function code(){
     };
     let string_code = JSON.stringify(obj)
     localStorage.setItem("code", string_code)
-    window.location.href = "sharing.html"
+    window.location.href = "main_sharing.html"
 
 }
