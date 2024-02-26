@@ -10,19 +10,19 @@ function getting_title(){
       for (const [i, title] of titles.entries()){
           const positionTdEl = document.createElement('td');
           const titleTdEl = document.createElement('td');
-          const dateTdEl = document.createElement('td');
+          const timeTdEl = document.createElement('td');
 
           positionTdEl.textContent = i + 1;
           titleTdEl.textContent = title.subject;
           titleTdEl.addEventListener("click", function(){
                   window.location.href = "sharing.html";
                 }); // need to fix
-          dateTdEl.textContent = title.date;
+          timeTdEl.textContent = title.time;
 
           const rowEl = document.createElement('tr');
           rowEl.appendChild(positionTdEl);
           rowEl.appendChild(titleTdEl);
-          rowEl.appendChild(dateTdEl);
+          rowEl.appendChild(timeTdEl);
 
           tableBodyEl.appendChild(rowEl);
       }

@@ -2,10 +2,13 @@ function code(){
     const subjectEl = document.querySelector("#subject")
     const codeEl = document.querySelector("#message")
     const explainEl = document.querySelector("#message2")
+    const now = new Date()
     const obj = {
         subject : subjectEl.value,
         code : codeEl.value ,
-        explanation : explainEl.value
+        explanation : explainEl.value,
+        time : now
+
     };
     let current_code = localStorage.getItem("code")
     if (current_code){
