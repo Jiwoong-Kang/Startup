@@ -20,7 +20,7 @@ function getting_title(){
             titleTdEl.addEventListener("click", function(){
                     window.location.href = "sharing.html";
                   }); // need to fix
-            dateTdEl.textContent = title.date;
+            dateTdEl.textContent = title.time;
 
             const rowEl = document.createElement('tr');
             rowEl.appendChild(positionTdEl);

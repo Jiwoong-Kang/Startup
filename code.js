@@ -3,11 +3,18 @@ function code(){
     const codeEl = document.querySelector("#message")
     const explainEl = document.querySelector("#message2")
     const now = new Date()
+    const formattedTime = now.toLocaleString('en-US', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit'
+    });
     const obj = {
         subject : subjectEl.value,
         code : codeEl.value ,
         explanation : explainEl.value,
-        time : now
+        time : formattedTime
 
     };
     let current_code = localStorage.getItem("code")
