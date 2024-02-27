@@ -15,22 +15,20 @@ function sharing(){
     document.getElementById("outer3_text").style.whiteSpace = "pre"
 
 
-    // let show_feedback = localStorage.getItem("feedback")
-
     document.getElementById("feedback2").innerHTML = show_code_parse.feedbacks
     document.getElementById("feedback2").style.whiteSpace = "pre"
 
     
 }
 
-// setInterval(() => {
-//     const score = Math.floor(Math.random() * 3000);
-//     const chatText = document.querySelector('#player-messages');
-//     chatText.innerHTML =
-//       `<div class="event"><span class="player-event">Eich</span> scored ${score}</div>` +
-//       chatText.innerHTML;
-//   }, 5000);
+setInterval(() => {
+    const score = Math.floor(Math.random() * 3000);
+    const chatText = document.querySelector('#user-messages');
+    chatText.innerHTML =
+      `<div class="event"><span class="player-event">Eich</span> left ${score}</div>` +
+      chatText.innerHTML;
+  }, 5000);
 
 
 sharing()
-// setInterval()
+setInterval()
