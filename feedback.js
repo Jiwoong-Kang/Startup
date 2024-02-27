@@ -11,6 +11,14 @@ function feedback(){
     const codeEl = document.querySelector("#message")
     show_code_parse.feedbacks.push(codeEl.value)
     localStorage.setItem("current_code", JSON.stringify(show_code_parse))
+    let codes = JSON.parse(localStorage.getItem("code"))
+    for (let i = 0; i < codes.length; i++){
+        if (codes[i].time === show_code_parse.time){
+            codes[i] = show_code_parse
+            break
+        }
+    }
+    localStorage.setItem("code", JSON.stringify(codes))
     window.location.href = "sharing.html"
 
 }

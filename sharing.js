@@ -15,7 +15,7 @@ function sharing(){
     document.getElementById("outer3_text").style.whiteSpace = "pre"
 
 
-    document.getElementById("feedback2").innerHTML = show_code_parse.feedbacks
+    document.getElementById("feedback2").innerHTML = show_code_parse.feedbacks.join("<br>")
     document.getElementById("feedback2").style.whiteSpace = "pre"
 
     
