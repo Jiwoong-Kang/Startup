@@ -61,5 +61,5 @@ Have you ever encountered a critical coding error while working on a project? Ar
 
 - Login : When you press the login button, it will direct you to mypage where you can all the codes that you uploaded and there is an account login section where you can make a new account.
 - Database : All uploaded codes are stored at local storage but they will be replaced by database data later. So far, you can only see your code which is at local storage.
-- Websocket : I put a code that users can leave their reponses and it is updated automatically. Now, I made it just show "Eich left numbers". I will keep updating this part later.
+- Websocket : I put a code that users can leave their reponses and it is updated automatically. Now, I made it just show "Eich left numbers". I will keep updating this part later. You may see this part if you click, codesharing and click the title. And then it will be updated automatically.
 - Application's interaction logic : After you upload your code, you may see your code in different pages. For example, if you upload your code at feedback section, you can see your code in different pages like mypage or code part. Also, they are shown as lists first and when you click, all datas show only on your laptop, since I am just using local storage.
