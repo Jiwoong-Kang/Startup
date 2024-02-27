@@ -90,12 +90,13 @@ main{
     border: 1px solid #000;
     padding: 10px; 
     background-color: #f5f5f5; 
-    text-align: left; 
+    justify-content: center;
 }
 
 .table1 tbody td {
     border: 1px solid #000; 
     padding: 10px; 
+
 }
 
 
@@ -133,7 +134,7 @@ main{
     max-width : 500px;
     overflow-wrap: anywhere;  
     word-wrap: break-word; 
-    word-break: break-all !important;
+    word-break: break-all;
    
 }
 
