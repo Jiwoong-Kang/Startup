@@ -3,7 +3,7 @@ function feedback2(){
 }
 
 function sharing(){
-    let show_code = localStorage.getItem("code")
+    let show_code = localStorage.getItem("current_code")
     let show_code_parse = JSON.parse(show_code)
     
     document.getElementById("subject2").innerHTML = show_code_parse.subject
@@ -15,13 +15,22 @@ function sharing(){
     document.getElementById("outer3_text").style.whiteSpace = "pre"
 
 
-    let show_feedback = localStorage.getItem("feedback")
+    // let show_feedback = localStorage.getItem("feedback")
 
-    document.getElementById("feedback2").innerHTML = show_feedback
+    document.getElementById("feedback2").innerHTML = show_code_parse.feedbacks
     document.getElementById("feedback2").style.whiteSpace = "pre"
 
-
+    
 }
+
+// setInterval(() => {
+//     const score = Math.floor(Math.random() * 3000);
+//     const chatText = document.querySelector('#player-messages');
+//     chatText.innerHTML =
+//       `<div class="event"><span class="player-event">Eich</span> scored ${score}</div>` +
+//       chatText.innerHTML;
+//   }, 5000);
 
 
 sharing()
+// setInterval()
