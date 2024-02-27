@@ -32,6 +32,12 @@ function code(){
 
 }
 
+function clearContent() {
+    document.getElementById("subject").value = "";
+    document.getElementById("message").value = "";
+    document.getElementById("message2").value = "";
+}
+
 const textAreas = document.querySelectorAll('textarea');
 
 textAreas.forEach(textArea => {

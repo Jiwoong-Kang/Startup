@@ -133,7 +133,7 @@ main{
     max-width : 500px;
     overflow-wrap: anywhere;  
     word-wrap: break-word; 
-    word-break: break-all;
+    word-break: break-all !important;
    
 }
 
