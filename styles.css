@@ -124,6 +124,10 @@ main{
 #new_outer2{
     grid-column : 1;
     border : 1px solid black;
+    max-width : 80%;
+    overflow-wrap: break-word;  
+    word-wrap: break-word; 
+    word-break: break-all;
     
 }
 #new_outer3{
@@ -131,8 +135,8 @@ main{
     display : flex;
     flex-direction : column;
     border : 1px solid black;
-    max-width : 500px;
-    overflow-wrap: anywhere;  
+    max-width : 80%;
+    overflow-wrap: break-word;  
     word-wrap: break-word; 
     word-break: break-all;
    

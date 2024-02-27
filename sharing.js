@@ -8,11 +8,10 @@ function sharing(){
     
     document.getElementById("subject2").innerHTML = show_code_parse.subject
     
-    document.getElementById("outer2_text").innerHTML = show_code_parse.code
-    document.getElementById("outer2_text").style.whiteSpace = "pre"
+    document.getElementById("new_outer2").innerHTML = show_code_parse.code
+    document.getElementById("new_outer2").style.whiteSpace = "pre"
 
-    document.getElementById("outer3_text").innerHTML = show_code_parse.explanation
-    document.getElementById("outer3_text").style.whiteSpace = "pre"
+    document.getElementById("new_outer3").innerHTML = show_code_parse.explanation
 
 
     document.getElementById("feedback2").innerHTML = show_code_parse.feedbacks.join("<br>")
