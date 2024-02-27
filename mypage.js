@@ -15,8 +15,9 @@ function getting_title(){
           positionTdEl.textContent = i + 1;
           titleTdEl.textContent = title.subject;
           titleTdEl.addEventListener("click", function(){
-                  window.location.href = "sharing.html";
-                }); // need to fix
+            localStorage.setItem("current_code",JSON.stringify(title));
+            window.location.href = "sharing.html";
+          }); 
           timeTdEl.textContent = title.time;
 
           const rowEl = document.createElement('tr');

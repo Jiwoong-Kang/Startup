@@ -8,6 +8,7 @@ function getting_title(){
         titles = JSON.parse(titlesText);
     }
     const tableBodyEl = document.querySelector("#title");
+    tableBodyEl.innerHTML = '';
 
     if (titles.length){
         for (const [i, title] of titles.entries()){

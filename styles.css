@@ -66,6 +66,39 @@ main{
     }
     
 }
+.table1 {
+    width: 100%; 
+    border-collapse: collapse; 
+}
+
+.table1 thead th:nth-child(1),
+.table1 tbody td:nth-child(1) {
+    width: 10%;  
+}
+
+.table1 thead th:nth-child(2),
+.table1 tbody td:nth-child(2) {
+    width: 60%;  
+}
+
+.table1 thead th:nth-child(3),
+.table1 tbody td:nth-child(3) {
+    width: 30%;  
+}
+
+.table1 thead th {
+    border: 1px solid #000;
+    padding: 10px; 
+    background-color: #f5f5f5; 
+    text-align: left; 
+}
+
+.table1 tbody td {
+    border: 1px solid #000; 
+    padding: 10px; 
+}
+
+
 #outer{
     display : grid;
     grid-template-columns : 1fr 1fr;
