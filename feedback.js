@@ -13,7 +13,7 @@ function feedback(){
     localStorage.setItem("current_code", JSON.stringify(show_code_parse))
     let codes = JSON.parse(localStorage.getItem("code"))
     for (let i = 0; i < codes.length; i++){
-        if (codes[i].time === show_code_parse.time){
+        if (codes[i].code === show_code_parse.code){
             codes[i] = show_code_parse
             break
         }
