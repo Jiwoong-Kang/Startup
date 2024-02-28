@@ -208,6 +208,15 @@ try {
 - 근복적으로 이 promise는 결과와 조건을 정해놓고 그것이 맞는 결과를 가져오게 한다.
 - 예시는 4.5 파워포인트를 보면된다.(p18, 19)
 
+## Fetch
+
+- const r = await fetch('https://api.quotable.io/random')
+- const j = await r.json()
+- console.log(j.content)
+- 위에 이런 식으로 사용한다.
+- fetch returns promises when the promises are accomplished and make it work.
+- 아마 이걸로 3rd party를 가져오는 것 같다.
+
 
 
 
