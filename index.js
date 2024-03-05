@@ -10,6 +10,11 @@ app.use(express.static('public'));
 var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
+apiRouter.post('/save',(req, res) => {
+    const data = req.body;
+    res.json({message: "Successfully saved data"})
+});
+
 app.use((_req, res) => {
     res.sendFile('index.html', { root: 'public' });
   });
