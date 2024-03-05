@@ -17,18 +17,7 @@ async function code(){ //일단 await를 위해 이걸 써놓긴 했는데 과�
         time : formattedTime,
         feedbacks : []
     };
-    let current_code = localStorage.getItem("code")
-    if (current_code){
-        let current_code_array = JSON.parse(current_code)
-        current_code_array.push(obj)
-        let new_current_code = JSON.stringify(current_code_array)
-        localStorage.setItem("code", new_current_code)
-        //window.location.href = "main_sharing.html"
-    }else{
-        let string_code = JSON.stringify([obj])
-        localStorage.setItem("code", string_code)
-        //window.location.href = "main_sharing.html"
-    }
+    
     try { //try 부분 전부 새로 추가하고 위에 빗금친곳들 수정함
         const response = await fetch('/api/save', {
             method: 'POST',
@@ -46,6 +35,18 @@ async function code(){ //일단 await를 위해 이걸 써놓긴 했는데 과�
     } catch(error) {
         console.error('Error:', error);
     } //일단 넣어둠 곧 고쳐야 할듯
+    let current_code = localStorage.getItem("code")
+    if (current_code){
+        let current_code_array = JSON.parse(current_code)
+        current_code_array.push(obj)
+        let new_current_code = JSON.stringify(current_code_array)
+        localStorage.setItem("code", new_current_code)
+        //window.location.href = "main_sharing.html"
+    }else{
+        let string_code = JSON.stringify([obj])
+        localStorage.setItem("code", string_code)
+        //window.location.href = "main_sharing.html"
+    }
 
 }
 

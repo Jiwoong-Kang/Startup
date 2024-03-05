@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-const port = process.argv.length > 2 ? process.argv[2] : 4000;
+const port = process.argv.length > 2 ? process.argv[2] : 5500; //잠깐 포트를 맞춰놓음
 
 app.use(express.json());
 
