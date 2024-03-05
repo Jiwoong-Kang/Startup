@@ -29,7 +29,7 @@ async function code(){ //일단 await를 위해 이걸 써놓긴 했는데 과�
         localStorage.setItem("code", string_code)
         //window.location.href = "main_sharing.html"
     }
-    try {
+    try { //try 부분 전부 새로 추가하고 위에 빗금친곳들 수정함
         const response = await fetch('/api/save', {
             method: 'POST',
             headers: {

@@ -3,12 +3,12 @@ async function sharing(){ //일단 await를 위해
         //let show_code = localStorage.getItem("current_code")
         //console.log(show_code)
         //let show_code_parse = JSON.parse(show_code)
-        const response = await fetch('/api/load')
+        const response = await fetch('/api/load')// 여기부터
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
-        console.log(data);
+        console.log(data); //여기까지 새롭게 추가됨
         document.getElementById("outer2_text").innerHTML = show_code_parse.code
         document.getElementById("outer2_text").style.whiteSpace = "pre"
         localStorage.setItem("current_code", JSON.stringify(data)); //일단 추가한 파트
@@ -31,7 +31,7 @@ async function feedback(){
     // }
     // localStorage.setItem("code", JSON.stringify(codes))
     // window.location.href = "sharing.html"
-    try {
+    try { //그냥 try 안에 있는 것들은 다 새로 추가됨
         const response = await fetch('/api/save', {
             method: 'POST',
             headers: {
