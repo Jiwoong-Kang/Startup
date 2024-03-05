@@ -1,4 +1,4 @@
-function code(){
+async function code(){ //일단 await를 위해 이걸 써놓긴 했는데 과연 맞을까?
     const subjectEl = document.querySelector("#subject")
     const codeEl = document.querySelector("#message")
     const explainEl = document.querySelector("#message2")

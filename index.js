@@ -10,9 +10,20 @@ app.use(express.static('public'));
 var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
+let codes = []
+
 apiRouter.post('/save',(req, res) => {
     const data = req.body;
+    codes.push(data)
     res.json({message: "Successfully saved data"})
+});
+
+apiRouter.get('/load', (req, res) => {
+    if (codes.length > 0) {
+        res.json(codes[codes.length - 1]); 
+    } else {
+        res.status(404).send('No code found.');
+    }
 });
 
 app.use((_req, res) => {
