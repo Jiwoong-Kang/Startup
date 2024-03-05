@@ -26,6 +26,14 @@ apiRouter.get('/load', (req, res) => {
     }
 });
 
+apiRouter.get('/load_all', (req, res) => { 
+    if (codes.length > 0) {
+        res.json(codes); 
+    } else {
+        res.status(404).send('No code found.');
+    }
+});
+
 app.use((_req, res) => {
     res.sendFile('index.html', { root: 'public' });
   });

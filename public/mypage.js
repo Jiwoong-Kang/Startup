@@ -1,35 +1,45 @@
-function getting_title(){
-  let titles = [];
-  const titlesText = localStorage.getItem("code");
-  if (titlesText){
-      titles = JSON.parse(titlesText);
-  }
-  const tableBodyEl = document.querySelector("#title");
+async function getting_title(){
+  // let titles = [];
+  // const titlesText = localStorage.getItem("code");
+  // if (titlesText){
+  //     titles = JSON.parse(titlesText);
+  // }
+  try{
+    const response = await fetch('/api/load_all'); 
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const titles = await response.json();
 
-  if (titles.length){
-      for (const [i, title] of titles.entries()){
-          const positionTdEl = document.createElement('td');
-          const titleTdEl = document.createElement('td');
-          const timeTdEl = document.createElement('td');
+    const tableBodyEl = document.querySelector("#title");
 
-          positionTdEl.textContent = i + 1;
-          titleTdEl.textContent = title.subject;
-          titleTdEl.addEventListener("click", function(){
-            localStorage.setItem("current_code",JSON.stringify(title));
-            window.location.href = "sharing.html";
-          }); 
-          timeTdEl.textContent = title.time;
+    if (titles.length){
+        for (const [i, title] of titles.entries()){
+            const positionTdEl = document.createElement('td');
+            const titleTdEl = document.createElement('td');
+            const timeTdEl = document.createElement('td');
 
-          const rowEl = document.createElement('tr');
-          rowEl.appendChild(positionTdEl);
-          rowEl.appendChild(titleTdEl);
-          rowEl.appendChild(timeTdEl);
+            positionTdEl.textContent = i + 1;
+            titleTdEl.textContent = title.subject;
+            titleTdEl.addEventListener("click", function(){
+              localStorage.setItem("current_code",JSON.stringify(title));
+              window.location.href = "sharing.html";
+            }); 
+            timeTdEl.textContent = title.time;
 
-          tableBodyEl.appendChild(rowEl);
-      }
-  }else{
-          tableBodyEl.innerHTML = '<tr><td colSpan=3>Be the first to upload</td></tr>';
-      }
+            const rowEl = document.createElement('tr');
+            rowEl.appendChild(positionTdEl);
+            rowEl.appendChild(titleTdEl);
+            rowEl.appendChild(timeTdEl);
+
+            tableBodyEl.appendChild(rowEl);
+        }
+    }else{
+            tableBodyEl.innerHTML = '<tr><td colSpan=3>Be the first to upload</td></tr>';
+        }
+      }catch(error) {
+        console.error('Error:', error);
+    }
   }
   
 
