@@ -22,10 +22,10 @@ async function code(){ //일단 await를 위해 이걸 써놓긴 했는데 과�
         const response = await fetch('/api/save', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
+                'content-type': 'application/json',
             },
             body: JSON.stringify(obj),
-        }); // 이렇게 넣는게 맞는지 물어보기, 아님 다른 방법이 있는지
+        }); 
         if(!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -35,18 +35,18 @@ async function code(){ //일단 await를 위해 이걸 써놓긴 했는데 과�
     } catch(error) {
         console.error('Error:', error);
     } //일단 넣어둠 곧 고쳐야 할듯
-    let current_code = localStorage.getItem("code")
-    if (current_code){
-        let current_code_array = JSON.parse(current_code)
-        current_code_array.push(obj)
-        let new_current_code = JSON.stringify(current_code_array)
-        localStorage.setItem("code", new_current_code)
-        //window.location.href = "main_sharing.html"
-    }else{
-        let string_code = JSON.stringify([obj])
-        localStorage.setItem("code", string_code)
-        //window.location.href = "main_sharing.html"
-    }
+    // let current_code = localStorage.getItem("code")
+    // if (current_code){
+    //     let current_code_array = JSON.parse(current_code)
+    //     current_code_array.push(obj)
+    //     let new_current_code = JSON.stringify(current_code_array)
+    //     localStorage.setItem("code", new_current_code)
+    //     //window.location.href = "main_sharing.html"
+    // }else{
+    //     let string_code = JSON.stringify([obj])
+    //     localStorage.setItem("code", string_code)
+    //     //window.location.href = "main_sharing.html"
+    // }
 
 }
 
