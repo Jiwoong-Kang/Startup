@@ -17,7 +17,18 @@ async function code(){
         time : formattedTime,
         feedbacks : []
     };
-    
+    let current_code = localStorage.getItem("code")
+    if (current_code){
+        let current_code_array = JSON.parse(current_code)
+        current_code_array.push(obj)
+        let new_current_code = JSON.stringify(current_code_array)
+        localStorage.setItem("code", new_current_code)
+    }else{
+        let string_code = JSON.stringify([obj])
+        localStorage.setItem("code", string_code)
+    }
+
+    // localStorage.setItem("current_code2", obj.code)
     try { 
         const response = await fetch('/api/save', {
             method: 'POST',
@@ -35,6 +46,7 @@ async function code(){
     } catch(error) {
         console.error('Error:', error);
     } 
+    
     
 
 }

@@ -18,26 +18,25 @@ apiRouter.post('/save',(req, res) => {
     res.json({message: "Successfully saved data"})
 });
 
-apiRouter.get('/getData', (req, res) => { //how can I get the data from above?
+apiRouter.get('/getData', (req, res) => { 
     const code = req.query.code;
     const index = codes.findIndex(item => item.code === code);
     
     if (index !== -1) {
-        res.json(codes[index]);
+        res.json(codes[index].feedbacks);
     } else {
         res.status(404).json({message: "Code not found"});
     }
     });
 
 apiRouter.post('/upDateFeedbacks',(req, res) => {
-    const obj = req.body;
-    const code = obj.code;
-    const feedbacks = obj.feedbacks;
+    const code = req.query.code;
+    const feedbacks = req.body.feedback;
 
     const index = codes.findIndex(item => item.code === code);
 
     if (index !== -1) {
-        codes[index].feedbacks.push(...feedbacks);
+        codes[index].feedbacks.push(feedbacks);
         res.json({message: "Successfully updated feedback"});
     } else {
         res.status(404).json({message: "Code not found"});
@@ -47,7 +46,7 @@ apiRouter.post('/upDateFeedbacks',(req, res) => {
 
 
 apiRouter.get('/load', (req, res) => {
-    const code = req.params.code;
+    const code = req.query.code;
     const data = codes.find(item => item.code === code);
 
     if (data) {
