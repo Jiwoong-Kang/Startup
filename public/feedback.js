@@ -17,26 +17,31 @@ async function sharing(){ //일단 await를 위해
     }
 }
 
-async function getData() {
-    try { 
-        const response = await fetch(`/api/getData`); //it cannot connect to server
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        console.log('Success:', data);
-        return data;
-    } catch (error) {
-        console.error('Error:', error);
-    }
-}
-getData().then(data => {
-    feedback(data);
-});
+// async function getData() {
+//     try { 
+//         const response = await fetch(`/api/getData`); //it cannot connect to server
+//         if (!response.ok) {
+//             throw new Error(`HTTP error! status: ${response.status}`);
+//         }
+//         const data = await response.json();
+//         console.log('Success:', data);
+//         return data;
+//     } catch (error) {
+//         console.error('Error:', error);
+//     }
+// }
+// getData().then(data => {
+//     feedback(data);
+// });
 
-async function feedback(data){
+async function feedback(){
     
     try { 
+        const response1 = await fetch(`/api/getData`); //it cannot connect to server
+        if (!response1.ok) {
+            throw new Error(`HTTP error! status: ${response1.status}`);
+        }
+        const data = await response1.json();
         const response = await fetch('/api/upDateFeedbacks', {
             method: 'POST',
             headers: {
