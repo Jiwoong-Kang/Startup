@@ -16,7 +16,22 @@ async function sharing(){ //일단 await를 위해
         console.error('Error:', error);
     }
 }
-async function feedback(){
+
+async function getData() {
+    try { 
+        const response = await fetch(`/api/getData`);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log('Success:', data);
+        return data;
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+async function feedback(data){
     
     try { 
         const response = await fetch('/api/upDateFeedbacks', {
@@ -36,5 +51,9 @@ async function feedback(){
         console.error('Error:', error);
     }
 
+
 }
 sharing()
+getData().then(data => {
+    feedback(data);
+});

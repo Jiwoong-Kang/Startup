@@ -14,15 +14,20 @@ let codes = []
 
 apiRouter.post('/save',(req, res) => {
     const data = req.body;
-    const index = codes.findIndex(item => item.code === data.code);
-    
-    if (index !== -1) {
-        codes[index] = data;
-    } else {
-        codes.push(data);
-    }
+    codes.push(data);
     res.json({message: "Successfully saved data"})
 });
+
+apiRouter.get('/getData', (req, res) => {
+    const code = req.query.code;
+    const index = codes.findIndex(item => item.code === code);
+    
+    if (index !== -1) {
+        res.json(codes[index]);
+    } else {
+        res.status(404).json({message: "Code not found"});
+    }
+    });
 
 apiRouter.post('/upDateFeedbacks',(req, res) => {
     const obj = req.body;
