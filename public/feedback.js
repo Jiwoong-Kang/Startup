@@ -38,7 +38,7 @@ async function feedback(){
     
     try { 
         
-        const response = await fetch('/api/upDateFeedbacks', {
+        const response = await fetch('/api/upDateFeedbacks', { //이걸 부르면 먼저 저기 index로 가서 정보를 업데이트하는거 아님?
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
