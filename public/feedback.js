@@ -30,6 +30,9 @@ async function getData() {
         console.error('Error:', error);
     }
 }
+getData().then(data => {
+    feedback(data);
+});
 
 async function feedback(data){
     
@@ -54,6 +57,3 @@ async function feedback(data){
 
 }
 sharing()
-getData().then(data => {
-    feedback(data);
-});
