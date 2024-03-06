@@ -18,7 +18,7 @@ apiRouter.post('/save',(req, res) => {
     res.json({message: "Successfully saved data"})
 });
 
-apiRouter.get('/getData', (req, res) => {
+apiRouter.get('/getData', (req, res) => { //how can I get the data from above?
     const code = req.query.code;
     const index = codes.findIndex(item => item.code === code);
     

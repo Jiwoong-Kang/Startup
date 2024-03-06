@@ -3,7 +3,7 @@ async function sharing(){ //일단 await를 위해
         //let show_code = localStorage.getItem("current_code")
         //console.log(show_code)
         //let show_code_parse = JSON.parse(show_code)
-        const response = await fetch('/api/load/:code')// 여기부터
+        const response = await fetch('/api/load/')// 여기부터
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -19,7 +19,7 @@ async function sharing(){ //일단 await를 위해
 
 async function getData() {
     try { 
-        const response = await fetch(`/api/getData`);
+        const response = await fetch(`/api/getData`); //it cannot connect to server
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
