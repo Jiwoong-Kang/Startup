@@ -19,14 +19,7 @@ async function sharing(){ //일단 await를 위해
 async function feedback(){
     
     try { 
-        // const responseLoad = await fetch('/api/load');
-        // if (!responseLoad.ok) {
-        //     throw new Error(`HTTP error! status: ${responseLoad.status}`);
-        // }
-        // const data = await responseLoad.json();
-        // console.log(data)
-
-        const response = await fetch('/api/save', {
+        const response = await fetch('/api/upDateFeedbacks', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

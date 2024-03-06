@@ -25,12 +25,20 @@ apiRouter.post('/save',(req, res) => {
 });
 
 apiRouter.post('/upDateFeedbacks',(req, res) => {
-    let obj = req.body
-    let feedback = obj.feedbacks
-    let code = obj.code
+    const obj = req.body;
+    const code = obj.code;
+    const feedbacks = obj.feedbacks;
 
+    const index = codes.findIndex(item => item.code === code);
+
+    if (index !== -1) {
+        codes[index].feedbacks.push(...feedbacks);
+        res.json({message: "Successfully updated feedback"});
+    } else {
+        res.status(404).json({message: "Code not found"});
+    }
+    
 })
-
 
 
 apiRouter.get('/load', (req, res) => {
