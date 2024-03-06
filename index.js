@@ -15,7 +15,7 @@ let codes = []
 apiRouter.post('/save',(req, res) => {
     const data = req.body;
     const index = codes.findIndex(item => item.code === data.code);
-
+    
     if (index !== -1) {
         codes[index] = data;
     } else {
@@ -23,6 +23,15 @@ apiRouter.post('/save',(req, res) => {
     }
     res.json({message: "Successfully saved data"})
 });
+
+apiRouter.post('/upDateFeedbacks',(req, res) => {
+    let obj = req.body
+    let feedback = obj.feedbacks
+    let code = obj.code
+
+})
+
+
 
 apiRouter.get('/load', (req, res) => {
     const code = req.params.code;
@@ -60,3 +69,5 @@ app.listen(port, () => {
     console.log(`Listening on port ${port}`);
   });
   
+
+dict = {}

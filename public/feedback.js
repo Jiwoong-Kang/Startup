@@ -3,7 +3,7 @@ async function sharing(){ //일단 await를 위해
         //let show_code = localStorage.getItem("current_code")
         //console.log(show_code)
         //let show_code_parse = JSON.parse(show_code)
-        const response = await fetch('/api/load')// 여기부터
+        const response = await fetch('/api/load/:code')// 여기부터
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -18,12 +18,13 @@ async function sharing(){ //일단 await를 위해
 }
 async function feedback(){
     
-    try { //그냥 try 안에 있는 것들은 다 새로 추가됨
-        const responseLoad = await fetch('/api/load');
-        if (!responseLoad.ok) {
-            throw new Error(`HTTP error! status: ${responseLoad.status}`);
-        }
-        const data = await responseLoad.json();
+    try { 
+        // const responseLoad = await fetch('/api/load');
+        // if (!responseLoad.ok) {
+        //     throw new Error(`HTTP error! status: ${responseLoad.status}`);
+        // }
+        // const data = await responseLoad.json();
+        // console.log(data)
 
         const response = await fetch('/api/save', {
             method: 'POST',
