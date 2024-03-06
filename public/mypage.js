@@ -1,9 +1,5 @@
 async function getting_title(){
-  // let titles = [];
-  // const titlesText = localStorage.getItem("code");
-  // if (titlesText){
-  //     titles = JSON.parse(titlesText);
-  // }
+  
   try{ //여기부터
     const response = await fetch('/api/load_all'); 
     if (!response.ok) {

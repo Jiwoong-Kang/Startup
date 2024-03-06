@@ -2,11 +2,7 @@ function upload(){
     window.location.href = "code.html"
 }
 async function getting_title(){
-    // let titles = [];
-    // const titlesText = localStorage.getItem("code");
-    // if (titlesText){
-    //     titles = JSON.parse(titlesText);
-    // }
+    
     try{
         const response = await fetch('/api/load_all'); 
         if (!response.ok) {
@@ -25,7 +21,7 @@ async function getting_title(){
                 positionTdEl.textContent = i + 1;
                 titleTdEl.textContent = title.subject;
                 titleTdEl.addEventListener("click", function(){
-                        localStorage.setItem("current_code",JSON.stringify(title));
+                        localStorage.setItem("current_code",JSON.stringify(title)); //maybe need to fix
                         window.location.href = "sharing.html";
                     }); 
                 dateTdEl.textContent = title.time;
