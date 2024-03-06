@@ -23,7 +23,7 @@ async function getting_title(){
             titleTdEl.textContent = title.subject;
             titleTdEl.addEventListener("click", function(){
               localStorage.setItem("current_code",JSON.stringify(title));
-              window.location.href = "sharing.html";
+              window.location.href = "sharing.html"; //
             }); 
             timeTdEl.textContent = title.time;
 

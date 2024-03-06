@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-const port = process.argv.length > 2 ? process.argv[2] : 4000; //잠깐 포트를 맞춰놓음
+const port = process.argv.length > 2 ? process.argv[2] : 4000; 
 
 app.use(express.json());
 
@@ -14,13 +14,22 @@ let codes = []
 
 apiRouter.post('/save',(req, res) => {
     const data = req.body;
-    codes.push(data)
+    const index = codes.findIndex(item => item.code === data.code);
+
+    if (index !== -1) {
+        codes[index] = data;
+    } else {
+        codes.push(data);
+    }
     res.json({message: "Successfully saved data"})
 });
 
 apiRouter.get('/load', (req, res) => {
-    if (codes.length > 0) {
-        res.json(codes[codes.length - 1]); 
+    const code = req.params.code;
+    const data = codes.find(item => item.code === code);
+
+    if (data) {
+        res.json(data); 
     } else {
         res.status(404).send('No code found.');
     }
@@ -29,6 +38,16 @@ apiRouter.get('/load', (req, res) => {
 apiRouter.get('/load_all', (req, res) => { 
     if (codes.length > 0) {
         res.json(codes); 
+    } else {
+        res.status(404).send('No code found.');
+    }
+});
+
+apiRouter.get('/get_code/:code', (req, res) => {
+    const code = req.params.code;
+    const result = codes.find(item => item.code === code);
+    if (result) {
+        res.json(result);
     } else {
         res.status(404).send('No code found.');
     }

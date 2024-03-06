@@ -1,4 +1,4 @@
-async function code(){ //일단 await를 위해 이걸 써놓긴 했는데 과연 맞을까?
+async function code(){ 
     const subjectEl = document.querySelector("#subject")
     const codeEl = document.querySelector("#message")
     const explainEl = document.querySelector("#message2")
@@ -18,7 +18,7 @@ async function code(){ //일단 await를 위해 이걸 써놓긴 했는데 과�
         feedbacks : []
     };
     
-    try { //try 부분 전부 새로 추가하고 위에 빗금친곳들 수정함
+    try { 
         const response = await fetch('/api/save', {
             method: 'POST',
             headers: {
@@ -34,19 +34,8 @@ async function code(){ //일단 await를 위해 이걸 써놓긴 했는데 과�
         window.location.href = "main_sharing.html"
     } catch(error) {
         console.error('Error:', error);
-    } //일단 넣어둠 곧 고쳐야 할듯
-    // let current_code = localStorage.getItem("code")
-    // if (current_code){
-    //     let current_code_array = JSON.parse(current_code)
-    //     current_code_array.push(obj)
-    //     let new_current_code = JSON.stringify(current_code_array)
-    //     localStorage.setItem("code", new_current_code)
-    //     //window.location.href = "main_sharing.html"
-    // }else{
-    //     let string_code = JSON.stringify([obj])
-    //     localStorage.setItem("code", string_code)
-    //     //window.location.href = "main_sharing.html"
-    // }
+    } 
+    
 
 }
 
