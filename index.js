@@ -30,10 +30,10 @@ apiRouter.get('/getData', (req, res) => {
     });
 
 apiRouter.post('/upDateFeedbacks',(req, res) => {
-    const code = req.query.code;
+    const ID = req.query.ID;
     const feedbacks = req.body.feedback;
 
-    const index = codes.findIndex(item => item.code === code);
+    const index = codes.findIndex(item => item.ID === ID);
 
     if (index !== -1) {
         codes[index].feedbacks.push(feedbacks);
