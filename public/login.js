@@ -10,4 +10,4 @@ function display3rd(data){
     fetch()
     .then((response)=>response.json())
     .then
-}
+} // 3rd party 정확히 어떻게 쓰는지 물어보기
