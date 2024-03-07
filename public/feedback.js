@@ -8,7 +8,7 @@ function sharing(){
 
 
 async function feedback(){
-    let show_code = localStorage.getItem("current_code") //여기 2있었는데 일단 뺌
+    let show_code = localStorage.getItem("current_code") 
     let show_code_parse = JSON.parse(show_code)
     let real_code = show_code_parse.code
     try { 
