@@ -21,7 +21,7 @@ async function getting_title(){
                 positionTdEl.textContent = i + 1;
                 titleTdEl.textContent = title.subject;
                 titleTdEl.addEventListener("click", function(){
-                        localStorage.setItem("current_code",JSON.stringify(title)); //how can I get the information from the server directly
+                        localStorage.setItem("current_code",JSON.stringify(title)); 
                         window.location.href = "sharing.html";
                     }); 
                 dateTdEl.textContent = title.time;

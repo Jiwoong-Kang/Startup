@@ -1,11 +1,11 @@
 async function getting_title(){
   
-  try{ //여기부터
+  try{ 
     const response = await fetch('/api/load_all'); 
     if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
     }
-    const titles = await response.json(); //여기까지 현재 고침, 나머지는 자리만 움직이고 고치지 않음
+    const titles = await response.json(); 
 
     const tableBodyEl = document.querySelector("#title");
 
