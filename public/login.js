@@ -7,9 +7,13 @@ function login(){
 }
 
 function display3rd(data){
-    fetch()
+    fetch("https://foodish-api.com/images/burger/")
     .then((response)=>response.json())
     .then((data) => {
-
+        const containerEl = document.querySelector('#food');
+        const foodEl = document.createElement('img');
+        foodEl.classList.add('food');       
+        foodEl.src = data.image;    
+        containerEl.appendChild(foodEl);
     });
-} // 3rd party 정확히 어떻게 쓰는지 물어보기
+} 
