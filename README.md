@@ -68,8 +68,8 @@ Have you ever encountered a critical coding error while working on a project? Ar
 
 **For this deliverable, I made some endpoints and update my information to server.**
 
-- Node.js/Express HTTP service : Done. It is in index.js
-- Static middleware for frontend : Done. It is in index.js
+- Node.js/Express HTTP service : Done. It is in index.js.
+- Static middleware for frontend : Done. It is in index.js.
 - Calls to third party endpoints : 
-- Backend service endpoints :
+- Backend service endpoints : I wrote all necessary backend endpoints at index.js.
 - Frontend calls service endpoints : I did this using the fetch function at all part where it needs to use HTTP.(code.js, feedback.js and so on)
