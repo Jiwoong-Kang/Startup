@@ -5,3 +5,9 @@ function login(){
     localStorage.setItem("passWord", passEl.value);
     window.location.href = "mypage.html"
 }
+
+function display3rd(data){
+    fetch()
+    .then((response)=>response.json())
+    .then
+}
