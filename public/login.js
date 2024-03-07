@@ -9,5 +9,7 @@ function login(){
 function display3rd(data){
     fetch()
     .then((response)=>response.json())
-    .then
+    .then((data) => {
+
+    });
 } // 3rd party 정확히 어떻게 쓰는지 물어보기

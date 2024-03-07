@@ -64,15 +64,6 @@ apiRouter.get('/load_all', (req, res) => {
     }
 });
 
-apiRouter.get('/get_code/:code', (req, res) => {
-    const code = req.params.code;
-    const result = codes.find(item => item.code === code);
-    if (result) {
-        res.json(result);
-    } else {
-        res.status(404).send('No code found.');
-    }
-});
 
 app.use((_req, res) => {
     res.sendFile('index.html', { root: 'public' });
