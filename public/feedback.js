@@ -12,7 +12,7 @@ async function feedback(){
     let show_code_parse = JSON.parse(show_code)
     let real_ID = show_code_parse.ID
     try { 
-        const response1 = await fetch(`/api/getData?ID=${real_ID}`); 
+        const response1 = await fetch(`/api/getData?ID=${real_ID}`); //There is an error here
         if (!response1.ok) {
             throw new Error(`HTTP error! status: ${response1.status}`);
         }
