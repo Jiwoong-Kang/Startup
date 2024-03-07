@@ -30,7 +30,7 @@ async function feedback(){
         }
         const result = await response2.json();
         console.log('Success:', result);
-        window.location.href = "sharing.html";
+        window.location.href = "main_sharing.html";
     } catch (error) {
         console.error('Error:', error);
     }
