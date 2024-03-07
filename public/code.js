@@ -1,8 +1,21 @@
+function getRandomFromTime() {
+    var currentTime = new Date();
+    var hours = currentTime.getHours().toString();
+    var minutes = currentTime.getMinutes().toString();
+    var seconds = currentTime.getSeconds().toString();
+    var milliseconds = currentTime.getMilliseconds().toString();
+
+    var timeString = hours + minutes + seconds + milliseconds;
+    
+    return timeString;
+}
+
 async function code(){ 
     const subjectEl = document.querySelector("#subject")
     const codeEl = document.querySelector("#message")
     const explainEl = document.querySelector("#message2")
     const now = new Date()
+    const random = getRandomFromTime()
     const formattedTime = now.toLocaleString('en-US', {
         year: 'numeric',
         month: '2-digit',
@@ -15,7 +28,8 @@ async function code(){
         code : codeEl.value ,
         explanation : explainEl.value,
         time : formattedTime,
-        feedbacks : []
+        feedbacks : [],
+        ID : random
     };
     let current_code = localStorage.getItem("code")
     if (current_code){

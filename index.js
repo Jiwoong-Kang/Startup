@@ -19,8 +19,8 @@ apiRouter.post('/save',(req, res) => {
 });
 
 apiRouter.get('/getData', (req, res) => { 
-    const code = req.query.code;
-    const index = codes.findIndex(item => item.code === code);
+    const ID = req.query.ID;
+    const index = codes.findIndex(item => item.ID === ID);
     
     if (index !== -1) {
         res.json(codes[index].feedbacks);
