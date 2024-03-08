@@ -218,10 +218,14 @@ try {
 - 아마 이걸로 3rd party를 가져오는 것 같다.
 
 
-## Deamons & Debugging
+## Debugging
 - chrome : frontend, node.js: backend
 - frontend에 있는 코드를 고치면 그냥 새로고침하면 적용되지만, backend에 있는건 아예 껏다켜야한다.
 - debugging할떄 backend에 있는 친구는 그냥 vs code에 있는 디버깅을 사용하도록 하자.
 - backend code 는 frontend에 나타나지 않는 걸 알아야 한다.
+
+## Daemons
+- keeps your node service running
+- 현재는 내가 할 필요는 없다. 왜냐하면 deployService를 사용하면 되니까.
 
 
