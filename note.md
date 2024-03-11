@@ -228,4 +228,15 @@ try {
 - keeps your node service running
 - 현재는 내가 할 필요는 없다. 왜냐하면 deployService를 사용하면 되니까.
 
+## Web services
+**How to upload file on your website**
+- mkdir file && cd file
+- npm init -y
+- npm install express
+- npm install multer
+- code .
+- put html, frontend.js
+- start working on backend part
+- copy and paste in 5.6.1 page 6 and 9
+
 
