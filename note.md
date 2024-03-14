@@ -229,7 +229,7 @@ try {
 - 현재는 내가 할 필요는 없다. 왜냐하면 deployService를 사용하면 되니까.
 
 ## Web services
-**How to upload file on your website**
+**How to upload file on your website(using server)**
 - mkdir file && cd file
 - npm init -y
 - npm install express
@@ -238,5 +238,19 @@ try {
 - put html, frontend.js
 - start working on backend part
 - copy and paste in 5.6.1 page 6 and 9
+
+**Using MangoDB**
+- Network Access : anyone can see my work 0.0.0.0/0
+- Database Access : Remember your user name, 비밀번호 잊어버리면 바꿀 수 있지만 그면 데이터가 날라갈 수 있기 때문에 반드시 기억하도록 하자.
+- Database Deployment : 여기에서 내  데이터베이스를 볼 수 있다.
+- mkdir testmongo
+- npm init -y
+- npm install mongodb
+- code . 
+- create file .gitignore
+- create file index.js
+- database에 가서 "connect" 누르면 내 이름, 비밀번호, 그리고 hostname이 나온다.
+- username, password, hostname 을 const로 놔두고 저 위에서 얻은 정보를 넣는다.
+
 
 
