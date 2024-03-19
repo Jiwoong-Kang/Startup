@@ -133,7 +133,7 @@ secureApiRouter.post('/upDateFeedbacks',async(req, res) => {
 })
 
 
-apiRouter.get('/load', (req, res) => {
+secureApiRouter.get('/load', async(req, res) => {
     const code = req.query.code;
     const data = codes.find(item => item.code === code);
 
@@ -144,7 +144,7 @@ apiRouter.get('/load', (req, res) => {
     }
 });
 
-apiRouter.get('/load_all', (req, res) => { 
+secureApiRouter.get('/load_all', async(req, res) => { 
     if (codes.length > 0) {
         res.json(codes); 
     } else {
