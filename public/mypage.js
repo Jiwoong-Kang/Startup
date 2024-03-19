@@ -37,6 +37,13 @@ async function getting_title(){
         console.error('Error:', error);
     }
   }
+
+function logout() {
+  localStorage.removeItem('userName');
+  fetch(`/api/auth/logout`, {
+    method: 'delete',
+  }).then(() => (window.location.href = '/'));
+}
   
 
 getting_title()
