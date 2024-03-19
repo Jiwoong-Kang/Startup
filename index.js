@@ -23,7 +23,7 @@ apiRouter.post('/auth/create', async (req, res) => {
       res.status(409).send({ msg: 'Existing user' });
     } else {
       const user = await DB.createUser(req.body.email, req.body.password);
-  
+      console.log(req.body)
       // Set the cookie
       setAuthCookie(res, user.token);
   

@@ -39,7 +39,7 @@ async function getting_title(){
   }
 
 function logout() {
-  localStorage.removeItem('userName');
+  localStorage.removeItem('userName'); //뭐가 잘못되면 아마 아이디 문제일 듯
   fetch(`/api/auth/logout`, {
     method: 'delete',
   }).then(() => (window.location.href = 'index.html'));
