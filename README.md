@@ -81,6 +81,6 @@ Have you ever encountered a critical coding error while working on a project? Ar
 - MongoDB Atlas database created : Done!
 - Stores data in MongoDB : Done!
 - User registration : creates a new account in the database.
-- Existing user : Store the codes list under the same usweer if the user already exists.
-- Use MongoDb to store credentials : Store both user and their code.
+- Existing users : Store the codes list under the same user if the user already exists.
+- Use MongoDb to store credentials : Store both users and their codes.
 - Restricts functionality : You cannot upload your code or leave feedbacks unless you logged in. This is the restriction.
