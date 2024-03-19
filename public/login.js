@@ -14,9 +14,9 @@ async function loginUser() {
   loginOrCreate(`/api/auth/login`);
 }
 
-async function createUser() {
-  loginOrCreate(`/api/auth/create`);
-}
+// async function createUser() {
+//   loginOrCreate(`/api/auth/create`);
+// }
 
 async function loginOrCreate(endpoint) {
   const userName = document.querySelector('#userName')?.value;
