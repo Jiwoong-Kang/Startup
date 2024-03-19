@@ -73,3 +73,14 @@ Have you ever encountered a critical coding error while working on a project? Ar
 - Calls to third party endpoints : I brought some quote.
 - Backend service endpoints : I wrote all necessary backend endpoints at index.js.
 - Frontend calls service endpoints : I did this using the fetch function at all part where it needs to use HTTP.(code.js, feedback.js and so on)
+
+## DB/Login deliverable
+
+**For this deliverable, I created my DB and made login session so that I can distinguish people by their id and password.**
+
+- MongoDB Atlas database created : Done!
+- Stores data in MongoDB : Done!
+- User registration : creates a new account in the database.
+- Existing user : Store the codes list under the same usweer if the user already exists.
+- Use MongoDb to store credentials : Store both user and their code.
+- Restricts functionality : You cannot upload your code or leave feedbacks unless you logged in. This is the restriction.
