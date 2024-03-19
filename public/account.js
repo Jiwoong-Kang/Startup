@@ -23,7 +23,7 @@
   
     if (response.ok) {
       localStorage.setItem('userName', userName);
-      window.location.href = 'mypage.html';
+      window.location.href = 'index.html';
     } else {
       const body = await response.json();
       const modalEl = document.querySelector('#msgModal');
