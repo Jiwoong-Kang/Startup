@@ -10,6 +10,10 @@
     }
   })();
 
+  async function createUser() {
+    loginOrCreate(`/api/auth/create`);
+}
+
   async function loginOrCreate(endpoint) {
     const userName = document.querySelector('#userName')?.value;
     const password = document.querySelector('#userPassword')?.value;
@@ -20,7 +24,7 @@
         'Content-type': 'application/json; charset=UTF-8',
       },
     });
-  
+      
     if (response.ok) {
       //localStorage.setItem('userName', userName);
       window.location.href = 'index.html';
