@@ -34,7 +34,7 @@ apiRouter.post('/auth/create', async (req, res) => {
   }); 
 
   // GetAuth token for the provided credentials
-  apiRouter.post('/auth/login', async (req, res) => {
+apiRouter.post('/auth/login', async (req, res) => {
     const user = await DB.getUser(req.body.email);
     if (user) {
       if (await bcrypt.compare(req.body.password, user.password)) {
@@ -46,11 +46,11 @@ apiRouter.post('/auth/create', async (req, res) => {
     res.status(401).send({ msg: 'Unauthorized' });
   });
   
-  // DeleteAuth token if stored in cookie
-  apiRouter.delete('/auth/logout', (_req, res) => {
+// DeleteAuth token if stored in cookie
+apiRouter.delete('/auth/logout', (_req, res) => {
     res.clearCookie(authCookieName);
     res.status(204).end();
-  });
+});
 
 // GetUser returns information about a user
 apiRouter.get('/user/:email', async (req, res) => {
@@ -64,10 +64,10 @@ apiRouter.get('/user/:email', async (req, res) => {
   });
   
   // secureApiRouter verifies credentials for endpoints
-  var secureApiRouter = express.Router();
-  apiRouter.use(secureApiRouter);
+var secureApiRouter = express.Router();
+apiRouter.use(secureApiRouter);
   
-  secureApiRouter.use(async (req, res, next) => {
+secureApiRouter.use(async (req, res, next) => {
     authToken = req.cookies[authCookieName];
     const user = await DB.getUserByToken(authToken);
     if (user) {
@@ -76,6 +76,25 @@ apiRouter.get('/user/:email', async (req, res) => {
       res.status(401).send({ msg: 'Unauthorized' });
     }
   });
+
+// Default error handler
+app.use(function (err, req, res, next) {
+    res.status(500).send({ type: err.name, message: err.message });
+  });
+  
+// Return the application's default page if the path is unknown
+app.use((_req, res) => {
+    res.sendFile('index.html', { root: 'public' });
+});
+  
+  // setAuthCookie in the HTTP response
+function setAuthCookie(res, authToken) {
+    res.cookie(authCookieName, authToken, {
+      secure: true,
+      httpOnly: true,
+      sameSite: 'strict',
+    });
+}
   
 
 let codes = []
@@ -133,9 +152,7 @@ apiRouter.get('/load_all', (req, res) => {
 });
 
 
-app.use((_req, res) => {
-    res.sendFile('index.html', { root: 'public' });
-  });
+
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
   });
