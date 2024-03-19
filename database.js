@@ -31,9 +31,18 @@ async function createUser(email, password) {
     return user;
 }
 
+function addcodes(code){
+    codeCollection.insertOne(code)
+}
+
+function getcodes(ID){
+    codeCollection.findOne({ID:ID})
+}
 
 module.exports = {
     getUser,
     getUserByToken,
     createUser, 
+    addcodes,
+    getcodes
 };

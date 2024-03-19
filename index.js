@@ -99,31 +99,32 @@ function setAuthCookie(res, authToken) {
 
 let codes = []
 
-apiRouter.post('/save',(req, res) => {
+secureApiRouter.post('/save',async (req, res) => {
     const data = req.body;
-    codes.push(data);
+    await DB.addcodes(data);
+    // codes.push(data);
     res.json({message: "Successfully saved data"})
 });
 
-apiRouter.get('/getData', (req, res) => { 
+secureApiRouter.get('/getData', async(req, res) => { 
     const ID = req.query.ID;
-    const index = codes.findIndex(item => item.ID === ID);
-    
-    if (index !== -1) {
-        res.json(codes[index].feedbacks);
+    // const index = codes.findIndex(item => item.ID === ID);
+    const new_code = await DB.getcodes(ID);
+    if (new_code) {
+        res.json(new_code.feedbacks);
     } else {
         res.status(404).json({message: "Code not found"});
     }
     });
 
-apiRouter.post('/upDateFeedbacks',(req, res) => {
+secureApiRouter.post('/upDateFeedbacks',async(req, res) => {
     const ID = req.query.ID;
     const feedbacks = req.body.feedback;
 
-    const index = codes.findIndex(item => item.ID === ID);
+    const new_code = await DB.getcodes(ID);
 
-    if (index !== -1) {
-        codes[index].feedbacks.push(feedbacks);
+    if (new_code) {
+        new_code.feedbacks.push(feedbacks);
         res.json({message: "Successfully updated feedback"});
     } else {
         res.status(404).json({message: "Code not found"});
