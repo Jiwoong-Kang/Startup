@@ -22,7 +22,7 @@
     });
   
     if (response.ok) {
-      localStorage.setItem('userName', userName);
+      //localStorage.setItem('userName', userName);
       window.location.href = 'index.html';
     } else {
       const body = await response.json();
