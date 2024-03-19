@@ -252,5 +252,13 @@ try {
 - database에 가서 "connect" 누르면 내 이름, 비밀번호, 그리고 hostname이 나온다.
 - username, password, hostname 을 const로 놔두고 저 위에서 얻은 정보를 넣는다.
 
+**Authorization services**
+- hashedPassword = await bcrypt.hash("toomanysecrets", 10);
+
+- if (await bcrypt.compare("toomanysecrets", hashedPassword)) {
+-    console.log("passwords match");
+- }
+- 위에 방식이 가장 편한 방법이다.
+- tokens을 사용하면 어느정도 시간이 지나면 알아서 로그아웃 같은게 되게 한다.
 
 
