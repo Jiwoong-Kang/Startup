@@ -1,22 +1,6 @@
-(async () => {
-  const userName = localStorage.getItem('userName');
-  if (userName) {
-    document.querySelector('#playerName').textContent = userName;
-    setDisplay('loginControls', 'none');
-    setDisplay('playControls', 'block');
-  } else {
-    setDisplay('loginControls', 'block');
-    setDisplay('playControls', 'none');
-  }
-})();
-
 async function loginUser() {
   loginOrCreate(`/api/auth/login`);
 }
-
-// async function createUser() {
-//   loginOrCreate(`/api/auth/create`);
-// }
 
 async function loginOrCreate(endpoint) {
   const userName = document.querySelector('#ID')?.value;
@@ -41,12 +25,6 @@ async function loginOrCreate(endpoint) {
   }
 }
 
-function logout() {
-  localStorage.removeItem('userName');
-  fetch(`/api/auth/logout`, {
-    method: 'delete',
-  }).then(() => (window.location.href = '/'));
-}
 
 async function getUser(email) {
   let scores = [];
