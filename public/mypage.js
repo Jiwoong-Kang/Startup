@@ -5,12 +5,14 @@ async function getting_title(){
     if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
     }
+    const userName = localStorage.getItem('userName') // 실험1
     const titles = await response.json(); 
 
     const tableBodyEl = document.querySelector("#title");
 
     if (titles.length){
         for (const [i, title] of titles.entries()){
+          if (userName === titles[i].user){//실험2
             const positionTdEl = document.createElement('td');
             const titleTdEl = document.createElement('td');
             const timeTdEl = document.createElement('td');
@@ -29,6 +31,7 @@ async function getting_title(){
             rowEl.appendChild(timeTdEl);
 
             tableBodyEl.appendChild(rowEl);
+          }
         }
     }else{
             tableBodyEl.innerHTML = '<tr><td colSpan=3>Be the first to upload</td></tr>';
@@ -39,7 +42,7 @@ async function getting_title(){
   }
 
 function logout() {
-  localStorage.removeItem('userName'); //뭐가 잘못되면 아마 아이디 문제일 듯
+  localStorage.removeItem('userName'); 
   fetch(`/api/auth/logout`, {
     method: 'delete',
   }).then(() => (window.location.href = 'index.html'));
