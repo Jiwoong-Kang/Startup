@@ -123,7 +123,7 @@ secureApiRouter.post('/upDateFeedbacks',async(req, res) => {
     const new_code = await DB.getcodes(ID);
 
     if (new_code) {
-        new_code.feedbacks.push(feedbacks);
+        await DB.update(ID, feedbacks)
         res.json({message: "Successfully updated feedback"});
     } else {
         res.status(404).json({message: "Code not found"});

@@ -35,12 +35,23 @@ function addcodes(code){
     codeCollection.insertOne(code)
 }
 
-function getcodes(ID){
-    return codeCollection.findOne({ID:ID})
+async function getcodes(ID){
+    return await codeCollection.findOne({ID:ID})
 }
 
 function get_all(){
     return codeCollection.find().toArray()
+}
+
+async function update(ID, feedback){
+    let resource = await getcodes(ID)
+    let updated_feedbacks = resource.feedbacks
+    updated_feedbacks.push(feedback)
+    await codeCollection.updateOne({ID:ID}, {
+        $set :{
+            feedbacks: updated_feedbacks
+        },
+    })
 }
 
 module.exports = {
@@ -49,5 +60,6 @@ module.exports = {
     createUser, 
     addcodes,
     getcodes,
-    get_all
+    get_all,
+    update
 };
