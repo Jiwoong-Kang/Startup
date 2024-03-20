@@ -16,7 +16,7 @@ async function getting_title(){
             const positionTdEl = document.createElement('td');
             const titleTdEl = document.createElement('td');
             const timeTdEl = document.createElement('td');
-            // const deleteTdEl = document.createElement('td'); // add temporarily
+            const deleteTdEl = document.createElement('td'); // add temporarily
 
             positionTdEl.textContent = i + 1;
             titleTdEl.textContent = title.subject;
@@ -25,11 +25,11 @@ async function getting_title(){
               window.location.href = "sharing.html"; 
             }); 
             timeTdEl.textContent = title.time;
-            // deleteTdEl.textContent = Delete;
-            // deleteTdEl.addEventListener("click",function(){
-            //   // need to put something calls delete function
-            //   window.location.hret = "mypage.html"
-            // })
+            deleteTdEl.textContent = "Delete";
+            deleteTdEl.addEventListener("click",function(){
+              // need to put something calls delete function
+              window.location.hret = "mypage.html"
+            })
 
             const rowEl = document.createElement('tr');
             rowEl.appendChild(positionTdEl);
