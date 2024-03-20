@@ -127,7 +127,7 @@ secureApiRouter.post('/upDateFeedbacks',async(req, res) => {
 })
 
 
-secureApiRouter.delete('/delete', async(req, res) => { // prototype
+secureApiRouter.delete('/delete', async(req, res) => { // temporarily
     const ID = req.query.ID;
     await delete_item(ID)
 });
