@@ -55,7 +55,7 @@ async function update(ID, feedback){
 }
 
 async function delete_item(ID){
-    await codeCollection.deleteOne({ID:ID})
+    await codeCollection.deleteOne({ID:ID}) // not sure how to make this work
 }
 
 module.exports = {
