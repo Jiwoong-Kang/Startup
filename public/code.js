@@ -42,7 +42,6 @@ async function code(){
         localStorage.setItem("code", string_code)
     }
 
-    // localStorage.setItem("current_code2", obj.code)
     try { 
         const response = await fetch('/api/save', {
             method: 'POST',

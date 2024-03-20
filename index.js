@@ -108,11 +108,12 @@ secureApiRouter.post('/save',async (req, res) => {
 secureApiRouter.get('/getData', async(req, res) => { 
     const ID = req.query.ID;
     const new_code = await DB.getcodes(ID);
-    if (new_code) {
-        res.json(new_code.feedbacks);
-    } else {
-        res.status(404).json({message: "Code not found"});
-    }
+    res.send(new_code);
+    // if (new_code) {
+    //     res.json(new_code.feedbacks);
+    // } else {
+    //     res.status(404).json({message: "Code not found"});
+    // }
     });
 
 secureApiRouter.post('/upDateFeedbacks',async(req, res) => {
@@ -144,7 +145,6 @@ secureApiRouter.get('/load', async(req, res) => {
 
 secureApiRouter.get('/load_all', async(req, res) => { 
     const all_code = await DB.get_all();
-    console.log(all_code);
     res.send(all_code);
 });
 
