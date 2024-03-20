@@ -109,11 +109,6 @@ secureApiRouter.get('/getData', async(req, res) => {
     const ID = req.query.ID;
     const new_code = await DB.getcodes(ID);
     res.send(new_code);
-    // if (new_code) {
-    //     res.json(new_code.feedbacks);
-    // } else {
-    //     res.status(404).json({message: "Code not found"});
-    // }
     });
 
 secureApiRouter.post('/upDateFeedbacks',async(req, res) => {
