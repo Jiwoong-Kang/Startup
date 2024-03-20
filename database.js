@@ -54,6 +54,10 @@ async function update(ID, feedback){
     })
 }
 
+async function delete_item(ID){
+    await codeCollection.deleteOne({ID:ID})
+}
+
 module.exports = {
     getUser,
     getUserByToken,
@@ -61,5 +65,6 @@ module.exports = {
     addcodes,
     getcodes,
     get_all,
-    update
+    update,
+    delete_item
 };
