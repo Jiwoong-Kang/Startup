@@ -127,15 +127,9 @@ secureApiRouter.post('/upDateFeedbacks',async(req, res) => {
 })
 
 
-secureApiRouter.get('/load', async(req, res) => {
-    const code = req.query.code;
-    const new_code = await DB.getcodes(code);
-
-    if (new_code) {
-        res.json(new_code.code); 
-    } else {
-        res.status(404).send('No code found.');
-    }
+secureApiRouter.delete('/delete', async(req, res) => { // prototype
+    const ID = req.query.ID;
+    await delete_item(ID)
 });
 
 secureApiRouter.get('/load_all', async(req, res) => { 
