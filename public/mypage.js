@@ -5,14 +5,14 @@ async function getting_title(){
     if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
     }
-    const userName = localStorage.getItem('userName') // 실험1
+    const userName = localStorage.getItem('userName'); 
     const titles = await response.json(); 
 
     const tableBodyEl = document.querySelector("#title");
 
     if (titles.length){
         for (const [i, title] of titles.entries()){
-          if (userName === titles[i].user){//실험2
+          if (userName === titles[i].user){
             const positionTdEl = document.createElement('td');
             const titleTdEl = document.createElement('td');
             const timeTdEl = document.createElement('td');
