@@ -102,13 +102,11 @@ let codes = []
 secureApiRouter.post('/save',async (req, res) => {
     const data = req.body;
     await DB.addcodes(data);
-    // codes.push(data);
     res.json({message: "Successfully saved data"})
 });
 
 secureApiRouter.get('/getData', async(req, res) => { 
     const ID = req.query.ID;
-    // const index = codes.findIndex(item => item.ID === ID);
     const new_code = await DB.getcodes(ID);
     if (new_code) {
         res.json(new_code.feedbacks);
@@ -135,21 +133,19 @@ secureApiRouter.post('/upDateFeedbacks',async(req, res) => {
 
 secureApiRouter.get('/load', async(req, res) => {
     const code = req.query.code;
-    const data = codes.find(item => item.code === code);
+    const new_code = await DB.getcodes(code);
 
-    if (data) {
-        res.json(data); 
+    if (new_code) {
+        res.json(new_code.code); 
     } else {
         res.status(404).send('No code found.');
     }
 });
 
 secureApiRouter.get('/load_all', async(req, res) => { 
-    if (codes.length > 0) {
-        res.json(codes); 
-    } else {
-        res.status(404).send('No code found.');
-    }
+    const all_code = await DB.get_all();
+    console.log(all_code);
+    res.send(all_code);
 });
 
 

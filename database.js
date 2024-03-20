@@ -36,7 +36,11 @@ function addcodes(code){
 }
 
 function getcodes(ID){
-    codeCollection.findOne({ID:ID})
+    return codeCollection.findOne({ID:ID})
+}
+
+function get_all(){
+    return codeCollection.find().toArray()
 }
 
 module.exports = {
@@ -44,5 +48,6 @@ module.exports = {
     getUserByToken,
     createUser, 
     addcodes,
-    getcodes
+    getcodes,
+    get_all
 };
