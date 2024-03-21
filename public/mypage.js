@@ -48,6 +48,13 @@ function logout() {
     method: 'delete',
   }).then(() => (window.location.href = 'index.html'));
 }
+
+function show(){
+  const userName = localStorage.getItem('userName');
+  let name = document.querySelector('h2');
+  name.textContent = userName;
+}
   
 
 getting_title()
+show()
