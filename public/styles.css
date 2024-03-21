@@ -66,6 +66,26 @@ main{
     }
     
 }
+
+.error-popup {
+    position: fixed; 
+    top: 20%;
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    background-color: white;
+    color: red;
+    border: 2px solid red;
+    padding: 20px;
+    z-index: 1000; 
+    display: none; 
+  }
+  
+.close-btn {
+    float: right;
+    cursor: pointer;
+}
+
+
 .table1 {
     width: 100%; 
     border-collapse: collapse; 

@@ -2,6 +2,16 @@
     loginOrCreate(`/api/auth/create`);
 }
 
+function showErrorPopup(message) { 
+  const errorMessageElement = document.querySelector('#errorMessage');
+  errorMessageElement.textContent = message;
+  document.querySelector('#errorPopup').style.display = 'block'; 
+}
+
+function closeErrorPopup() { 
+  document.querySelector('#errorPopup').style.display = 'none'; 
+}
+
   async function loginOrCreate(endpoint) {
     const userName = document.querySelector('#ID')?.value;
     const password = document.querySelector('#password')?.value;
@@ -17,6 +27,7 @@
     if (response.ok) {
       window.location.href = 'index.html';
     } else {
-      const body = await response.json(); // think of error cases
+      const body = await response.json();
+      showErrorPopup(body.message); //test
     }
   }
