@@ -28,6 +28,6 @@ function closeErrorPopup() {
       window.location.href = 'index.html';
     } else {
       const body = await response.json();
-      showErrorPopup(body.message); 
+      showErrorPopup(body.msg); 
     }
   }
