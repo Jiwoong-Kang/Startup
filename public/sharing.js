@@ -1,6 +1,9 @@
 function feedback2(){
     window.location.href = "feedback.html"
 }
+function deleting(){
+    window.location.href = "deleting.html"
+}
 
 async function sharing(){
     let show_code = localStorage.getItem("current_code")

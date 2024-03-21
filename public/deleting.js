@@ -11,4 +11,12 @@ async function sharing(){
     
 }
 
+function keep(){
+    window.location.href = "mypage.html"
+}
+
+function remove(){
+    
+}
+
 sharing()
