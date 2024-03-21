@@ -19,7 +19,10 @@ async function remove(){
     let show_code = localStorage.getItem("current_code");
     let show_code_parse = JSON.parse(show_code);
     let real_ID = show_code_parse.ID;
-    await fetch(`/api/delete?ID=${real_ID}`); // it didn't work to delete the date from mongo
+    fetch(`/api/delete?ID=${real_ID}`, {
+        method: 'Delete',
+    }); 
+    console.log("hello");
     window.location.href = "mypage.html"; 
 }
 
