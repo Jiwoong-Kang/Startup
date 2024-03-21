@@ -13,12 +13,6 @@ async function loginOrCreate(endpoint) {
     },
   });
 
-  function logout() {
-    localStorage.removeItem('userName'); 
-    fetch(`/api/auth/logout`, {
-      method: 'delete',
-    }).then(() => (window.location.href = 'index.html'));
-  }
 
   if (response.ok) {
     localStorage.setItem('userName', userName);
