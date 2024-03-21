@@ -19,8 +19,8 @@ async function remove(){
     let show_code = localStorage.getItem("current_code");
     let show_code_parse = JSON.parse(show_code);
     let real_ID = show_code_parse.ID;
-    await fetch(`/api/delete?ID=${real_ID}`);
-    window.location.href = "mypage.html";
+    await fetch(`/api/delete?ID=${real_ID}`); // it didn't work to delete the date from mongo
+    window.location.href = "mypage.html"; 
 }
 
 sharing()
