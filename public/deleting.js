@@ -15,7 +15,7 @@ function keep(){
     window.location.href = "mypage.html";
 }
 
-async function remove(){
+function remove(){
     let show_code = localStorage.getItem("current_code");
     let show_code_parse = JSON.parse(show_code);
     let real_ID = show_code_parse.ID;
