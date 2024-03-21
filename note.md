@@ -261,4 +261,12 @@ try {
 - 위에 방식이 가장 편한 방법이다.
 - tokens을 사용하면 어느정도 시간이 지나면 알아서 로그아웃 같은게 되게 한다.
 
-
+**UI testing**
+- mkdir testui && cd testui
+- npm init playwright@latest
+- 위에 것은 frontend를 시험할때 사용하는 것이다.
+- mkdir testJest && cd testJest
+- npm init -y
+- npm install express
+- npm install jest supertest -D
+- 위에 것은 backend를 시험할때 사용하는 것이다.
