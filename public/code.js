@@ -16,7 +16,7 @@ async function code(){
     const explainEl = document.querySelector("#message2")
     const now = new Date()
     const random = getRandomFromTime()
-    const owner = localStorage.getItem('userName') // new information
+    const owner = localStorage.getItem('userName') 
     const formattedTime = now.toLocaleString('en-US', {
         year: 'numeric',
         month: '2-digit',
@@ -25,7 +25,7 @@ async function code(){
         minute: '2-digit'
     });
     const obj = {
-        user : owner, // new information
+        user : owner, 
         subject : subjectEl.value,
         code : codeEl.value ,
         explanation : explainEl.value,
