@@ -16,7 +16,8 @@ function keep(){
 }
 
 function remove(){
-    
+    let show_code = localStorage.getItem("current_code")
+    let show_code_parse = JSON.parse(show_code)
 }
 
 sharing()
