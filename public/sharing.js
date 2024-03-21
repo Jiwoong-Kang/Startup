@@ -2,7 +2,12 @@ function feedback2(){
     window.location.href = "feedback.html"
 }
 function deleting(){
-    window.location.href = "deleting.html"
+    const userName = localStorage.getItem('userName'); 
+    let show_code = localStorage.getItem("current_code")
+    let show_code_parse = JSON.parse(show_code)
+    if (userName === show_code_parse.user){
+        window.location.href = "deleting.html"
+    }
 }
 
 async function sharing(){
