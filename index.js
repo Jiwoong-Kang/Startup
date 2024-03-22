@@ -1,10 +1,10 @@
-const cookieParser = require('cookie-parser'); // New
-const bcrypt = require('bcrypt'); // New
+const cookieParser = require('cookie-parser'); 
+const bcrypt = require('bcrypt'); 
 const express = require('express');
 const app = express();
-const DB = require('./database.js'); // New
+const DB = require('./database.js'); 
 
-const authCookieName = 'token'; // new
+const authCookieName = 'token'; 
 
 const port = process.argv.length > 2 ? process.argv[2] : 4000; 
 
