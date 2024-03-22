@@ -270,3 +270,10 @@ try {
 - npm install express
 - npm install jest supertest -D
 - 위에 것은 backend를 시험할때 사용하는 것이다.
+
+**Web Socket**
+- proxy messages between clients
+- sending notifications to client
+- mkdir ws && cd ws
+- npm init -y
+- npm install ws
