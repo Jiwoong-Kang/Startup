@@ -6,10 +6,12 @@ function sharing(){
 }
 
 const username = localStorage.getItem('userName'); // put username
-const playerNameEl = document.querySelector('.player-name');
+const playerNameEl = document.querySelector('.user-name');
 playerNameEl.textContent = username;
 const FeedBackUpload = "Feedback uploaded";
 const CodeUpload = "Code uploaded";
+let socket ;
+configureWebSocket();
 
 async function feedback(){
     let show_code = localStorage.getItem("current_code") 
@@ -29,7 +31,7 @@ async function feedback(){
             },
             body: JSON.stringify({feedback:feedback}),
         });
-        this.broadcastEvent(username, FeedBackUpload, show_code); // add event
+        broadcastEvent(username, FeedBackUpload, show_code); // add event
         if (!response2.ok) {
             throw new Error(`HTTP error! status: ${response2.status}`);
         }
@@ -42,21 +44,21 @@ async function feedback(){
 }
 
 
-function configureWebSocket(){ //애네들 function으로 써도 되는건가요?
+function configureWebSocket(){ 
     const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
-    this.socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
-    this.socket.onopen = (event) => {
-      this.displayMsg('system', 'server', 'connected'); // game -> server
+    socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+    socket.onopen = (event) => {
+      displayMsg('system', 'server', 'connected'); // game -> server
     };
-    this.socket.onclose = (event) => {
-      this.displayMsg('system', 'server', 'disconnected');
+    socket.onclose = (event) => {
+      displayMsg('system', 'server', 'disconnected');
     };
-    this.socket.onmessage = async (event) => {
+    socket.onmessage = async (event) => {
       const msg = JSON.parse(await event.data.text());
       if (msg.type === FeedBackUpload) {
-        this.displayMsg('user', msg.from, `uploaded a feedback on ${msg.value.subject}`);
+        displayMsg('user', msg.from, `uploaded a feedback on ${msg.value.subject}`);
       } else if (msg.type === CodeUpload) {
-        this.displayMsg('user', msg.from, `uploaded a new code`); //player -> user
+        displayMsg('user', msg.from, `uploaded a new code`); //player -> user
       }
     };
 }
@@ -73,8 +75,7 @@ function broadcastEvent(from, type, value) {
       type: type,
       value: value,
     };
-    this.socket.send(JSON.stringify(event)); // this 대신에 이 정보를 socket에 저장할 수 있는 방법을 찾고 그 socket을 불러와야 한다.
+    socket.send(JSON.stringify(event)); // this 대신에 이 정보를 socket에 저장할 수 있는 방법을 찾고 그 socket을 불러와야 한다.
   }
 
-sharing()
-configureWebSocket()
+sharing();

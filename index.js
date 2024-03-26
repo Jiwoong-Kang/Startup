@@ -143,9 +143,10 @@ secureApiRouter.get('/load_all', async(req, res) => {
 
 
 
-app.listen(port, () => {
+const httpService = app.listen(port, () => {
     console.log(`Listening on port ${port}`);
   });
+
   
 
 peerProxy(httpService);
