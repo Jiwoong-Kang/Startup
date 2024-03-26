@@ -6,6 +6,8 @@ function sharing(){
 }
 
 const username = localStorage.getItem('userName'); // put username
+const playerNameEl = document.querySelector('.player-name');
+playerNameEl.textContent = username;
 const FeedBackUpload = "Feedback uploaded";
 const CodeUpload = "Code uploaded";
 
@@ -44,10 +46,10 @@ function configureWebSocket(){ //애네들 function으로 써도 되는건가요
     const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
     this.socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
     this.socket.onopen = (event) => {
-      this.displayMsg('system', 'upload', 'connected'); // game -> upload
+      this.displayMsg('system', 'server', 'connected'); // game -> server
     };
     this.socket.onclose = (event) => {
-      this.displayMsg('system', 'upload', 'disconnected');
+      this.displayMsg('system', 'server', 'disconnected');
     };
     this.socket.onmessage = async (event) => {
       const msg = JSON.parse(await event.data.text());
