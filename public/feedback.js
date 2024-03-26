@@ -59,7 +59,7 @@ configureWebSocket(){ //what does this error mean?
   }
 
   displayMsg(cls, from, msg) { // need to move to mypage, mainsharing, sharing
-    const chatText = document.querySelector('#player-messages'); // need to put this id in above html
+    const chatText = document.querySelector('#user-messages'); // need to put this id in above html
     chatText.innerHTML =
       `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
   }
