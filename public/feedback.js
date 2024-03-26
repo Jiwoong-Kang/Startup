@@ -7,6 +7,7 @@ function sharing(){
 
 const username = localStorage.getItem('userName'); // put username
 const FeedBackUpload = "Feedback uploaded";
+const CodeUpload = "Code uploaded";
 
 async function feedback(){
     let show_code = localStorage.getItem("current_code") 
@@ -39,7 +40,7 @@ async function feedback(){
 }
 
 
-function configureWebSocket(){ 
+function configureWebSocket(){ //애네들 function으로 써도 되는건가요?
     const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
     this.socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
     this.socket.onopen = (event) => {
@@ -52,8 +53,8 @@ function configureWebSocket(){
       const msg = JSON.parse(await event.data.text());
       if (msg.type === FeedBackUpload) {
         this.displayMsg('player', msg.from, `uploaded a feedback on ${msg.value.subject}`);
-      } else if (msg.type === GameStartEvent) {
-        this.displayMsg('player', msg.from, `started a new game`);
+      } else if (msg.type === CodeUpload) {
+        this.displayMsg('player', msg.from, `uploaded a new code`);
       }
     };
 }
@@ -74,3 +75,4 @@ function broadcastEvent(from, type, value) {
   }
 
 sharing()
+configureWebSocket()
