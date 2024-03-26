@@ -1,6 +1,5 @@
 function sharing(){  
     let show_code = localStorage.getItem("current_code")
-    // console.log(show_code)
     let show_code_parse = JSON.parse(show_code)
     document.getElementById("outer2_text").innerHTML = show_code_parse.code
     document.getElementById("outer2_text").style.whiteSpace = "pre"
@@ -34,7 +33,41 @@ async function feedback(){
     } catch (error) {
         console.error('Error:', error);
     }
-
-
 }
+const FeedBackUpload = "Feedback uploaded";
+
+configureWebSocket(){ //what does this error mean?
+    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+    this.socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+    this.socket.onopen = (event) => {
+      this.displayMsg('system', 'upload', 'connected'); // game -> upload
+    };
+    this.socket.onclose = (event) => {
+      this.displayMsg('system', 'upload', 'disconnected');
+    };
+    this.socket.onmessage = async (event) => {
+      const msg = JSON.parse(await event.data.text());
+      if (msg.type === FeedBackUpload) {
+        this.displayMsg('player', msg.from, `uploaded ${msg.value.score}`);
+      } else if (msg.type === GameStartEvent) {
+        this.displayMsg('player', msg.from, `started a new game`);
+      }
+    };
+  }
+
+  displayMsg(cls, from, msg) {
+    const chatText = document.querySelector('#player-messages');
+    chatText.innerHTML =
+      `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
+  }
+
+  broadcastEvent(from, type, value) {
+    const event = {
+      from: from,
+      type: type,
+      value: value,
+    };
+    this.socket.send(JSON.stringify(event));
+  }
+
 sharing()
