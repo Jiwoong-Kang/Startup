@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const express = require('express');
 const app = express();
 const DB = require('./database.js'); 
+const { peerProxy } = require('./peerProxy.js'); // put proxy for websocket
 
 const authCookieName = 'token'; 
 
@@ -13,6 +14,9 @@ app.use(express.json());
 app.use(cookieParser()); // Use the cookie parser middleware for tracking authentication tokens
 
 app.use(express.static('public'));
+
+// Trust headers that are forwarded from the proxy so we can determine IP addresses
+app.set('trust proxy', true);
 
 var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
@@ -144,4 +148,7 @@ app.listen(port, () => {
   });
   
 
-dict = {}
+peerProxy(httpService);
+
+
+// 여기에 있던 dict = {}지움, 에러뜨면 여기를 살릴 것
