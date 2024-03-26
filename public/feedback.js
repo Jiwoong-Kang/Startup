@@ -5,6 +5,8 @@ function sharing(){
     document.getElementById("outer2_text").style.whiteSpace = "pre"
 }
 
+const username = localStorage.getItem('userName'); // put username
+const FeedBackUpload = "Feedback uploaded";
 
 async function feedback(){
     let show_code = localStorage.getItem("current_code") 
@@ -24,6 +26,7 @@ async function feedback(){
             },
             body: JSON.stringify({feedback:feedback}),
         });
+        this.broadcastEvent(username, FeedBackUpload, show_code); // add event
         if (!response2.ok) {
             throw new Error(`HTTP error! status: ${response2.status}`);
         }
@@ -34,7 +37,7 @@ async function feedback(){
         console.error('Error:', error);
     }
 }
-const FeedBackUpload = "Feedback uploaded";
+
 
 configureWebSocket(){ //what does this error mean?
     const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
@@ -48,15 +51,15 @@ configureWebSocket(){ //what does this error mean?
     this.socket.onmessage = async (event) => {
       const msg = JSON.parse(await event.data.text());
       if (msg.type === FeedBackUpload) {
-        this.displayMsg('player', msg.from, `uploaded ${msg.value.score}`);
+        this.displayMsg('player', msg.from, `uploaded a feedback on ${msg.value.subject}`);
       } else if (msg.type === GameStartEvent) {
         this.displayMsg('player', msg.from, `started a new game`);
       }
     };
   }
 
-  displayMsg(cls, from, msg) {
-    const chatText = document.querySelector('#player-messages');
+  displayMsg(cls, from, msg) { // need to move to mypage, mainsharing, sharing
+    const chatText = document.querySelector('#player-messages'); // need to put this id in above html
     chatText.innerHTML =
       `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
   }
