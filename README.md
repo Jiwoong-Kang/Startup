@@ -84,3 +84,12 @@ Have you ever encountered a critical coding error while working on a project? Ar
 - Existing users : Store the codes list under the same user if the user already exists.
 - Use MongoDb to store credentials : Store both users and their codes.
 - Restricts functionality : You cannot upload your code or leave feedbacks unless you logged in. This is the restriction.
+
+## WebSocket deliverable
+
+**The following is an example of the required information for the Startup Websocket deliverable.
+
+- Backend listens for WebSocket connection : Done!
+- Frontend makes WebSocket connection : Done!
+- Data sent over WebSocket connection : Done!
+- WebSocket data displayed : Users can notice in realtime if new codes or feedbacks are updated. And if someone login, users can notice that too.
