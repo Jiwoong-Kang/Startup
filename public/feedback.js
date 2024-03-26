@@ -60,7 +60,7 @@ function configureWebSocket(){ //애네들 function으로 써도 되는건가요
 }
 
 function displayMsg(cls, from, msg) { // need to move to mypage, mainsharing, sharing
-    const chatText = document.querySelector('#user-messages'); // need to put this id in above html
+    const chatText = document.querySelector('#user-messages'); 
     chatText.innerHTML =
       `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
   }
@@ -71,7 +71,7 @@ function broadcastEvent(from, type, value) {
       type: type,
       value: value,
     };
-    this.socket.send(JSON.stringify(event)); // may be replace this to something that includes the information
+    this.socket.send(JSON.stringify(event)); // this 대신에 이 정보를 socket에 저장할 수 있는 방법을 찾고 그 socket을 불러와야 한다.
   }
 
 sharing()
