@@ -52,9 +52,9 @@ function configureWebSocket(){ //애네들 function으로 써도 되는건가요
     this.socket.onmessage = async (event) => {
       const msg = JSON.parse(await event.data.text());
       if (msg.type === FeedBackUpload) {
-        this.displayMsg('player', msg.from, `uploaded a feedback on ${msg.value.subject}`);
+        this.displayMsg('user', msg.from, `uploaded a feedback on ${msg.value.subject}`);
       } else if (msg.type === CodeUpload) {
-        this.displayMsg('player', msg.from, `uploaded a new code`);
+        this.displayMsg('user', msg.from, `uploaded a new code`); //player -> user
       }
     };
 }
