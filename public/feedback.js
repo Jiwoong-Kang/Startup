@@ -39,7 +39,7 @@ async function feedback(){
 }
 
 
-configureWebSocket(){ //what does this error mean?
+function configureWebSocket(){ 
     const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
     this.socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
     this.socket.onopen = (event) => {
@@ -56,15 +56,15 @@ configureWebSocket(){ //what does this error mean?
         this.displayMsg('player', msg.from, `started a new game`);
       }
     };
-  }
+}
 
-  displayMsg(cls, from, msg) { // need to move to mypage, mainsharing, sharing
+function displayMsg(cls, from, msg) { // need to move to mypage, mainsharing, sharing
     const chatText = document.querySelector('#user-messages'); // need to put this id in above html
     chatText.innerHTML =
       `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
   }
 
-  broadcastEvent(from, type, value) {
+function broadcastEvent(from, type, value) {
     const event = {
       from: from,
       type: type,
