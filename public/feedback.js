@@ -71,7 +71,7 @@ function broadcastEvent(from, type, value) {
       type: type,
       value: value,
     };
-    this.socket.send(JSON.stringify(event));
+    this.socket.send(JSON.stringify(event)); // may be replace this to something that includes the information
   }
 
 sharing()
