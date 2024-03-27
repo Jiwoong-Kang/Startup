@@ -63,7 +63,7 @@ async function code(){
         if(!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        broadcastEvent(username, CodeUpload); // add event
+        broadcastEvent(username, CodeUpload); 
         const data = await response.json();
         console.log('Success:', data);
         window.location.href = "main_sharing.html"
@@ -101,14 +101,14 @@ textAreas.forEach(textArea => {
 
 function configureWebSocket(){ 
     const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
-    this.socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
-    this.socket.onopen = (event) => {
-      this.displayMsg('system', 'server', 'connected'); 
+    socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+    socket.onopen = (event) => {
+      displayMsg('system', 'server', 'connected'); 
     };
-    this.socket.onclose = (event) => {
-      this.displayMsg('system', 'server', 'disconnected');
+    socket.onclose = (event) => {
+      displayMsg('system', 'server', 'disconnected');
     };
-    this.socket.onmessage = async (event) => {
+    socket.onmessage = async (event) => {
       const msg = JSON.parse(await event.data.text());
       if (msg.type === FeedBackUpload) {
         displayMsg('user', msg.from, `uploaded a feedback on ${msg.value.subject}`);
