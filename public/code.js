@@ -15,6 +15,8 @@ const playerNameEl = document.querySelector('.player-name');
 playerNameEl.textContent = username;
 const FeedBackUpload = "Feedback uploaded";
 const CodeUpload = "Code uploaded";
+let socket;
+configureWebSocket();
 
 async function code(){ 
     const subjectEl = document.querySelector("#subject")
@@ -61,7 +63,7 @@ async function code(){
         if(!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        this.broadcastEvent(username, CodeUpload, show_code); // add event
+        broadcastEvent(username, CodeUpload, show_code); // add event
         const data = await response.json();
         console.log('Success:', data);
         window.location.href = "main_sharing.html"
@@ -97,7 +99,7 @@ textAreas.forEach(textArea => {
     });
 });
 
-function configureWebSocket(){ //애네들 function으로 써도 되는건가요?
+function configureWebSocket(){ 
     const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
     this.socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
     this.socket.onopen = (event) => {
