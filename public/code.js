@@ -63,7 +63,9 @@ async function code(){
         if(!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        broadcastEvent(username, CodeUpload); 
+        let show_code = localStorage.getItem("current_code") 
+        let show_code_parse = JSON.parse(show_code)
+        broadcastEvent(username, CodeUpload, show_code_parse); 
         const data = await response.json();
         console.log('Success:', data);
         window.location.href = "main_sharing.html"
