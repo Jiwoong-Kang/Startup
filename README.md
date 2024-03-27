@@ -87,7 +87,7 @@ Have you ever encountered a critical coding error while working on a project? Ar
 
 ## WebSocket deliverable
 
-**The following is an example of the required information for the Startup Websocket deliverable.
+**The following is an example of the required information for the Startup Websocket deliverable.**
 
 - Backend listens for WebSocket connection : Done!
 - Frontend makes WebSocket connection : Done!
