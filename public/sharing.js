@@ -27,15 +27,37 @@ async function sharing(){
 
     
 }
+const username = localStorage.getItem('userName'); 
+const playerNameEl = document.querySelector('.user-name');
+playerNameEl.textContent = username;
+const FeedBackUpload = "Feedback uploaded";
+const CodeUpload = "Code uploaded";
+let socket;
+configureWebSocket();
 
-setInterval(() => {
-    const score = Math.floor(Math.random() * 3000);
-    const chatText = document.querySelector('#user-messages');
+function configureWebSocket(){ 
+    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+    socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+    socket.onopen = (event) => {
+      displayMsg('system', 'server', 'connected'); 
+    };
+    socket.onclose = (event) => {
+      displayMsg('system', 'server', 'disconnected');
+    };
+    socket.onmessage = async (event) => {
+      const msg = JSON.parse(await event.data.text());
+      if (msg.type === FeedBackUpload) {
+        displayMsg('user', msg.from, `uploaded a feedback on ${msg.value.subject}`);
+      } else if (msg.type === CodeUpload) {
+        displayMsg('user', msg.from, `uploaded a new code`); 
+      }
+    };
+}
+
+function displayMsg(cls, from, msg) { // need to move to mypage, mainsharing, 
+    const chatText = document.querySelector('#user-messages'); 
     chatText.innerHTML =
-      `<div class="event"><span class="player-event">Eich</span> left ${score}</div>` +
-      chatText.innerHTML;
-  }, 5000);
-
+      `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
+  }
 
 sharing()
-setInterval()

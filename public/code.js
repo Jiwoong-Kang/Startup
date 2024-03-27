@@ -10,7 +10,7 @@ function getRandomFromTime() {
     return timeString;
 }
 
-const username = localStorage.getItem('userName'); // put username, new part
+const username = localStorage.getItem('userName'); 
 const playerNameEl = document.querySelector('.user-name');
 playerNameEl.textContent = username;
 const FeedBackUpload = "Feedback uploaded";
