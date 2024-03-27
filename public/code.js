@@ -11,7 +11,7 @@ function getRandomFromTime() {
 }
 
 const username = localStorage.getItem('userName'); // put username, new part
-const playerNameEl = document.querySelector('.player-name');
+const playerNameEl = document.querySelector('.user-name');
 playerNameEl.textContent = username;
 const FeedBackUpload = "Feedback uploaded";
 const CodeUpload = "Code uploaded";
@@ -63,7 +63,7 @@ async function code(){
         if(!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        broadcastEvent(username, CodeUpload, show_code); // add event
+        broadcastEvent(username, CodeUpload); // add event
         const data = await response.json();
         console.log('Success:', data);
         window.location.href = "main_sharing.html"
@@ -103,7 +103,7 @@ function configureWebSocket(){
     const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
     this.socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
     this.socket.onopen = (event) => {
-      this.displayMsg('system', 'server', 'connected'); // game -> server
+      this.displayMsg('system', 'server', 'connected'); 
     };
     this.socket.onclose = (event) => {
       this.displayMsg('system', 'server', 'disconnected');
@@ -111,9 +111,9 @@ function configureWebSocket(){
     this.socket.onmessage = async (event) => {
       const msg = JSON.parse(await event.data.text());
       if (msg.type === FeedBackUpload) {
-        this.displayMsg('user', msg.from, `uploaded a feedback on ${msg.value.subject}`);
+        displayMsg('user', msg.from, `uploaded a feedback on ${msg.value.subject}`);
       } else if (msg.type === CodeUpload) {
-        this.displayMsg('user', msg.from, `uploaded a new code`); //player -> user
+        displayMsg('user', msg.from, `uploaded a new code`); 
       }
     };
 }
@@ -124,11 +124,10 @@ function displayMsg(cls, from, msg) { // need to move to mypage, mainsharing, sh
       `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
   }
 
-function broadcastEvent(from, type, value) {
+function broadcastEvent(from, type) {
     const event = {
       from: from,
       type: type,
-      value: value,
     };
-    this.socket.send(JSON.stringify(event)); // this 대신에 이 정보를 socket에 저장할 수 있는 방법을 찾고 그 socket을 불러와야 한다.
+    socket.send(JSON.stringify(event)); 
   }
