@@ -63,7 +63,7 @@ async function code(){
         if(!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        let show_code = localStorage.getItem("current_code") 
+        let show_code = JSON.stringify(obj);
         let show_code_parse = JSON.parse(show_code)
         broadcastEvent(username, CodeUpload, show_code_parse); 
         const data = await response.json();
