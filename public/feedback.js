@@ -5,7 +5,7 @@ function sharing(){
     document.getElementById("outer2_text").style.whiteSpace = "pre"
 }
 
-const username = localStorage.getItem('userName'); // put username
+const username = localStorage.getItem('userName'); 
 const playerNameEl = document.querySelector('.user-name');
 playerNameEl.textContent = username;
 const FeedBackUpload = "Feedback uploaded";
@@ -31,7 +31,7 @@ async function feedback(){
             },
             body: JSON.stringify({feedback:feedback}),
         });
-        broadcastEvent(username, FeedBackUpload, show_code); // add event
+        broadcastEvent(username, FeedBackUpload, show_code); 
         if (!response2.ok) {
             throw new Error(`HTTP error! status: ${response2.status}`);
         }
@@ -48,7 +48,7 @@ function configureWebSocket(){
     const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
     socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
     socket.onopen = (event) => {
-      displayMsg('system', 'server', 'connected'); // game -> server
+      displayMsg('system', 'server', 'connected'); 
     };
     socket.onclose = (event) => {
       displayMsg('system', 'server', 'disconnected');
@@ -58,12 +58,12 @@ function configureWebSocket(){
       if (msg.type === FeedBackUpload) {
         displayMsg('user', msg.from, `uploaded a feedback on ${msg.value.subject}`);
       } else if (msg.type === CodeUpload) {
-        displayMsg('user', msg.from, `uploaded a new code`); //player -> user
+        displayMsg('user', msg.from, `uploaded a new code`); 
       }
     };
 }
 
-function displayMsg(cls, from, msg) { // need to move to mypage, mainsharing, sharing
+function displayMsg(cls, from, msg) { 
     const chatText = document.querySelector('#user-messages'); 
     chatText.innerHTML =
       `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
@@ -75,7 +75,7 @@ function broadcastEvent(from, type, value) {
       type: type,
       value: value,
     };
-    socket.send(JSON.stringify(event)); // this 대신에 이 정보를 socket에 저장할 수 있는 방법을 찾고 그 socket을 불러와야 한다.
+    socket.send(JSON.stringify(event)); 
   }
 
 sharing();

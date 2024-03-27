@@ -54,7 +54,7 @@ function configureWebSocket(){
     };
 }
 
-function displayMsg(cls, from, msg) { // need to move to mypage, mainsharing, 
+function displayMsg(cls, from, msg) { 
     const chatText = document.querySelector('#user-messages'); 
     chatText.innerHTML =
       `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
