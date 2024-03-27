@@ -31,7 +31,7 @@ async function feedback(){
             },
             body: JSON.stringify({feedback:feedback}),
         });
-        broadcastEvent(username, FeedBackUpload, show_code); 
+        broadcastEvent(username, FeedBackUpload, show_code_parse); 
         if (!response2.ok) {
             throw new Error(`HTTP error! status: ${response2.status}`);
         }
@@ -58,7 +58,7 @@ function configureWebSocket(){
       if (msg.type === FeedBackUpload) {
         displayMsg('user', msg.from, `uploaded a feedback on ${msg.value.subject}`);
       } else if (msg.type === CodeUpload) {
-        displayMsg('user', msg.from, `uploaded a new code`); 
+        displayMsg('user', msg.from, `uploaded a new code, ${msg.value.subject}`); 
       }
     };
 }
