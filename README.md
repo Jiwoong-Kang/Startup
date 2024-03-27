@@ -18,15 +18,15 @@ Have you ever encountered a critical coding error while working on a project? Ar
 - Upload coding problems
 
 ### Technologies
-- HTML : Uses correct HTML structure for application. Six HTML pages. One for login, one for sharing, one for leaving feedbacks one for writing your code, one for your hompage where you can see what you uploaded and one for making new account.
+- HTML : Uses correct HTML structure for application. Seven HTML pages. One for login, one for sharing, one for leaving feedbacks one for writing your code, one for your hompage where you can see what you uploaded, one for confirming deletion and one for making new account.
 - CSS : All styling should be enhanced through the use of proper white space, contrasting colors, and appropriate screen sizes to ensure clarity.
-- Javascript :  The application includes functionality for user login, category display, feedback presentation, result display, and backend endpoint calls.
+- Javascript :  The application includes functionality for user login, category display, feedback presentation, result display, deletion scetion and backend endpoint calls.
 - Service : Backend service with endpoints for:
    - login
    - feedback
    - personal code
 - DB/Login : Store users, codes, and feedbacks in database. Register and login users. Credentials securely stored in database. Can't share codes and leave and read feedbacks unless authenticated.
-- Websocket : As each user shares their code, it becomes visible to all other users.
+- Websocket : As each user shares their code, it becomes visible to all other users. 
 - React :  Application ported to use the React web framework.
 
 
@@ -34,7 +34,7 @@ Have you ever encountered a critical coding error while working on a project? Ar
 
 **For this deliverable I built out the structure of my application using HTML.**
 
-- HTML Pages : Six HTML pages for login and home page, uploading your code, shared code pages, leaving feedback page, your personal homepage and making new account page.  
+- HTML Pages : Seven HTML pages for login and home page, uploading your code, shared code pages, leaving feedback page, your personal homepage, deletion page, and making new account page.  
 - Links : Upon logging in, you are seamlessly redirected to your code page. Upon code submission, you are seamlessly directed to the shared code page, which in turn provides a convenient link to the feedback page, allowing you to easily identify and address any issues with your code.
 - Text : Each submission button will be distinguished by a unique color, enhancing visual clarity and providing a distinct visual identifier for each interactive element. But in this step, I didn't change the color yet. I will put some unique color later by using CSS.
 - Images : I have incorporated images related to computers on the page to provide a visual cue, ensuring that users can easily discern the purpose of this platform.
