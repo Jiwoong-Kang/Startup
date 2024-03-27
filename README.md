@@ -92,4 +92,4 @@ Have you ever encountered a critical coding error while working on a project? Ar
 - Backend listens for WebSocket connection : Done!
 - Frontend makes WebSocket connection : Done!
 - Data sent over WebSocket connection : Done!
-- WebSocket data displayed : Users can notice in realtime if new codes or feedbacks are updated. And if someone login, users can notice that too.
+- WebSocket data displayed : Users can notice in realtime if new codes or feedbacks are updated. 
