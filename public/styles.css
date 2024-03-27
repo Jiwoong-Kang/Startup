@@ -67,6 +67,22 @@ main{
     
 }
 
+
+.users {
+    flex: 1;
+    width: 100%;
+    padding: 0.5em;
+  }
+  
+.user-name {
+    color: rgb(118, 190, 210);
+}
+  
+#user-messages {
+    padding-top: 0.25em;
+    opacity: 0.7;
+}
+
 .error-popup {
     position: fixed; 
     top: 20%;
