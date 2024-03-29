@@ -277,3 +277,8 @@ try {
 - mkdir ws && cd ws
 - npm init -y
 - npm install ws
+
+**Web Framework**
+- JSX : Javascript + HTML
+- component has to be upper case when it starts (Hello is fine, hello is not good)
+- 
