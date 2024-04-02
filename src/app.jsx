@@ -10,32 +10,45 @@ import {Feedback} from './feedback/feedback';
 import {Mypage} from './mypage/mypage';
 import {Mainsharing} from './maingsharing/mainsharing';
 
+
+
 export default function App() {
+    const [userName, setUserName] = React.useState(localStorage.getItem('userName') || '');
+    const currentAuthState = userName ? AuthState.Authenticated : AuthState.Unauthenticated;
+    const [authState, setAuthState] = React.useState(currentAuthState);
     return (
         <BrowerRouter>
-        <div class = "app">
-            <div class="page-content">
-                <h1 class="image-container">Codesharing<sup>&reg;</sup></h1>
+        <div className = "app">
+            {/* class를 className으로 바꿔서 css 혼동이 올 수 있다 */}
+            <div className="page-content">
+                <h1 className="image-container">Codesharing<sup>&reg;</sup></h1>
                 <header>
                     <nav>
-                        <div class="container">
-                            <div id="list"><a href="index.html">Home</a></div>
+                        <div className="container">
+                            <div className="list"><NavLink href="Login">Home</NavLink></div>
+                            {/* css 를 고쳐야 한다 class를 사용하니까 list 아이디 애들을 전부 클래스를 사용하는 걸로 바꾼다.  */}
                      </div>
                     </nav>
 
                     <hr />
                  </header>
 
-                 <main>
-                    Components go here        
-                </main>
+                 <Routes>
+                    <Route path='/' element={<Login />} />
+                    <Route path='/account' element={<Account />} />
+                    <Route path='/code' element={<Code />} />
+                    <Route path='/deleting' element={<Deleting />} />
+                    <Route path='/feedback' element={<Feedback />} />
+                    <Route path='/mainsharing' element={<Mainsharing />} />
+                    <Route path='/mypage' element={<Mypage />} />
+                </Routes>
             </div>
-            <footer>
-                <hr />
-                <span class="text-reset">Author Name(s)</span>
-                <br />
-                <a href="https://github.com/Jiwoong-Kang/Startup.git">Jiwoong Kang</a>
-            </footer>
+                <footer>
+                    <hr />
+                    <span className="text-reset">Author Name(s)</span>
+                    <br />
+                    <a href="https://github.com/Jiwoong-Kang/Startup.git">Jiwoong Kang</a>
+                </footer>
     
         </div>
         </BrowerRouter>
