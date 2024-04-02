@@ -1,7 +1,13 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
-
+import {Login} from './login/login';
+import {Account} from './account/account';
+import {Code} from './code/code';
+import {Deleting} from './deleting/deleting';
+import {Feedback} from './feedback/feedback';
+import {Mypage} from './mypage/mypage';
+import {Mainsharing} from './maingsharing/mainsharing';
 
 export default function App() {
     return (
