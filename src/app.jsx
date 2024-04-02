@@ -1,6 +1,5 @@
 import React from 'react';
-import {BrowerRouter, NavLink, Route, Routes} from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import {BrowserRouter, NavLink, Route, Routes} from 'react-router-dom';
 import './app.css';
 import {Login} from './login/login';
 import {Account} from './account/account';
@@ -8,16 +7,16 @@ import {Code} from './code/code';
 import {Deleting} from './deleting/deleting';
 import {Feedback} from './feedback/feedback';
 import {Mypage} from './mypage/mypage';
-import {Mainsharing} from './maingsharing/mainsharing';
+import {Mainsharing} from './mainsharing/mainsharing';
 
 
 
 export default function App() {
-    const [userName, setUserName] = React.useState(localStorage.getItem('userName') || '');
-    const currentAuthState = userName ? AuthState.Authenticated : AuthState.Unauthenticated;
-    const [authState, setAuthState] = React.useState(currentAuthState);
+    // const [userName, setUserName] = React.useState(localStorage.getItem('userName') || '');
+    // const currentAuthState = userName ? AuthState.Authenticated : AuthState.Unauthenticated;
+    // const [authState, setAuthState] = React.useState(currentAuthState);
     return (
-        <BrowerRouter>
+        <BrowserRouter>
         <div className = "app">
             {/* class를 className으로 바꿔서 css 혼동이 올 수 있다 */}
             <div className="page-content">
@@ -32,7 +31,6 @@ export default function App() {
 
                     <hr />
                  </header>
-
                  <Routes>
                     <Route path='/' element={<Login />} />
                     <Route path='/account' element={<Account />} />
@@ -51,6 +49,6 @@ export default function App() {
                 </footer>
     
         </div>
-        </BrowerRouter>
+        </BrowserRouter>
     );
 }

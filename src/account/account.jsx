@@ -2,8 +2,8 @@ import React from 'react';
 
 export function Account() {
     return (
-        <main classname='container-fluid bg-secondary text-center'>
-            <div>mypage displayed here</div>
+        <main className='container-fluid bg-secondary text-center'>
+            <div>Account displayed here</div>
         </main>
     )
 }

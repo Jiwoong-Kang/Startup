@@ -1,9 +1,9 @@
 import React from 'react';
 
-export function code() {
+export function Code() {
     return (
-        <main classname='container-fluid bg-secondary text-center'>
-            <div>mypage displayed here</div>
+        <main className='container-fluid bg-secondary text-center'>
+            <div>Code displayed here</div>
         </main>
     )
 }
