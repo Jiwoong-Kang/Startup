@@ -1,4 +1,5 @@
 import React from 'react';
+import {BrowerRouter, NavLink, Route, Routes} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
 import {Login} from './login/login';
@@ -11,6 +12,7 @@ import {Mainsharing} from './maingsharing/mainsharing';
 
 export default function App() {
     return (
+        <BrowerRouter>
         <div class = "app">
             <div class="page-content">
                 <h1 class="image-container">Codesharing<sup>&reg;</sup></h1>
@@ -36,5 +38,6 @@ export default function App() {
             </footer>
     
         </div>
+        </BrowerRouter>
     );
 }
