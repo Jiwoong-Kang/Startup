@@ -9,7 +9,9 @@ import {Feedback} from './feedback/feedback';
 import {Mypage} from './mypage/mypage';
 import {Mainsharing} from './mainsharing/mainsharing';
 
-
+function NotFound() {
+    return <main className='container-fluid bg-secondary text-center'>404: Return to sender. Address unknown.</main>;
+  }
 
 export default function App() {
     // const [userName, setUserName] = React.useState(localStorage.getItem('userName') || '');
@@ -39,6 +41,7 @@ export default function App() {
                     <Route path='/feedback' element={<Feedback />} />
                     <Route path='/mainsharing' element={<Mainsharing />} />
                     <Route path='/mypage' element={<Mypage />} />
+                    <Route path='*' element={<NotFound />} />
                 </Routes>
             </div>
                 <footer>
