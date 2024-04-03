@@ -1,7 +1,14 @@
 import React from 'react';
 
+function Header() {
+    return (
+        <header></header>
+    )
+}
 export function Mypage() {
     return (
+        <div>
+        <Header />
         <main className='container-fluid bg-secondary text-center'>
             <div className="users">
                 User
@@ -22,5 +29,6 @@ export function Mypage() {
                 </table>
                 <div><button className="btn btn-primary" id="logout" onclick="logout(this)">Logout</button></div>
         </main>
+        </div>
     )
 }
