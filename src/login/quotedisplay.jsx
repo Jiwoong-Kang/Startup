@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
-function QuoteDisplay() {
+export function QuoteDisplay() {
   const [quote, setQuote] = useState('');
   const [author, setAuthor] = useState('');
 
-  useEffect(() => {
+  React.useEffect(() => {
     fetch('https://api.quotable.io/random')
       .then((response) => response.json())
       .then((data) => {
@@ -21,4 +21,4 @@ function QuoteDisplay() {
   );
 }
 
-export default QuoteDisplay;
+
