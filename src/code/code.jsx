@@ -1,5 +1,7 @@
 import React from 'react';
-
+import {Mypage} from './mypage/mypage';
+import {Login} from './login/login';
+import {Mainsharing} from './mainsharing/mainsharing';
 
 function Header() {
     return (
