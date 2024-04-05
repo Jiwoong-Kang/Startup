@@ -1,8 +1,8 @@
 import React from 'react';
 import {BrowserRouter, NavLink, Route, Routes} from 'react-router-dom';
-import {Login} from './login/login';
-import {Mainsharing} from './mainsharing/mainsharing';
-import {Code} from './code/code';
+import {Login} from '../login/login';
+import {Mainsharing} from '../mainsharing/mainsharing';
+import {Code} from '../code/code';
 
 function Header() {
     return (

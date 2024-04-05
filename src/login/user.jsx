@@ -33,11 +33,11 @@ export function User({ loginUser }) {
     <>
     <div id="post_form">
       <div className="form-group">
-        <label for="ID">ID</label>
+        <label htmlFor="ID">ID</label>
         <input type="text" id="ID" placeholder="Your ID here" onChange={(e) => setUserName(e.target.value)} />
       </div>
       <div className="form-group">
-        <label for="password">Password</label>
+        <label htmlFor="password">Password</label>
         <input type="password" id="password" placeholder="Password here" required onChange={(e) => setPassword(e.target.value)} />
       </div>
       <button className="btn btn-primary" id="login" onClick={() => loginUser()}>Login</button>

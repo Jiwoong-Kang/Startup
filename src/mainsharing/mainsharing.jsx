@@ -1,6 +1,6 @@
 import React from 'react';
-import {Login} from './login/login';
-import {Mypage} from './mypage/mypage';
+import {Login} from '../login/login';
+import {Mypage} from '../mypage/mypage';
 
 function Header() {
     return (

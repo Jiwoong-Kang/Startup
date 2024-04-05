@@ -151,5 +151,3 @@ const httpService = app.listen(port, () => {
 
 peerProxy(httpService);
 
-
-// 여기에 있던 dict = {}지움, 에러뜨면 여기를 살릴 것

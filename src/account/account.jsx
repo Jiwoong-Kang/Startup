@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ErrorPopup} from './login/errorpopup';
+import { ErrorPopup} from '../login/errorpopup';
 
-function Account() {
+export function Account() {
     const [userName, setUserName] = React.useState('');
     const [password, setPassword] = React.useState('');
     const [displayError, setDisplayError] = React.useState(null);
