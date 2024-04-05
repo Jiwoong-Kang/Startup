@@ -1,4 +1,8 @@
 import React from 'react';
+import { QuoteDisplay } from './quotedisplay';
+import { ErrorPopup } from './errorpopup';
+import { User } from './user';
+
 
 export function Login() {
     return (
