@@ -1,7 +1,23 @@
 import React from 'react';
+import {Mypage} from './mypage/mypage';
+import {Login} from './login/login';
+import {Mainsharing} from './mainsharing/mainsharing';
+
+
+function Header() {
+    return (
+        <header>
+            <div className="list"><NavLink href="Login">Home</NavLink></div>
+            <div claseName="list"><NavLink href="">CodeSharing</NavLink></div>
+            <div claseName="list"><NavLink href="mypage">MyPage</NavLink></div>
+        </header>
+    )
+}
 
 export function Feedback() {
     return (
+        <>
+        <Header />
         <main className='container-fluid bg-secondary text-center'>
             <div className="users">
                 User
@@ -19,5 +35,6 @@ export function Feedback() {
                 </div>
             </div>
         </main>
+        </>
     )
 }

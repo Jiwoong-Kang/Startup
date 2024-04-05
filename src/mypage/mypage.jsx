@@ -1,8 +1,16 @@
 import React from 'react';
+import {BrowserRouter, NavLink, Route, Routes} from 'react-router-dom';
+import {Login} from './login/login';
+import {Mainsharing} from './mainsharing/mainsharing';
+import {Code} from './code/code';
 
 function Header() {
     return (
-        <header></header>
+        <header>
+            <div className="list"><NavLink href="Login">Home</NavLink></div>
+            <div claseName="list"><NavLink href="mainsharing">Codesharing</NavLink></div>
+            <div className="list"><NavLink href="code">YourCode</NavLink></div>
+        </header>
     )
 }
 export function Mypage() {

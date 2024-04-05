@@ -44,7 +44,7 @@ header{
 nav{
     width : 100%;
 }
-#list{
+.list{
     padding:5px;
 }
 a{
