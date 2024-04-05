@@ -1,7 +1,20 @@
 import React from 'react';
 
+
+function Header() {
+    return (
+        <header>
+            <div className="list"><NavLink href="Login">Home</NavLink></div>
+            <div claseName="list"><NavLink href="">CodeSharing</NavLink></div>
+            <div claseName="list"><NavLink href="mypage">MyPage</NavLink></div>
+        </header>
+    )
+}
+
 export function Code() {
     return (
+        <>
+        <Header />
         <main className='container-fluid bg-secondary text-center'>
             <div className="users">
                 User
@@ -19,5 +32,6 @@ export function Code() {
                 <button type="submit" id="delete" onclick="clearContent(this)">Delete</button>
 
         </main>
+        </>
     )
 }
