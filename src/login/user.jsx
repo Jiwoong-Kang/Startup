@@ -1,8 +1,30 @@
 import React, { useState } from 'react';
 
-function User({ loginUser }) {
-  const [userName, setUserName] = useState('');
-  const [password, setPassword] = useState('');
+export function User({ loginUser }) {
+  const [userName, setUserName] = React.useState('');
+  const [password, setPassword] = React.useState('');
+
+  async function loginUser() {
+    loginOrCreate(`/api/auth/login`);
+  }
+
+  async function loginOrCreate(endpoint) {
+    const response = await fetch(endpoint, {
+      method: 'post',
+      body: JSON.stringify({email: userName, password: password}),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    });
+    if (response?.status === 200) {
+      localStorage.setItem('userName', userName);
+      props.onLogin(userName);
+    } else {
+      const body = await response.json();
+      setDisplayError(`⚠ Error: ${body.msg}`);
+    }
+  }
+
 
   return (
     <div id="post_form">
@@ -14,9 +36,9 @@ function User({ loginUser }) {
         <label for="password">Password</label>
         <input type="password" id="password" placeholder="Password here" required onChange={(e) => setPassword(e.target.value)} />
       </div>
-      <button className="btn btn-primary" id="login" onClick={() => loginUser(userName, password)}>Login</button>
+      <button className="btn btn-primary" id="login" onClick={() => loginUser()}>Login</button>
     </div>
   );
 }
 
-export default Login;
+
