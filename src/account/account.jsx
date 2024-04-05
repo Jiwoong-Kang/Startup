@@ -1,10 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ErrorPopup} from './login/errorpopup';
 
-
-export function Account() {
+function Account() {
     const [userName, setUserName] = React.useState('');
     const [password, setPassword] = React.useState('');
+    const [displayError, setDisplayError] = React.useState(null);
 
     async function createUser() {
         loginOrCreate(`/api/auth/create`);
@@ -45,6 +46,7 @@ export function Account() {
                     <span className="close-btn" onclick="closeErrorPopup()">X</span>
                     <p id="errorMessage"></p>
                 </div>
+                <ErrorPopup message={displayError} onHide ={() => setDisplayError(null)} />
         </main>
     )
 }

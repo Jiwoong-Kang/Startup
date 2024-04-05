@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { ErrorPopup } from './errorpopup';
+
 
 export function User({ loginUser }) {
   const [userName, setUserName] = React.useState('');
   const [password, setPassword] = React.useState('');
+  const [displayError, setDisplayError] = React.useState(null);
 
   async function loginUser() {
     loginOrCreate(`/api/auth/login`);
@@ -27,6 +30,7 @@ export function User({ loginUser }) {
 
 
   return (
+    <>
     <div id="post_form">
       <div className="form-group">
         <label for="ID">ID</label>
@@ -38,6 +42,9 @@ export function User({ loginUser }) {
       </div>
       <button className="btn btn-primary" id="login" onClick={() => loginUser()}>Login</button>
     </div>
+
+    <ErrorPopup message={displayError} onHide ={() => setDisplayError(null)} />
+  </>
   );
 }
 
