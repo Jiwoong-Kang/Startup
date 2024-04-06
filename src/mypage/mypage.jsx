@@ -75,7 +75,7 @@ export function Mypage() {
             {titles.length > 0 ? titles.map((title, i) => (
               <tr key={i} onClick={() => {
                 localStorage.setItem("current_code", JSON.stringify(title));
-                navigate('./sharing');
+                navigate('/sharing');
               }}>
                 <td>{i + 1}</td>
                 <td>{title.subject}</td>

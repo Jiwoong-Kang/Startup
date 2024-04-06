@@ -1,29 +1,64 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-export function Sharing(){
-    return(
-        <main>
+export function Sharing() {
+  const [userName, setUserName] = useState('');
+  const [subject, setSubject] = useState('subject that you entered');
+  const [code, setCode] = useState('show code');
+  const [explanation, setExplanation] = useState('show explanation');
+  const [feedbacks, setFeedbacks] = useState(['feedbacks']);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const userName = localStorage.getItem('userName');
+    setUserName(userName);
+
+    const showCode = JSON.parse(localStorage.getItem("current_code") || '{}');
+    if (showCode) {
+      setSubject(showCode.subject || 'subject that you entered');
+      setCode(showCode.code || 'show code');
+      setExplanation(showCode.explanation || 'show explanation');
+      if (showCode.feedbacks) {
+        setFeedbacks(showCode.feedbacks);
+      }
+    }
+  }, []);
+
+  const feedback2 = () => {
+    navigate('/feedback');
+  };
+
+  const deleting = () => {
+    const showCode = JSON.parse(localStorage.getItem("current_code") || '{}');
+    if (userName === showCode.user) {
+      navigate('/deleting');
+    }
+  };
+
+  return (
+    <main>
       <div className="users">
         User
-        <span className="user-name"></span>
+        <span className="user-name">{userName}</span>
         <div id="user-messages"></div>
       </div>
-      <h2 id = "subject2">subject that you entered</h2>
+      <h2 id="subject2">{subject}</h2>
       <div id="new_outer">
-        <div id="new_outer2">show code
+        <div id="new_outer2" style={{ whiteSpace: "pre" }}>
+          {code}
         </div>
-        <div id="new_outer3">show explanation
-        </div>
+        <div id="new_outer3">{explanation}</div>
       </div>
       <h3>Feedbacks</h3>
       <div id="user-messages">
-        <div id="feedback2">feedbacks</div>
+        <div id="feedback2" style={{ whiteSpace: "pre" }}>
+          {feedbacks.join("\n")}
+        </div>
       </div>
       <div id="post_form">
-        <button type="submit" id="feedback" onclick = "feedback2()">Leave your feedback</button>
+        <button type="submit" id="feedback" onClick={feedback2}>Leave your feedback</button>
       </div>
-      <div><button type="submit" id="delete" onclick = "deleting()">Delete code</button></div>
-      
+      <div><button type="submit" id="delete" onClick={deleting}>Delete code</button></div>
     </main>
-    )
+  );
 }
