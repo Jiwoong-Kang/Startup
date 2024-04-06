@@ -8,6 +8,7 @@ import {Deleting} from './deleting/deleting';
 import {Feedback} from './feedback/feedback';
 import {Mypage} from './mypage/mypage';
 import {Mainsharing} from './mainsharing/mainsharing';
+import {Sharing} from './sharing/sharing';
 import { PageState } from './login/pageState';
 
 function NotFound() {
@@ -40,6 +41,7 @@ export default function App() {
                     <Route path='/feedback' element={<Feedback />} />
                     <Route path='/mainsharing' element={<Mainsharing />} />
                     <Route path='/mypage' element={<Mypage />} />
+                    <Route path='/sharing' element={<Sharing />} />
                     <Route path='*' element={<NotFound />} />
                 </Routes>
             </div>
