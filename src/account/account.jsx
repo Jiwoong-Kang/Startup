@@ -60,7 +60,7 @@ export function Account() {
                     <span className="close-btn" onClick="closeErrorPopup()">X</span>
                     <p id="errorMessage"></p>
                 </div>
-                {displayError && <ErrorPopup message={displayError} onClose ={() => setDisplayError(null)} />}
+                <ErrorPopup message={displayError} onHide ={() => setDisplayError(null)} />
         </main>
     )
 }
