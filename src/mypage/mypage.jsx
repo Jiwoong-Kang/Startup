@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-
 export function Mypage() {
   const [titles, setTitles] = useState([]);
   const [messages, setMessages] = useState([]);
@@ -35,11 +34,22 @@ export function Mypage() {
   function configureWebSocket() {
     const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
     socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+    socket.onopen = (event) => {
+      displayMsg('system', 'server', 'connected');
+  };
+    socket.onclose = (event) => {
+      displayMsg('system', 'server', 'disconnected');
+  };
     socket.onmessage = async (event) => {
       const msg = JSON.parse(await event.data.text());
       setMessages(prevMessages => [msg, ...prevMessages]);
     };
   }
+
+  const displayMsg = (cls, from, msg) => {
+    const newMessage = { cls, from, msg };
+    setMessages(prevMessages => [newMessage, ...prevMessages]);
+};
 
   function logout() {
     localStorage.removeItem('userName');
