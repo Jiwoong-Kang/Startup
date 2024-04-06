@@ -27,6 +27,7 @@ export function User() {
     } else {
       const body = await response.json();
       setDisplayError(`⚠ Error: ${body.msg}`);
+      
     }
   }
 
