@@ -3,9 +3,9 @@ import React from 'react';
 export function Sharing(){
     return(
         <main>
-      <div class="users">
+      <div className="users">
         User
-        <span class="user-name"></span>
+        <span className="user-name"></span>
         <div id="user-messages"></div>
       </div>
       <h2 id = "subject2">subject that you entered</h2>
