@@ -43,7 +43,7 @@ export function Mainsharing() {
         };
         socket.onmessage = async (event) => {
             const msg = JSON.parse(await event.data.text());
-            let displayMessage = '';
+            let displayMessage = ''; // if it doesn't show up, add variable for feebackupload
             if (msg.type === 'FeedBackUpload') {
                 displayMessage = `uploaded a feedback on ${msg.value.subject}`;
             } else if (msg.type === 'CodeUpload') {

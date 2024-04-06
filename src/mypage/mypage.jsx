@@ -41,8 +41,28 @@ export function Mypage() {
       displayMsg('system', 'server', 'disconnected');
   };
     socket.onmessage = async (event) => {
-      const msg = JSON.parse(await event.data.text());
-      setMessages(prevMessages => [msg, ...prevMessages]);
+      const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+        socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+        socket.onopen = (event) => {
+            displayMsg('system', 'server', 'connected');
+        };
+        socket.onclose = (event) => {
+            displayMsg('system', 'server', 'disconnected');
+        };
+        socket.onmessage = async (event) => {
+            const msg = JSON.parse(await event.data.text());
+            let displayMessage = ''; // if it doesn't show up, add variable for feebackupload
+            if (msg.type === 'FeedBackUpload') {
+                displayMessage = `uploaded a feedback on ${msg.value.subject}`;
+            } else if (msg.type === 'CodeUpload') {
+                displayMessage = `uploaded a new code, ${msg.value.subject}`;
+            }
+
+            if (displayMessage) {
+                const newMessage = { cls: 'user', from: msg.from, msg: displayMessage };
+                setMessages(prevMessages => [newMessage, ...prevMessages]);
+            }
+        };
     };
   }
 
