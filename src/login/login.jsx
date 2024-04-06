@@ -2,9 +2,14 @@ import React from 'react';
 import { QuoteDisplay } from './quotedisplay';
 import { ErrorPopup } from './errorpopup';
 import { User } from './user';
+import { useNavigate } from 'react-router-dom';
 
 
 export function Login() {
+  const navigate = useNavigate();
+  function handleClick() {
+    navigate('/account'); 
+  }
     return (
         <main className='container-fluid bg-secondary text-center'>
         <h1>Welcome to CodeSharing</h1>
@@ -14,9 +19,7 @@ export function Login() {
             <p>If you have an account</p>
             <User />
             <p>Are you new?</p>
-            <form method="get" action="account.html">
-            <button type="submit" id="new">Click here</button>
-            </form>
+            <button onClick={handleClick} id="new">Click here</button>
           </div>
           <ErrorPopup />
         </div>

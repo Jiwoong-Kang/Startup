@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { ErrorPopup } from './errorpopup';
+import { useNavigate } from 'react-router-dom';
 
 
-export function User({ loginUser }) {
+export function User() {
   const [userName, setUserName] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [displayError, setDisplayError] = React.useState(null);
+  const navigate = useNavigate();
 
   async function loginUser() {
     loginOrCreate(`/api/auth/login`);
@@ -21,7 +23,7 @@ export function User({ loginUser }) {
     });
     if (response?.status === 200) {
       localStorage.setItem('userName', userName);
-      props.onLogin(userName);
+      navigate('/mypage');
     } else {
       const body = await response.json();
       setDisplayError(`⚠ Error: ${body.msg}`);

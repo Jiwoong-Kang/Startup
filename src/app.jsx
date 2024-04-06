@@ -8,23 +8,25 @@ import {Deleting} from './deleting/deleting';
 import {Feedback} from './feedback/feedback';
 import {Mypage} from './mypage/mypage';
 import {Mainsharing} from './mainsharing/mainsharing';
+import { PageState } from './login/pageState';
 
 function NotFound() {
     return <main className='container-fluid bg-secondary text-center'>404: Return to sender. Address unknown.</main>;
   }
 
 export default function App() {
+    // const [pageState, setPagestate] = React.useState(PageState.Login); // 이렇게 여러가지 만들기
+    // <div className="list">{pageState != PageState.login && <NavLink to="Login" onClick = {setPagestate(PageState.Login)}>Home</NavLink>}</div>
+
     return (
         <BrowserRouter>
         <div className = "app">
-            {/* class를 className으로 바꿔서 css 혼동이 올 수 있다 */}
             <div className="page-content">
                 <h1 className="image-container">Codesharing<sup>&reg;</sup></h1>
                 <header>
                     <nav>
                         <div className="container">
-                            <div className="list"><NavLink href="Login">Home</NavLink></div>
-                            {/* css 를 고쳐야 한다 class를 사용하니까 list 아이디 애들을 전부 클래스를 사용하는 걸로 바꾼다.  */}
+                            <div className="list"> <NavLink to="Login" >Home</NavLink></div>
                      </div>
                     </nav>
 
