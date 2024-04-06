@@ -6,6 +6,7 @@ export function Account() {
     const [userName, setUserName] = React.useState('');
     const [password, setPassword] = React.useState('');
     const [displayError, setDisplayError] = React.useState(null);
+    const navigate = useNavigate();
 
     async function createUser() {
         loginOrCreate(`/api/auth/create`);
@@ -21,7 +22,7 @@ export function Account() {
         });
         if (response?.status === 200) {
           localStorage.setItem('userName', userName);
-          props.onLogin(userName);
+          navigate('/mypage');
         } else {
           const body = await response.json();
           setDisplayError(`⚠ Error: ${body.msg}`);
@@ -33,20 +34,33 @@ export function Account() {
             <p>Put your new ID and new Password</p>
                 <div id="post_form">
                     <div className="form-group">
-                    <label for="ID">ID</label>
-                    <input type="text" id="ID" placeholder="New ID" />
+                    <label htmlFor="ID">ID</label>
+                    <input 
+                      type="text" 
+                      id="ID" 
+                      placeholder="New ID"
+                      value={userName}
+                      onChange={e =>setUserName(e.target.value)} //추가
+                      />
                     </div>
                     <div className="form-group">
-                    <label for="password">New password</label>
-                    <input type="text" id="password" placeholder="New password" required/>
+                    <label htmlFor="password">New password</label>
+                    <input 
+                      type="text" 
+                      id="password" 
+                      placeholder="New password" 
+                      value = {password} //추가된 부분
+                      onChange={e => setPassword(e.target.value)} //added
+                      required
+                      />
                     </div>
-                    <button type="btn btn-primary" id="login" onclick="createUser(this)">Create</button>
+                    <button type="btn btn-primary" id="login" onClick = {createUser}>Create</button>
                 </div>
                 <div id="errorPopup" className="error-popup">
-                    <span className="close-btn" onclick="closeErrorPopup()">X</span>
+                    <span className="close-btn" onClick="closeErrorPopup()">X</span>
                     <p id="errorMessage"></p>
                 </div>
-                <ErrorPopup message={displayError} onHide ={() => setDisplayError(null)} />
+                {displayError && <ErrorPopup message={displayError} onClose ={() => setDisplayError(null)} />}
         </main>
     )
 }
