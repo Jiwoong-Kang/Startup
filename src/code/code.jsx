@@ -1,7 +1,5 @@
 import React from 'react';
-import {Mypage} from '../mypage/mypage';
-import {Login} from '../login/login';
-import {Mainsharing} from '../mainsharing/mainsharing';
+import { WebSocketComponent } from './configurewebsocket';
 
 
 
@@ -9,11 +7,7 @@ export function Code() {
     return (
         <>
         <main className='container-fluid bg-secondary text-center'>
-            <div className="users">
-                User
-                <span className="user-name"></span>
-                <div id="user-messages"></div>
-            </div>
+            < WebSocketComponent />
             <h2><textarea id="subject" placeholder="Write your subject"></textarea></h2>
             <div id="outer">
                 <div id="outer2"><p><textarea id="message" placeholder="Write your code"></textarea></p>

@@ -1,7 +1,5 @@
 import React from 'react';
-import {Mypage} from '../mypage/mypage';
-import {Login} from '../login/login';
-import {Mainsharing} from '../mainsharing/mainsharing';
+import { WebSocketComponet } from './configurewebsocket';
 
 
 function Header() {
@@ -19,11 +17,7 @@ export function Feedback() {
         <>
         <Header />
         <main className='container-fluid bg-secondary text-center'>
-            <div className="users">
-                User
-                <span className="user-name"></span>
-                <div id="user-messages"></div>
-            </div>
+            < WebSocketComponet />
             <h2>Feedback</h2>
             <div id="outer">
                 <div id="outer2"><p id="outer2_text">Show the code that someone uploaded</p>
