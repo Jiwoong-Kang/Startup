@@ -9,7 +9,7 @@ import {Feedback} from './feedback/feedback';
 import {Mypage} from './mypage/mypage';
 import {Mainsharing} from './mainsharing/mainsharing';
 import {Sharing} from './sharing/sharing';
-import { PageState } from './login/pageState';
+import {Header} from './header';
 
 function NotFound() {
     return <main className='container-fluid bg-secondary text-center'>404: Return to sender. Address unknown.</main>;
@@ -24,16 +24,19 @@ export default function App() {
         <div className = "app">
             <div className="page-content">
                 <h1 className="image-container">Codesharing<sup>&reg;</sup></h1>
-                <header>
+                <Header />
+                {/* <header>
                     <nav>
                         <div className="container">
                             <div className="list"> <NavLink to="Login" >Home</NavLink></div>
-                            <div className="list"> <NavLink to="mainsharing" >YourCode</NavLink></div>
+                            <div className="list"> <NavLink to="mainsharing" >CodeSharing</NavLink></div>
+                            <div className="list"> <NavLink to="mypage" >Mypage</NavLink></div>
+                            <div className="list"> <NavLink to="code" >UploadCode</NavLink></div>
                      </div>
                     </nav>
 
                     <hr />
-                 </header>
+                 </header> */}
                  <Routes>
                     <Route path='/' element={<Login />} />
                     <Route path='/account' element={<Account />} />
