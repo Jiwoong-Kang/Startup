@@ -10,7 +10,6 @@ export function Deleting() {
     });
 
     useEffect(() => {
-        // sharing 함수 로직을 여기로 옮깁니다.
         const showCode = localStorage.getItem("current_code");
         if (showCode) {
             const showCodeParse = JSON.parse(showCode);
@@ -31,12 +30,9 @@ export function Deleting() {
         const showCode = localStorage.getItem("current_code");
         const showCodeParse = JSON.parse(showCode);
         const realID = showCodeParse.ID;
-
         await fetch(`/api/delete?ID=${realID}`, {
             method: 'DELETE',
-        });
-
-        navigate('/mypage');
+        }).then(()=>(navigate('/mypage')));
     };
 
     return (
