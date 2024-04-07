@@ -1,11 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { WebSocketComponent } from './configurewebsocket';
 import { useNavigate } from 'react-router-dom';
+import { WebSocketContext} from "./websocketcontext"
 
 export function Feedback() {
     const [currentCode, setCurrentCode] = useState({ code: "Show the code that someone uploaded" });
     const [feedback, setFeedback] = useState("");
     const navigate = useNavigate();
+    const socket = useContext(WebSocketContext);
+    const FeedBackUpload = "Feedback uploaded";
+    const username = localStorage.getItem('username')
 
     useEffect(() => {
         const show_code = localStorage.getItem("current_code");
@@ -14,6 +18,17 @@ export function Feedback() {
             setCurrentCode(show_code_parse);
         }
     }, []);
+
+    const broadcastEvent = (from, type, value) => { 
+        if (socket) { 
+            const event = {
+                from: from,
+                type: type,
+                value: value,
+            };
+            socket.send(JSON.stringify(event));
+        }
+    };
 
     async function handleFeedback() {
         const real_ID = currentCode.ID;
@@ -30,6 +45,7 @@ export function Feedback() {
                 },
                 body: JSON.stringify({ feedback }),
             });
+            broadcastEvent(username, FeedBackUpload, { feedback: feedback });
             if (!response2.ok) {
                 throw new Error(`HTTP error! status: ${response2.status}`);
             }
