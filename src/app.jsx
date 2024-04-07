@@ -28,7 +28,7 @@ export default function App() {
                     <nav>
                         <div className="container">
                             <div className="list"> <NavLink to="Login" >Home</NavLink></div>
-                            <div className="list"> <NavLink to="code" >YourCode</NavLink></div>
+                            <div className="list"> <NavLink to="mainsharing" >YourCode</NavLink></div>
                      </div>
                     </nav>
 

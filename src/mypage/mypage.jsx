@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { WebSocketComponent } from './configurewebsocket';
 
 export function Mypage() {
   const [titles, setTitles] = useState([]);
   const [messages, setMessages] = useState([]);
   const userName = localStorage.getItem('userName');
   const navigate = useNavigate();
-
+  let socket;
   useEffect(() => {
     fetchTitles();
-    configureWebSocket();
     return () => {
       if (socket) {
         socket.close();
@@ -30,46 +30,6 @@ export function Mypage() {
     }
   }
 
-  let socket;
-  function configureWebSocket() {
-    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
-    socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
-    socket.onopen = (event) => {
-      displayMsg('system', 'server', 'connected');
-  };
-    socket.onclose = (event) => {
-      displayMsg('system', 'server', 'disconnected');
-  };
-    socket.onmessage = async (event) => {
-      const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
-        socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
-        socket.onopen = (event) => {
-            displayMsg('system', 'server', 'connected');
-        };
-        socket.onclose = (event) => {
-            displayMsg('system', 'server', 'disconnected');
-        };
-        socket.onmessage = async (event) => {
-            const msg = JSON.parse(await event.data.text());
-            let displayMessage = ''; // if it doesn't show up, add variable for feebackupload
-            if (msg.type === 'FeedBackUpload') {
-                displayMessage = `uploaded a feedback on ${msg.value.subject}`;
-            } else if (msg.type === 'CodeUpload') {
-                displayMessage = `uploaded a new code, ${msg.value.subject}`;
-            }
-
-            if (displayMessage) {
-                const newMessage = { cls: 'user', from: msg.from, msg: displayMessage };
-                setMessages(prevMessages => [newMessage, ...prevMessages]);
-            }
-        };
-    };
-  }
-
-  const displayMsg = (cls, from, msg) => {
-    const newMessage = { cls, from, msg };
-    setMessages(prevMessages => [newMessage, ...prevMessages]);
-};
 
   function logout() {
     localStorage.removeItem('userName');
@@ -81,16 +41,7 @@ export function Mypage() {
   return (
     <div>
       <main className='container-fluid bg-secondary text-center'>
-        <div className="users">
-          User <span className="user-name">{userName}</span>
-          <div id="user-messages">
-            {messages.map((msg, index) => (
-              <div key={index} className="event">
-                <span className={`${msg.type}-event`}>{msg.from}</span> {msg.value.subject}
-              </div>
-            ))}
-          </div>
-        </div>
+        <WebSocketComponent />
         <h2>My page</h2>
         <h3>Code that you uploaded so far</h3>
         <table className="table1">

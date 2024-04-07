@@ -1,15 +1,16 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { WebSocketComponent } from './configurewebsocket';
 
 export function Mainsharing() {
     const [titles, setTitles] = useState([]);
     const [messages, setMessages] = useState([]);
     const userName = localStorage.getItem('userName');
     const navigate = useNavigate();
+    let socket;
 
     useEffect(() => {
         gettingTitles();
-        configureWebSocket();
     
         return () => {
             if (socket) {
@@ -31,36 +32,6 @@ export function Mainsharing() {
         }
     };
 
-    let socket;
-    function configureWebSocket() {
-        const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
-        socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
-        socket.onopen = (event) => {
-            displayMsg('system', 'server', 'connected');
-        };
-        socket.onclose = (event) => {
-            displayMsg('system', 'server', 'disconnected');
-        };
-        socket.onmessage = async (event) => {
-            const msg = JSON.parse(await event.data.text());
-            let displayMessage = ''; // if it doesn't show up, add variable for feebackupload
-            if (msg.type === 'FeedBackUpload') {
-                displayMessage = `uploaded a feedback on ${msg.value.subject}`;
-            } else if (msg.type === 'CodeUpload') {
-                displayMessage = `uploaded a new code, ${msg.value.subject}`;
-            }
-
-            if (displayMessage) {
-                const newMessage = { cls: 'user', from: msg.from, msg: displayMessage };
-                setMessages(prevMessages => [newMessage, ...prevMessages]);
-            }
-        };
-    };
-
-    const displayMsg = (cls, from, msg) => {
-        const newMessage = { cls, from, msg };
-        setMessages(prevMessages => [newMessage, ...prevMessages]);
-    };
 
     const upload = () => {
         navigate('/code');
@@ -69,11 +40,7 @@ export function Mainsharing() {
     return (
         <>
             <main className='container-fluid bg-secondary text-center'>
-                <div className="users">
-                    User
-                    <span className="user-name">{username}</span>
-                    <div id="user-messages"></div>
-                </div>
+                <WebSocketComponent />
                 <h2>CodeSharing</h2>
                 <table className="table1">
                     <thead>
