@@ -9,10 +9,12 @@ export function Sharing() {
   const [explanation, setExplanation] = useState('show explanation');
   const [feedbacks, setFeedbacks] = useState(['feedbacks']);
   const navigate = useNavigate();
+  let socket;
 
   useEffect(() => {
     const userName = localStorage.getItem('userName');
     setUserName(userName);
+    
 
     const showCode = JSON.parse(localStorage.getItem("current_code") || '{}');
     if (showCode) {
@@ -23,6 +25,12 @@ export function Sharing() {
         setFeedbacks(showCode.feedbacks);
       }
     }
+
+    return () => {
+      if (socket) {
+        socket.close();
+      }
+    }; // 추가한 부분
   }, []);
 
   const feedback2 = () => {
