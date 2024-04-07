@@ -56,10 +56,7 @@ export function Account() {
                     </div>
                     <button type="btn btn-primary" id="login" onClick = {createUser}>Create</button>
                 </div>
-                <div id="errorPopup" className="error-popup">
-                    <span className="close-btn" onClick="closeErrorPopup()">X</span>
-                    <p id="errorMessage"></p>
-                </div>
+                
                 <ErrorPopup message={displayError} onHide ={() => setDisplayError(null)} />
         </main>
     )
