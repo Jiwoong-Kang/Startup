@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { WebSocketComponent } from './configurewebsocket';
 import { useNavigate } from 'react-router-dom';
 
+
+
 function getRandomFromTime() {
     var currentTime = new Date();
     var hours = currentTime.getHours().toString();
@@ -20,6 +22,9 @@ export function Code() {
     useEffect(() => {
         setUsername(localStorage.getItem('userName') || '');
     }, []);
+
+    const navigate = useNavigate();
+
 
     async function saveCode() {
         const subjectEl = document.querySelector("#subject");
@@ -46,7 +51,7 @@ export function Code() {
         };
 
         let currentCode = localStorage.getItem("code");
-        let navigate = useNavigate();
+        
         if (currentCode) {
             let currentCodeArray = JSON.parse(currentCode);
             currentCodeArray.push(obj);
@@ -66,11 +71,10 @@ export function Code() {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
-            // Assuming broadcastEvent is defined elsewhere
-            broadcastEvent(username, 'CodeUpload', obj);
+            
             const data = await response.json();
             console.log('Success:', data);
-            navigate('./mainsharing');
+            navigate('/mainsharing');
         } catch (error) {
             console.error('Error:', error);
         }
