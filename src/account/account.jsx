@@ -40,7 +40,7 @@ export function Account() {
                       id="ID" 
                       placeholder="New ID"
                       value={userName}
-                      onChange={e =>setUserName(e.target.value)} //추가
+                      onChange={e =>setUserName(e.target.value)} 
                       />
                     </div>
                     <div className="form-group">
@@ -49,8 +49,8 @@ export function Account() {
                       type="text" 
                       id="password" 
                       placeholder="New password" 
-                      value = {password} //추가된 부분
-                      onChange={e => setPassword(e.target.value)} //added
+                      value = {password} 
+                      onChange={e => setPassword(e.target.value)} 
                       required
                       />
                     </div>
