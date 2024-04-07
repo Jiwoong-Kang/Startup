@@ -8,7 +8,7 @@ export function Header() {
         <header>
             <nav>
                 <div className="container">
-                    <div className="list"><NavLink to ="Login">Home</NavLink></div>
+                    <div className="list"><NavLink to ="login">Home</NavLink></div>
                 
                 {location.pathname === "/mypage" && (
                     <>

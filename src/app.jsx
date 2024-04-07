@@ -25,18 +25,7 @@ export default function App() {
             <div className="page-content">
                 <h1 className="image-container">Codesharing<sup>&reg;</sup></h1>
                 <Header />
-                {/* <header>
-                    <nav>
-                        <div className="container">
-                            <div className="list"> <NavLink to="Login" >Home</NavLink></div>
-                            <div className="list"> <NavLink to="mainsharing" >CodeSharing</NavLink></div>
-                            <div className="list"> <NavLink to="mypage" >Mypage</NavLink></div>
-                            <div className="list"> <NavLink to="code" >UploadCode</NavLink></div>
-                     </div>
-                    </nav>
-
-                    <hr />
-                 </header> */}
+                
                  <Routes>
                     <Route path='/' element={<Login />} />
                     <Route path='/account' element={<Account />} />
