@@ -26,13 +26,14 @@ export function Deleting() {
         navigate('/mypage');
     };
 
-    const remove = async () => {
+    function remove() {
         const showCode = localStorage.getItem("current_code");
         const showCodeParse = JSON.parse(showCode);
         const realID = showCodeParse.ID;
-        await fetch(`/api/delete?ID=${realID}`, {
+        fetch(`/api/delete?ID=${realID}`, {
             method: 'DELETE',
-        }).then(()=>(navigate('/mypage')));
+        });
+        navigate('/mypage');
     };
 
     return (
