@@ -22,7 +22,7 @@ export function Account() {
         });
         if (response?.status === 200) {
           localStorage.setItem('userName', userName);
-          navigate('/mypage');
+          navigate('/');
         } else {
           const body = await response.json();
           setDisplayError(`⚠ Error: ${body.msg}`);

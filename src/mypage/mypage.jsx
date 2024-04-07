@@ -35,7 +35,7 @@ export function Mypage() {
     localStorage.removeItem('userName');
     fetch(`/api/auth/logout`, {
       method: 'delete',
-    }).then(() => (navigate('/login'))); //maybe error here?
+    }).then(() => (navigate('/'))); 
   }
 
   return (
