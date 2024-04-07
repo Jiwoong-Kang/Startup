@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { WebSocketComponent } from './configurewebsocket';
 
 export function Sharing() {
   const [userName, setUserName] = useState('');
@@ -37,11 +38,7 @@ export function Sharing() {
 
   return (
     <main>
-      <div className="users">
-        User
-        <span className="user-name">{userName}</span>
-        <div id="user-messages"></div>
-      </div>
+      < WebSocketComponent />
       <h2 id="subject2">{subject}</h2>
       <div id="new_outer">
         <div id="new_outer2" style={{ whiteSpace: "pre" }}>
