@@ -22,7 +22,7 @@ export function Deleting() {
         }
     }, []);
 
-    const keep = () => {
+    function keep () {
         navigate('/mypage');
     };
 
