@@ -4,7 +4,6 @@ import { ErrorPopup } from './errorpopup';
 import { User } from './user';
 import { useNavigate } from 'react-router-dom';
 
-
 export function Login() {
   const navigate = useNavigate();
   function handleClick() {
