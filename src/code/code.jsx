@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Events, Notifier} from '../websocket';
+import { Events, Notifier} from '../websocket/websocket';
 
 
 function getRandomFromTime() {
