@@ -10,7 +10,7 @@ import {Mypage} from './mypage/mypage';
 import {Mainsharing} from './mainsharing/mainsharing';
 import {Sharing} from './sharing/sharing';
 import {Header} from './header';
-import { WebSocketFinal } from './finalwebsocket';
+import {WebSocketFinal} from './finalwebsocket';
 
 function NotFound() {
     return <main className='container-fluid bg-secondary text-center'>404: Return to sender. Address unknown.</main>;
