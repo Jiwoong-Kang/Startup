@@ -93,3 +93,12 @@ Have you ever encountered a critical coding error while working on a project? Ar
 - Frontend makes WebSocket connection : Done!
 - Data sent over WebSocket connection : Done!
 - WebSocket data displayed : Users can notice in realtime if new codes or feedbacks are updated. You can see this notification when you are writing your code, feedbacks or surfing mypage and codesharing page.
+
+## React deliverable
+
+**For this deliverable, I converted the application over to use React.**
+
+- Bundled and transpiled : Done!
+- Components - Login, Account creating, Code and Feedback Uploading, Deleting, Mypage and Sharing pages are all components
+- Router : Routing between all componenets above with APP.jsx.
+- Hooks : 
