@@ -7,7 +7,7 @@ export function WebSocketComponent() {
   const [events, setEvent] = useState([]);
   useEffect(() => {
 
-    setUsername(localStorage.getItem('userName') || 'Anonymous'); // 로컬 스토리지에서 유저 이름 가져오기
+    setUsername(localStorage.getItem('userName') || 'Anonymous'); 
     
     Notifier.addHandler(handleEvent);
 

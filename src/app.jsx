@@ -10,7 +10,7 @@ import {Mypage} from './mypage/mypage';
 import {Mainsharing} from './mainsharing/mainsharing';
 import {Sharing} from './sharing/sharing';
 import {Header} from './header';
-import { WebSocketComponent } from './websocketcomponent';
+import { WebSocketFinal } from './finalwebsocket';
 
 function NotFound() {
     return <main className='container-fluid bg-secondary text-center'>404: Return to sender. Address unknown.</main>;
@@ -25,7 +25,7 @@ export default function App() {
                 <h1 className="image-container">Codesharing<sup>&reg;</sup></h1>
                 <Header />
                 <main className='container-fluid bg-secondary text-center'>
-                <WebSocketComponent />
+                <WebSocketFinal />
                  <Routes>
                     <Route path='/' element={<Login />} />
                     <Route path='/account' element={<Account />} />
