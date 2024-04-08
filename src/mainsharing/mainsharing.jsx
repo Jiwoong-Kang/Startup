@@ -9,8 +9,6 @@ export function Mainsharing() {
 
     useEffect(() => {
         gettingTitles();
-    
-       
     }, []);
 
     async function gettingTitles(){
