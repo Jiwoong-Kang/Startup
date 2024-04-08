@@ -7,7 +7,7 @@ export function Account() {
     const [password, setPassword] = React.useState('');
     const [displayError, setDisplayError] = React.useState(null);
     const navigate = useNavigate();
-
+    const [showError, setShowError] = React.useState(false);
     async function createUser() {
         loginOrCreate(`/api/auth/create`);
       }
@@ -26,7 +26,12 @@ export function Account() {
         } else {
           const body = await response.json();
           setDisplayError(`⚠ Error: ${body.msg}`);
+          setShowError(true);
         }
+      }
+    
+      function hideErrorPopup(){
+        setShowError(false);
       }
       
     return (
@@ -58,7 +63,7 @@ export function Account() {
                     <button type="btn btn-primary" id="login" onClick = {createUser}>Create</button>
                 </div>
                 
-                <ErrorPopup message={displayError} onHide ={() => setDisplayError(null)} />
+                {showError &&<ErrorPopup message={displayError} onHide ={hideErrorPopup} />}
         </main>
         </>
     )
