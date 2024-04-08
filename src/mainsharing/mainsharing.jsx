@@ -1,22 +1,16 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import { WebSocketComponent } from './configurewebsocket';
 
 export function Mainsharing() {
     const [titles, setTitles] = useState([]);
     const [messages, setMessages] = useState([]);
     const userName = localStorage.getItem('userName');
     const navigate = useNavigate();
-    // let socket;
 
     useEffect(() => {
         gettingTitles();
     
-        // return () => {
-        //     if (socket) {
-        //         socket.close();
-        //     }
-        // };
+       
     }, []);
 
     async function gettingTitles(){
@@ -40,7 +34,6 @@ export function Mainsharing() {
     return (
         <>
             <main className='container-fluid bg-secondary text-center'>
-                {/* <WebSocketComponent /> */}
                 <h2>CodeSharing</h2>
                 <table className="table1">
                     <thead>

@@ -1,4 +1,4 @@
-const Events = { // simon's way
+const Events = { 
     System: 'system',
     FeedbackUpload : 'Feedback uploaded',
     CodeUpload : ' Code uploaded',
@@ -18,10 +18,10 @@ class EventNotifier {
     const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
     this.socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/ws`);
     this.socket.onopen = (event) => {
-      this.receiveEvent(new EventMessage('Codesharing', Events.System, { msg: 'connected' }));
+      this.receiveEvent(new EventMessage('System', Events.System, { msg: ' connected' }));
     };
     this.socket.onclose = (event) => {
-      this.receiveEvent(new EventMessage('Codesharing', Events.System, { msg: 'disconnected' }));
+      this.receiveEvent(new EventMessage('System', Events.System, { msg: ' disconnected' }));
     };
     this.socket.onmessage = async (msg) => {
       try {

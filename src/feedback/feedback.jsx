@@ -1,13 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
-// import { WebSocketComponent } from './configurewebsocket';
 import { useNavigate } from 'react-router-dom';
-// import { WebSocketContext} from "./websocketcontext"
 
 export function Feedback() {
     const [currentCode, setCurrentCode] = useState({ code: "Show the code that someone uploaded" });
     const [feedback, setFeedback] = useState("");
     const navigate = useNavigate();
-    // const socket = useContext(WebSocketContext);
     const FeedBackUpload = "Feedback uploaded";
     const username = localStorage.getItem('username')
 
@@ -19,16 +16,7 @@ export function Feedback() {
         }
     }, []);
 
-    // const broadcastEvent = (from, type, value) => { 
-    //     if (socket) { 
-    //         const event = {
-    //             from: from,
-    //             type: type,
-    //             value: value,
-    //         };
-    //         socket.send(JSON.stringify(event));
-    //     }
-    // };
+    
 
     async function handleFeedback() {
         const real_ID = currentCode.ID;

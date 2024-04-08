@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import { WebSocketComponent } from './configurewebsocket';
 
 export function Mypage() {
   const [titles, setTitles] = useState([]);
@@ -10,11 +9,7 @@ export function Mypage() {
   let socket;
   useEffect(() => {
     fetchTitles();
-    // return () => {
-    //   if (socket) {
-    //     socket.close();
-    //   }
-    // };
+    
   }, []);
 
   async function fetchTitles() {
@@ -41,7 +36,6 @@ export function Mypage() {
   return (
     <div>
       <main className='container-fluid bg-secondary text-center'>
-        {/* <WebSocketComponent /> */}
         <h2>My page</h2>
         <h3>Code that you uploaded so far</h3>
         <table className="table1">

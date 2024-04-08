@@ -10,14 +10,13 @@ import {Mypage} from './mypage/mypage';
 import {Mainsharing} from './mainsharing/mainsharing';
 import {Sharing} from './sharing/sharing';
 import {Header} from './header';
+import { WebSocketComponent } from './websocketcomponent';
 
 function NotFound() {
     return <main className='container-fluid bg-secondary text-center'>404: Return to sender. Address unknown.</main>;
   }
 
 export default function App() {
-    // const [pageState, setPagestate] = React.useState(PageState.Login); // 이렇게 여러가지 만들기
-    // <div className="list">{pageState != PageState.login && <NavLink to="Login" onClick = {setPagestate(PageState.Login)}>Home</NavLink>}</div>
 
     return (
         <BrowserRouter>
@@ -25,7 +24,8 @@ export default function App() {
             <div className="page-content">
                 <h1 className="image-container">Codesharing<sup>&reg;</sup></h1>
                 <Header />
-                
+                <main>
+                <WebSocketComponent />
                  <Routes>
                     <Route path='/' element={<Login />} />
                     <Route path='/account' element={<Account />} />
@@ -37,6 +37,7 @@ export default function App() {
                     <Route path='/sharing' element={<Sharing />} />
                     <Route path='*' element={<NotFound />} />
                 </Routes>
+                </main>
             </div>
                 <footer>
                     <hr />
