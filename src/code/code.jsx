@@ -105,7 +105,7 @@ export function Code() {
 
     return (
         <>
-            <main className='container-fluid bg-secondary text-center'>
+            {/* <main className='container-fluid bg-secondary text-center'> */}
                 <h2><textarea id="subject" placeholder="Write your subject"></textarea></h2>
                 <div id="outer">
                     <div id="outer2"><p><textarea id="message" placeholder="Write your code"></textarea></p>
@@ -115,7 +115,7 @@ export function Code() {
                 </div>
                 <button type="submit" id="save" onClick={saveCode}>Upload</button>
                 <button type="submit" id="delete" onClick={clearContent}>Delete</button>
-            </main>
+            {/* </main> */}
         </>
     )
 }

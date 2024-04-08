@@ -33,7 +33,7 @@ export function Mainsharing() {
 
     return (
         <>
-            <main className='container-fluid bg-secondary text-center'>
+            {/* <main className='container-fluid bg-secondary text-center'> */}
                 <h2>CodeSharing</h2>
                 <table className="table1">
                     <thead>
@@ -61,7 +61,7 @@ export function Mainsharing() {
                     <button type="button" id="feedback" onClick={upload}>Upload Your Code</button>
                 </div>
 
-            </main>
+            {/* </main> */}
         </>
     );
 }

@@ -24,7 +24,7 @@ export default function App() {
             <div className="page-content">
                 <h1 className="image-container">Codesharing<sup>&reg;</sup></h1>
                 <Header />
-                <main>
+                <main className='container-fluid bg-secondary text-center'>
                 <WebSocketComponent />
                  <Routes>
                     <Route path='/' element={<Login />} />

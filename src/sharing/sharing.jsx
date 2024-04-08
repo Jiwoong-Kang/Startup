@@ -44,7 +44,7 @@ export function Sharing() {
   };
 
   return (
-    <main>
+    <div>
       <h2 id="subject2">{subject}</h2>
       <div id="new_outer">
         <div id="new_outer2" style={{ whiteSpace: "pre" }}>
@@ -62,6 +62,6 @@ export function Sharing() {
         <button type="submit" id="feedback" onClick={feedback2}>Leave your feedback</button>
       </div>
       <div><button type="submit" id="delete" onClick={deleting}>Delete code</button></div>
-    </main>
+    </div> //main->div
   );
 }

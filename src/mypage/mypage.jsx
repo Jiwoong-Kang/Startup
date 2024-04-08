@@ -35,7 +35,7 @@ export function Mypage() {
 
   return (
     <div>
-      <main className='container-fluid bg-secondary text-center'>
+      {/* <main className='container-fluid bg-secondary text-center'> */}
         <h2>My page</h2>
         <h3>Code that you uploaded so far</h3>
         <table className="table1">
@@ -60,7 +60,7 @@ export function Mypage() {
           </tbody>
         </table>
         <div><button className="btn btn-primary" id="logout" onClick={logout}>Logout</button></div>
-      </main>
+      {/* </main> */}
     </div>
   );
 }
