@@ -3,7 +3,6 @@ const Events = { // simon's way
     FeedbackUpload : 'Feedback uploaded',
     CodeUpload : ' Code uploaded',
 };
-
 class EventMessage {
     constructor(from, type, value) {
         this.from = from;
@@ -11,11 +10,9 @@ class EventMessage {
         this.value = value;
     }
 }
-
 class EventNotifier {
     events = [];
     handlers = [];
-
     constructor() {
     let port = window.location.port;
     const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
@@ -33,7 +30,6 @@ class EventNotifier {
       } catch {}
     };
     }
-
     broadcastEvent(from, type, value) {
         const event = new EventMessage(from, type, value);
         this.socket.send(JSON.stringify(event));
@@ -57,7 +53,6 @@ class EventNotifier {
         });
       }
     }
-
 
 const Notifier = new EventNotifier();
 export { Events, Notifier };
