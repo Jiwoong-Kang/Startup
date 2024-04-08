@@ -3,7 +3,7 @@ import { Events, Notifier} from './websocket';
 
 export function WebSocketComponent() {
 
-    const [username, setUsername] = useState('');
+  const [username, setUsername] = useState('');
   const [events, setEvent] = useState([]);
   useEffect(() => {
 
@@ -25,9 +25,9 @@ export function WebSocketComponent() {
     for (const [i, event] of events.entries()) {
       let message = 'unknown';
       if (event.type === Events.FeedbackUpload) {
-        message = `uploaded a feedback on ${event.value.subject}`;
+        message = ` uploaded a feedback on ${event.value}`;
       } else if (event.type === Events.CodeUpload) {
-        message = `uploaded a code named ${event.value.subject}`;
+        message = ` uploaded a code named ${event.value}`;
       } else if (event.type === Events.System) {
         message = event.value.msg;
       }

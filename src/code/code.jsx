@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { Events, Notifier} from '../websocket';
 
 
 function getRandomFromTime() {
@@ -50,7 +50,7 @@ export function Code() {
         };
 
         let currentCode = localStorage.getItem("code");
-        
+        const subject = obj.subject;
         if (currentCode) {
             let currentCodeArray = JSON.parse(currentCode);
             currentCodeArray.push(obj);
@@ -67,6 +67,7 @@ export function Code() {
                 },
                 body: JSON.stringify(obj),
             });
+            Notifier.broadcastEvent(username, Events.CodeUpload, subject);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
