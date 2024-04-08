@@ -31,7 +31,7 @@ export function Account() {
 
     return (
       <>
-        {/* <main className='container-fluid bg-secondary text-center'> */}
+        <main className='container-fluid bg-secondary text-center'>
             <p>Put your new ID and new Password</p>
                 <div id="post_form">
                     <div className="form-group">
@@ -59,7 +59,7 @@ export function Account() {
                 </div>
                 
                 <ErrorPopup message={displayError} onHide ={() => setDisplayError(null)} />
-        {/* </main> */}
+        </main>
         </>
     )
 }

@@ -50,7 +50,7 @@ export function Feedback() {
 
     return (
         <>
-            {/* <main className='container-fluid bg-secondary text-center'> */}
+            <main className='container-fluid bg-secondary text-center'>
                 <h2>Feedback</h2>
                 <div id="outer">
                     <div id="outer2"><p id="outer2_text" style={{ whiteSpace: "pre" }}>{currentCode.code}</p>
@@ -62,7 +62,7 @@ export function Feedback() {
                         </div>
                     </div>
                 </div>
-            {/* </main> */}
+            </main>
         </>
     );
 }

@@ -24,7 +24,6 @@ export default function App() {
             <div className="page-content">
                 <h1 className="image-container">Codesharing<sup>&reg;</sup></h1>
                 <Header />
-                <main className='container-fluid bg-secondary text-center'>
                 <WebSocketFinal />
                  <Routes>
                     <Route path='/' element={<Login />} />
@@ -37,7 +36,6 @@ export default function App() {
                     <Route path='/sharing' element={<Sharing />} />
                     <Route path='*' element={<NotFound />} />
                 </Routes>
-                </main>
             </div>
                 <footer>
                     <hr />

@@ -38,7 +38,7 @@ export function Deleting() {
 
     return (
         <>
-        {/* <main className='container-fluid bg-secondary text-center'> */}
+        <main className='container-fluid bg-secondary text-center'>
             <h1>Are you really deleting this code?</h1>
             <h2 id="subject2">{codeInfo.subject}</h2>
             <div id="new_outer">
@@ -49,7 +49,7 @@ export function Deleting() {
                 <div><button className="btn btn-primary" id="save" onClick={keep}>Keep</button></div>
                 <div><button className="btn btn-primary" id="delete" onClick={remove}>Delete</button></div>
             </div>
-        {/* </main> */}
+        </main>
         </>
     );
 }

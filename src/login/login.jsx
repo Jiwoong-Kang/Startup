@@ -12,7 +12,7 @@ export function Login() {
   }
     return (
       <>
-        {/* <main className='container-fluid bg-secondary text-center'> */}
+        <main className='container-fluid bg-secondary text-center'>
         <h1>Welcome to CodeSharing</h1>
         <div id="outer">
           <div id="outer2"><QuoteDisplay /></div>
@@ -24,7 +24,7 @@ export function Login() {
           </div>
           <ErrorPopup />
         </div>
-        {/* </main> */}
+        </main>
         </>
     )
 }
