@@ -27,7 +27,6 @@ export function Account() {
           setDisplayError(`⚠ Error: ${body.msg}`);
         }
       }
-    console.log(displayError);
     return (
       <>
         <main className='container-fluid bg-secondary text-center'>
