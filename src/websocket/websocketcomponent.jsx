@@ -42,7 +42,7 @@ export function WebSocketComponent() {
   }
   return (
     <div className='users'>
-      User 
+      User:{" "}
       <span className='user-name'>{username}</span>
       <div id='user-messages'>{createMessageArray()}</div>
     </div>
