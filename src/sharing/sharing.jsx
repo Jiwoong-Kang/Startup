@@ -25,11 +25,6 @@ export function Sharing() {
       }
     }
 
-    // return () => {
-    //   if (socket) {
-    //     socket.close();
-    //   }
-    // }; // 추가한 부분
   }, []);
 
   const feedback2 = () => {
