@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 
 export function Login() {
   const navigate = useNavigate();
-  const [displayError, setDisplayError] = React.useState(null);
 
   function handleClick() {
     navigate('/account'); 
@@ -24,7 +23,6 @@ export function Login() {
             <p>Are you new?</p>
             <button onClick={handleClick} id="new">Click here</button>
           </div>
-          <ErrorPopup message={displayError} onHide={() => setDisplayError(null)} />      
         </div>
         </main>
         </>
