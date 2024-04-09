@@ -46,7 +46,7 @@ export function User() {
       <button className="btn btn-primary" id="login" onClick={() => loginUser()}>Login</button>
     </div>
 
-    <ErrorPopup message={displayError} onHide ={() => setDisplayError(null)} />
+    {displayError && <ErrorPopup message={displayError} onHide ={() => setDisplayError(null)} />}
   </>
   );
 }
