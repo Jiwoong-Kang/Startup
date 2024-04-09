@@ -100,5 +100,5 @@ Have you ever encountered a critical coding error while working on a project? Ar
 
 - Bundled and transpiled : Done!
 - Components - Login, Account creating, Code and Feedback Uploading, Deleting, Mypage and Sharing pages are all components
-- Router : Routing between all componenets above with APP.jsx.
+- Router : Routing between all components above with APP.jsx.
 - Hooks : I used "useState" for login, current username, putting feedbacks. And I used "useEffect" for writing and deleting a code, listing the codes that uploaded so far and showing codes and feedbacks on a page.
