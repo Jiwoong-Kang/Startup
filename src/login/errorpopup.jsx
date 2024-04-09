@@ -9,3 +9,4 @@ export function ErrorPopup({ message, onHide }) {
     </div>
   );
 }
+
