@@ -27,7 +27,7 @@ export function Account() {
           setDisplayError(`⚠ Error: ${body.msg}`);
         }
       }
-      
+    console.log(displayError);
     return (
       <>
         <main className='container-fluid bg-secondary text-center'>
@@ -56,7 +56,8 @@ export function Account() {
                     </div>
                     <button type="btn btn-primary" id="login" onClick = {createUser}>Create</button>
                 </div>
-                    <ErrorPopup message={displayError} onHide={() => setDisplayError(null)} />      
+                    {displayError && <ErrorPopup message={displayError} onHide={() => setDisplayError(null)} />}      
+                    
             </main>
         </>
     )

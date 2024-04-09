@@ -6,10 +6,12 @@ import { useNavigate } from 'react-router-dom';
 
 export function Login() {
   const navigate = useNavigate();
-  
+  const [displayError, setDisplayError] = React.useState(null);
+
   function handleClick() {
     navigate('/account'); 
   }
+
     return (
       <>
         <main className='container-fluid bg-secondary text-center'>
@@ -22,7 +24,7 @@ export function Login() {
             <p>Are you new?</p>
             <button onClick={handleClick} id="new">Click here</button>
           </div>
-          <ErrorPopup />
+          <ErrorPopup message={displayError} onHide={() => setDisplayError(null)} />      
         </div>
         </main>
         </>
